@@ -111,3 +111,23 @@ Mesh::createRGBAxes(GLdouble l)
 
 	return mesh;
 }
+Mesh* Mesh::generateRegularPolygon(GLuint num, GLdouble r) {
+	// Se construye sobre el plano Z = 0 así que la z de todos los vértices será igual a 0
+
+	const int centerX = 0;
+	const int centerY = 0;
+
+	Mesh* mesh = new Mesh();
+	mesh->mPrimitive = GL_LINE_LOOP;
+
+	GLdouble angleCount = glm::radians(90);
+	for (GLuint i = 0; i < num; ++i) {
+		GLdouble x = centerX + r * glm::cos(angleCount);
+		GLdouble y = centerY + r * glm::sin(angleCount);
+		mesh->vVertices.emplace_back(x, y, 0.0);
+
+		angleCount += glm::radians(360.0 / num);
+	}
+
+	return mesh;
+}
