@@ -118,9 +118,13 @@ Mesh* Mesh::generateRegularPolygon(GLuint num, GLdouble r) {
 	const int centerY = 0;
 
 	Mesh* mesh = new Mesh();
+
 	mesh->mPrimitive = GL_LINE_LOOP;
 
-	GLdouble angleCount = glm::radians(90);
+	mesh->mNumVertices = num;
+	mesh->vVertices.reserve(mesh->mNumVertices);
+
+	GLdouble angleCount = glm::radians(90.0);
 	for (GLuint i = 0; i < num; ++i) {
 		GLdouble x = centerX + r * glm::cos(angleCount);
 		GLdouble y = centerY + r * glm::sin(angleCount);
@@ -128,6 +132,5 @@ Mesh* Mesh::generateRegularPolygon(GLuint num, GLdouble r) {
 
 		angleCount += glm::radians(360.0 / num);
 	}
-
 	return mesh;
 }

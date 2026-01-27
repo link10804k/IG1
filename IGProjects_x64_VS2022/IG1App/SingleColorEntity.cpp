@@ -1,6 +1,6 @@
 #include "SingleColorEntity.h"
 
-SingleColorEntity::SingleColorEntity(glm::vec4 mColor = {1, 1, 1, 1}) : mColor(mColor) {
+SingleColorEntity::SingleColorEntity(glm::vec4 mColor) : mColor(mColor) {
 	mShader = Shader::get("simple");
 }
 
@@ -8,8 +8,8 @@ void SingleColorEntity::render(const glm::mat4& modelViewMat) const {
 	if (mMesh != nullptr) {
 		glm::mat4 aMat = modelViewMat * mModelMat; // glm matrix multiplication
 
-		mShader->setUniform("color", mColor);
 		mShader->use();
+		mShader->setUniform("color", mColor);
 
 		upload(aMat);
 		mMesh->render();

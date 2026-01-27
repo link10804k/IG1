@@ -3,6 +3,8 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+#include "RegularPolygon.h"
+
 using namespace glm;
 
 void
@@ -16,6 +18,8 @@ Scene::init()
 
 	// Graphics objects (entities) of the scene
 	gObjects.push_back(new RGBAxes(400.0));
+
+	gObjects.push_back(new RegularPolygon(7, 100, { 1, 0, 0, 1 }));
 }
 
 Scene::~Scene()
