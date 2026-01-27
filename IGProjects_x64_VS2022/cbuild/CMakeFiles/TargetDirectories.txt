@@ -1,0 +1,3 @@
+/home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/cbuild/CMakeFiles/IG1App.dir
+/home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/cbuild/CMakeFiles/edit_cache.dir
+/home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/cbuild/CMakeFiles/rebuild_cache.dir

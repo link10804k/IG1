@@ -1,0 +1,62 @@
+[
+{
+  "directory": "/home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/cbuild",
+  "command": "/usr/bin/c++  -I/home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/libs/stb_image/include -std=c++20 -o CMakeFiles/IG1App.dir/IG1App/Camera.cpp.o -c /home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/IG1App/Camera.cpp",
+  "file": "/home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/IG1App/Camera.cpp",
+  "output": "CMakeFiles/IG1App.dir/IG1App/Camera.cpp.o"
+},
+{
+  "directory": "/home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/cbuild",
+  "command": "/usr/bin/c++  -I/home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/libs/stb_image/include -std=c++20 -o CMakeFiles/IG1App.dir/IG1App/Entity.cpp.o -c /home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/IG1App/Entity.cpp",
+  "file": "/home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/IG1App/Entity.cpp",
+  "output": "CMakeFiles/IG1App.dir/IG1App/Entity.cpp.o"
+},
+{
+  "directory": "/home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/cbuild",
+  "command": "/usr/bin/c++  -I/home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/libs/stb_image/include -std=c++20 -o CMakeFiles/IG1App.dir/IG1App/IG1App.cpp.o -c /home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/IG1App/IG1App.cpp",
+  "file": "/home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/IG1App/IG1App.cpp",
+  "output": "CMakeFiles/IG1App.dir/IG1App/IG1App.cpp.o"
+},
+{
+  "directory": "/home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/cbuild",
+  "command": "/usr/bin/c++  -I/home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/libs/stb_image/include -std=c++20 -o CMakeFiles/IG1App.dir/IG1App/Image.cpp.o -c /home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/IG1App/Image.cpp",
+  "file": "/home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/IG1App/Image.cpp",
+  "output": "CMakeFiles/IG1App.dir/IG1App/Image.cpp.o"
+},
+{
+  "directory": "/home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/cbuild",
+  "command": "/usr/bin/c++  -I/home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/libs/stb_image/include -std=c++20 -o CMakeFiles/IG1App.dir/IG1App/main.cpp.o -c /home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/IG1App/main.cpp",
+  "file": "/home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/IG1App/main.cpp",
+  "output": "CMakeFiles/IG1App.dir/IG1App/main.cpp.o"
+},
+{
+  "directory": "/home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/cbuild",
+  "command": "/usr/bin/c++  -I/home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/libs/stb_image/include -std=c++20 -o CMakeFiles/IG1App.dir/IG1App/Mesh.cpp.o -c /home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/IG1App/Mesh.cpp",
+  "file": "/home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/IG1App/Mesh.cpp",
+  "output": "CMakeFiles/IG1App.dir/IG1App/Mesh.cpp.o"
+},
+{
+  "directory": "/home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/cbuild",
+  "command": "/usr/bin/c++  -I/home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/libs/stb_image/include -std=c++20 -o CMakeFiles/IG1App.dir/IG1App/Scene.cpp.o -c /home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/IG1App/Scene.cpp",
+  "file": "/home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/IG1App/Scene.cpp",
+  "output": "CMakeFiles/IG1App.dir/IG1App/Scene.cpp.o"
+},
+{
+  "directory": "/home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/cbuild",
+  "command": "/usr/bin/c++  -I/home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/libs/stb_image/include -std=c++20 -o CMakeFiles/IG1App.dir/IG1App/Shader.cpp.o -c /home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/IG1App/Shader.cpp",
+  "file": "/home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/IG1App/Shader.cpp",
+  "output": "CMakeFiles/IG1App.dir/IG1App/Shader.cpp.o"
+},
+{
+  "directory": "/home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/cbuild",
+  "command": "/usr/bin/c++  -I/home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/libs/stb_image/include -std=c++20 -o CMakeFiles/IG1App.dir/IG1App/Texture.cpp.o -c /home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/IG1App/Texture.cpp",
+  "file": "/home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/IG1App/Texture.cpp",
+  "output": "CMakeFiles/IG1App.dir/IG1App/Texture.cpp.o"
+},
+{
+  "directory": "/home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/cbuild",
+  "command": "/usr/bin/c++  -I/home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/libs/stb_image/include -std=c++20 -o CMakeFiles/IG1App.dir/IG1App/Viewport.cpp.o -c /home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/IG1App/Viewport.cpp",
+  "file": "/home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/IG1App/Viewport.cpp",
+  "output": "CMakeFiles/IG1App.dir/IG1App/Viewport.cpp.o"
+}
+]
