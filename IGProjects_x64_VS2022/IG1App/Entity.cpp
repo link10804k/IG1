@@ -32,6 +32,7 @@ Abs_Entity::unload()
 EntityWithColors::EntityWithColors()
 {
 	mShader = Shader::get("vcolors");
+	mShaderAlt = Shader::get("simple");
 }
 
 void
@@ -39,7 +40,21 @@ EntityWithColors::render(mat4 const& modelViewMat) const
 {
 	if (mMesh != nullptr) {
 		mat4 aMat = modelViewMat * mModelMat; // glm matrix multiplication
-		mShader->use();
+
+		glm::vec3 zAxis;
+		glm::vec3 zModel;
+		for (int i = 0; i < 3; ++i) {
+			zAxis[i] = modelViewMat[2][i];
+			zModel[i] = mModelMat[2][i];
+		}
+
+		if (glm::dot(zAxis, zModel) < 0) {
+			mShaderAlt->use();
+		}
+		else {
+			mShader->use();
+		}
+		
 		upload(aMat);
 		mMesh->render();
 	}
