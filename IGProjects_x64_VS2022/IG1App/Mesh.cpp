@@ -136,12 +136,28 @@ Mesh* Mesh::generateRegularPolygon(GLuint num, GLdouble r) {
 }
 
 // No lo pone en la práctica pero no sabemos cómo hacerlo sin utilizar un método interno de la clase mesh
-void Mesh::setVerticesColors(std::vector<glm::vec4> newColors) { 
-	assert(newColors.size() == vVertices.size());
+Mesh* Mesh::generateTriangleWithColors(GLdouble r) {
+	// Se construye sobre el plano Z = 0 así que la z de todos los vértices será igual a 0
 
-	vColors.reserve(mNumVertices);
-	
-	for (size_t i = 0; i < newColors.size(); ++i) {
-		vColors[i] = newColors[i];
+	const int centerX = 0;
+	const int centerY = 0;
+
+	Mesh* mesh = new Mesh();
+
+	mesh->mPrimitive = GL_TRIANGLES;
+
+	mesh->mNumVertices = 3;
+	mesh->vVertices.reserve(mesh->mNumVertices);
+	mesh->vColors.reserve(mesh->mNumVertices);
+
+	GLdouble angleCount = glm::radians(90.0);
+	for (GLuint i = 0; i < mesh->mNumVertices; ++i) {
+		GLdouble x = centerX + r * glm::cos(angleCount);
+		GLdouble y = centerY + r * glm::sin(angleCount);
+		mesh->vVertices.emplace_back(x, y, 0.0);
+		mesh->vColors.emplace_back(i % 3 == 0, i % 3 == 1, i % 3 == 2, 1);
+
+		angleCount += glm::radians(360.0 / mesh->mNumVertices);
 	}
+	return mesh;
 }
