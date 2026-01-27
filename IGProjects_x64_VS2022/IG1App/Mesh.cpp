@@ -134,3 +134,14 @@ Mesh* Mesh::generateRegularPolygon(GLuint num, GLdouble r) {
 	}
 	return mesh;
 }
+
+// No lo pone en la práctica pero no sabemos cómo hacerlo sin utilizar un método interno de la clase mesh
+void Mesh::setVerticesColors(std::vector<glm::vec4> newColors) { 
+	assert(newColors.size() == vVertices.size());
+
+	vColors.reserve(mNumVertices);
+	
+	for (size_t i = 0; i < newColors.size(); ++i) {
+		vColors[i] = newColors[i];
+	}
+}
