@@ -168,8 +168,12 @@ Mesh* Mesh::generateRectangle(GLdouble w, GLdouble h){
 
 	mesh->mNumVertices = 4;
 	mesh->vVertices.reserve(mesh->mNumVertices);
-	mesh->vColors.reserve(mesh->mNumVertices);
 	
+	mesh->vVertices.emplace_back(-(w / 2), (h / 2), 0);
+	mesh->vVertices.emplace_back(-w / 2, -(h / 2), 0);
+	mesh->vVertices.emplace_back((w / 2), h / 2, 0);
+	mesh->vVertices.emplace_back(w / 2, -h / 2, 0);
+
 	return mesh;
 }
 Mesh* Mesh::generateRGBRectangle(GLdouble w, GLdouble h){
@@ -181,14 +185,15 @@ Mesh* Mesh::generateRGBRectangle(GLdouble w, GLdouble h){
 	mesh->vVertices.reserve(mesh->mNumVertices);
 	mesh->vColors.reserve(mesh->mNumVertices);
 
-	mesh->vVertices.emplace_back(-(w/2),-(h/2),0);
-	mesh->vVertices.emplace_back(w/2,-(h/2),0);
-	mesh->vVertices.emplace_back(-(w/2),h/2,0);
-	mesh->vVertices.emplace_back(w/2,h/2,0);
+	mesh->vVertices.emplace_back(-(w/2),(h/2),0);
+	mesh->vVertices.emplace_back(-w/2,-(h/2),0);
+	mesh->vVertices.emplace_back((w/2),h/2,0);
+	mesh->vVertices.emplace_back(w/2,-h/2,0);
 
-	mesh->vColors.emplace_back(1.0,0.0,0.0,1.0);
-	mesh->vColors.emplace_back(0.0,1.0,0.0,1.0);
-	mesh->vColors.emplace_back(1.0,0.0,0.0,1.0);
-	mesh->vColors.emplace_back(0.0,0.0,1.0,1.0);
+	mesh->vColors.emplace_back(1.0, 0.0, 0.0, 1.0);
+	mesh->vColors.emplace_back(0.0, 1.0, 0.0, 1.0);
+	mesh->vColors.emplace_back(0.0, 1.0, 0.0, 1.0);
+	mesh->vColors.emplace_back(0.0, 0.0, 1.0, 1.0);
+	
 	return mesh;
 }

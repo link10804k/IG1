@@ -2,6 +2,7 @@
 
 #include "RegularPolygon.h"
 #include "RGBTriangle.h"
+#include "RGBRectangle.h"
 
 void Scene2::init() {
 	setGL(); // OpenGL settings
@@ -13,5 +14,5 @@ void Scene2::init() {
 	// Graphics objects (entities) of the scene
 	gObjects.push_back(new RGBAxes(400.0));
 
-	gObjects.push_back(new RGBTriangle(100));
+	gObjects.push_back(new RGBRectangle(200, 100));
 }
