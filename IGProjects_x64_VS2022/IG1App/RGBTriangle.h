@@ -7,6 +7,8 @@ class RGBTriangle : public EntityWithColors {
 public:
 	RGBTriangle(GLuint r, GLdouble x, GLdouble y);
 	~RGBTriangle() = default;
+
+	void update() override;
 };
 
 #endif
