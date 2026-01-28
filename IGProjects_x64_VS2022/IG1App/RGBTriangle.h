@@ -5,7 +5,7 @@
 
 class RGBTriangle : public EntityWithColors {
 public:
-	RGBTriangle(GLuint r);
+	RGBTriangle(GLuint r, GLdouble x, GLdouble y);
 	~RGBTriangle() = default;
 };
 

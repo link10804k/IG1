@@ -14,5 +14,9 @@ void Scene2::init() {
 	// Graphics objects (entities) of the scene
 	gObjects.push_back(new RGBAxes(400.0));
 
-	gObjects.push_back(new RGBRectangle(200, 100));
+	GLdouble r = 100;
+
+	gObjects.push_back(new RGBRectangle(100, 100));
+	gObjects.push_back(new RGBTriangle(33, r, 0));
+	gObjects.push_back(new RegularPolygon(60, r, { 1,0,1,1 }));
 }
