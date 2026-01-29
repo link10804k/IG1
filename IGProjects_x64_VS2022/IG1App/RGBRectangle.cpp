@@ -11,12 +11,15 @@ void RGBRectangle::render(glm::mat4 const& modelViewMat) const {
 		zAxis[i] = modelViewMat[2][i];
 		zModel[i] = mModelMat[2][i];
 	}
-
+	
 	// Cambiamos el modo de dibujado para toda la figura porque no están disponibles el FRONT ni el BACK para glPolygonMode
-	if (glm::dot(zAxis, zModel) >= 0) {
-		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-	}
-
+	glEnable(GL_CULL_FACE);
+	glCullFace(GL_BACK);
+	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	EntityWithColors::render(modelViewMat);
+	glCullFace(GL_FRONT);
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+	EntityWithColors::render(modelViewMat);
+
+	glDisable(GL_CULL_FACE);
 }
