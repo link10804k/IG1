@@ -136,11 +136,11 @@ Mesh* Mesh::generateRegularPolygon(GLuint num, GLdouble r) {
 }
 
 // No lo pone en la práctica pero no sabemos cómo hacerlo sin utilizar un método interno de la clase mesh
-Mesh* Mesh::generateTriangleWithColors(GLdouble r, GLdouble x, GLdouble y) {
+Mesh* Mesh::generateTriangleWithColors(GLdouble r) {
 	// Se construye sobre el plano Z = 0 así que la z de todos los vértices será igual a 0
 
-	const int centerX = x;
-	const int centerY = y;
+	const int centerX = 0;
+	const int centerY = 0;
 
 	Mesh* mesh = new Mesh();
 
@@ -159,6 +159,7 @@ Mesh* Mesh::generateTriangleWithColors(GLdouble r, GLdouble x, GLdouble y) {
 
 		angleCount += glm::radians(360.0 / mesh->mNumVertices);
 	}
+
 	return mesh;
 }
 Mesh* Mesh::generateRectangle(GLdouble w, GLdouble h){

@@ -43,8 +43,6 @@ class EntityWithColors : public Abs_Entity
 public:
 	explicit EntityWithColors();
 	void render(const glm::mat4& modelViewMat) const override;
-
-	Shader* mShaderAlt;
 };
 
 class RGBAxes : public EntityWithColors

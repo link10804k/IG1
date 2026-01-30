@@ -4,6 +4,8 @@
 #include "Entity.h"
 
 class RGBTriangle : public EntityWithColors {
+private:
+	GLfloat totalAngle = 0;
 public:
 	RGBTriangle(GLuint r, GLdouble x, GLdouble y);
 	~RGBTriangle() = default;
