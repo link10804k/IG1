@@ -62,6 +62,12 @@ protected:
 	GLFWwindow* mWindow = nullptr; // window's handle
 	int mWinW = 800;               // window's width
 	int mWinH = 600;               // window's height
+
+	// CNG: Adiciones para el update continuo
+
+	const int FRAME_DURATION = 1;
+	bool mUpdateEnabled = true;
+	double mNextUpdate = FRAME_DURATION;
 };
 
 inline Viewport const&

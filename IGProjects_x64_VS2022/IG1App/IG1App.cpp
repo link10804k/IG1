@@ -42,7 +42,20 @@ IG1App::run() // enters the main event processing loop
 		}
 
 		// Stop and wait for new events
-		glfwWaitEvents();
+		//glfwWaitEvents();
+
+		
+
+		if (glfwGetTime() >= mNextUpdate) {
+			printf("time");
+			mNextUpdate += FRAME_DURATION;
+			if (mUpdateEnabled) {
+				printf("update");
+				mScenes[mCurrentScene]->update();
+			}
+		}
+
+		glfwWaitEventsTimeout(mNextUpdate - glfwGetTime());
 	}
 
 	destroy();
@@ -174,6 +187,7 @@ IG1App::key(unsigned int key)
 		// Case nuevo para actualizar la escena
 		case 'u':
 			mScenes[mCurrentScene]->update();
+			//mUpdateEnabled = !mUpdateEnabled;
 			break;
 		default:
 			if (key >= '0' && key <= '9') {
