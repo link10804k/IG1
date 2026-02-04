@@ -52,6 +52,7 @@ IG1App::run() // enters the main event processing loop
 			if (mUpdateEnabled) {
 				printf("update");
 				mScenes[mCurrentScene]->update();
+				mNeedsRedisplay = true;
 			}
 		}
 
@@ -186,7 +187,7 @@ IG1App::key(unsigned int key)
 			break;
 		// Case nuevo para actualizar la escena
 		case 'u':
-			mScenes[mCurrentScene]->update();
+			mUpdateEnabled = !mUpdateEnabled;
 			//mUpdateEnabled = !mUpdateEnabled;
 			break;
 		default:
