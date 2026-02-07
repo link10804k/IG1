@@ -7,7 +7,7 @@
 class Cube : public SingleColorEntity
 {
 public:
-	Cube(GLdouble lenght);
+	Cube(GLdouble lenght, glm::vec4 mColor);
 	~Cube() = default;
 
 	void render(const glm::mat4 &modelViewMat) const override;

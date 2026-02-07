@@ -1,6 +1,6 @@
 #include "Cube.h"
 
-Cube::Cube(GLdouble lenght) {
+Cube::Cube(GLdouble lenght, glm::vec4 mColor) : SingleColorEntity(mColor){
 	mMesh = Mesh::generateCube(lenght);
 }
 

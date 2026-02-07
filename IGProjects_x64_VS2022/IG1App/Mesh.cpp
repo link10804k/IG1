@@ -5,13 +5,11 @@
 using namespace std;
 using namespace glm;
 
-#define PUSH_V(x1,y1,z1,x2,y2,z2,x3,y3,z3) mesh->vVertices.emplace_back(x1,y1,z1); \
-mesh->vVertices.emplace_back(x2,y2,z2); \
-mesh->vVertices.emplace_back(x3,y3,z3) \
-
 #define PUSH_TRIANGLE(V1,V2,V3) mesh->vVertices.emplace_back(V1.x, V1.y,V1.z); \
 mesh->vVertices.emplace_back(V2.x, V2.y,V2.z); \
 mesh->vVertices.emplace_back(V3.x, V3.y,V3.z) \
+
+#define PUSH_SQUARE_COLOR(color) for (int i = 0; i < 6; ++i){ mesh->vColors.emplace_back(color); }
 
 // Placeholder for the pending index of a GPU object
 constexpr GLuint NONE = numeric_limits<GLuint>::max();
@@ -217,7 +215,6 @@ Mesh* Mesh::generateCube(GLdouble length) {
 
 	mesh->mNumVertices = 36;
 	mesh->vVertices.reserve(mesh->mNumVertices);
-	mesh->vColors.reserve(mesh->mNumVertices);
 
 	vec3 v[4] = { {d,-d,d}, {d,-d,-d}, {d,d,-d},{d,d,d} };
 	PUSH_TRIANGLE(v[0],v[1],v[2]);
@@ -243,11 +240,51 @@ Mesh* Mesh::generateCube(GLdouble length) {
 	PUSH_TRIANGLE(v5[0], v5[1], v5[2]);
 	PUSH_TRIANGLE(v5[2], v5[3], v5[0]);
 
-	//FIXME: arrglar color cubo wire (es blanco cuando debería ser negro)
-	vec4 color = { 0.0,0.0,0.0,1.0 };
-	for (int i = 0; i < 36; ++i) {
-		mesh->vColors.emplace_back(0.0,0.0,0.0,1.0);
-	}
+	return mesh;
+}
+Mesh* Mesh::generateRGBCubeTriangles(GLdouble length) {
+	Mesh* mesh = new Mesh();
+	GLdouble d = length / 2;
+
+	mesh->mPrimitive = GL_TRIANGLES;
+
+	mesh->mNumVertices = 36;
+	mesh->vVertices.reserve(mesh->mNumVertices);
+	mesh->vColors.reserve(mesh->mNumVertices);
+
+	glm::vec4 red = { 1,0,0,1 };
+	glm::vec4 green = { 0,1,0,1 };
+	glm::vec4 blue  = { 0,0,1,1 };
+
+	vec3 v[4] = { {d,-d,d}, {d,-d,-d}, {d,d,-d},{d,d,d} };
+	PUSH_TRIANGLE(v[0], v[1], v[2]);
+	PUSH_TRIANGLE(v[2], v[3], v[0]);
+	PUSH_SQUARE_COLOR(green);
+
+	vec3 v1[4] = { {d,-d,-d}, {-d,-d,-d}, {-d,d,-d},{d,d,-d} };
+	PUSH_TRIANGLE(v1[0], v1[1], v1[2]);
+	PUSH_TRIANGLE(v1[2], v1[3], v1[0]);
+	PUSH_SQUARE_COLOR(red);
+
+	vec3 v2[4] = { {-d,-d,-d}, {-d,-d,d}, {-d,d,d},{-d,d,-d} };
+	PUSH_TRIANGLE(v2[0], v2[1], v2[2]);
+	PUSH_TRIANGLE(v2[2], v2[3], v2[0]);
+	PUSH_SQUARE_COLOR(green);
+
+	vec3 v3[4] = { {-d,-d,d}, {d,-d,d}, {d,d,d},{-d,d,d} };
+	PUSH_TRIANGLE(v3[0], v3[1], v3[2]);
+	PUSH_TRIANGLE(v3[2], v3[3], v3[0]);
+	PUSH_SQUARE_COLOR(red);
+
+	vec3 v4[4] = { {d,-d,d}, {-d,-d,d}, {-d,-d,-d},{d,-d,-d} };
+	PUSH_TRIANGLE(v4[0], v4[1], v4[2]);
+	PUSH_TRIANGLE(v4[2], v4[3], v4[0]);
+	PUSH_SQUARE_COLOR(blue);
+
+	vec3 v5[4] = { {d,d,d}, {d,d,-d}, {-d,d,-d},{-d,d,d} };
+	PUSH_TRIANGLE(v5[0], v5[1], v5[2]);
+	PUSH_TRIANGLE(v5[2], v5[3], v5[0]);
+	PUSH_SQUARE_COLOR(blue);
 
 	return mesh;
 }
