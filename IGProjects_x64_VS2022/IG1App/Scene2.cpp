@@ -13,12 +13,13 @@ void Scene2::init() {
 
 	// Graphics objects (entities) of the scene
 	gObjects.push_back(new RGBAxes(400.0));
-	// FIXME: Comprobar si este double da problemas lol
+
 	GLdouble r = 100;
 
 	gObjects.push_back(new RGBRectangle(100, 100));
 	gObjects.push_back(new RGBTriangle(33, r, 0));
-	gObjects.push_back(new RegularPolygon(60, r, { 1,0,1,1 }));
-}
 
-// FIXME: Cambiar colores como structs a punteros a colores porque si no la GPU se queja y lanza warning
+	glm::vec4 magenta = { 1,0,1,1 };
+
+	gObjects.push_back(new RegularPolygon(60, r, magenta));
+}

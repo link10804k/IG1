@@ -108,14 +108,17 @@ Mesh::createRGBAxes(GLdouble l)
 
 	mesh->vColors.reserve(mesh->mNumVertices);
 	// X axis color: red  (Alpha = 1 : fully opaque)
-	mesh->vColors.emplace_back(1.0, 0.0, 0.0, 1.0);
-	mesh->vColors.emplace_back(1.0, 0.0, 0.0, 1.0);
+	glm::vec4 red = { 1,0,0,1 };
+	mesh->vColors.emplace_back(red);
+	mesh->vColors.emplace_back(red);
 	// Y axis color: green
-	mesh->vColors.emplace_back(0.0, 1.0, 0.0, 1.0);
-	mesh->vColors.emplace_back(0.0, 1.0, 0.0, 1.0);
+	glm::vec4 green = { 0,1,0,1 };
+	mesh->vColors.emplace_back(green);
+	mesh->vColors.emplace_back(green);
 	// Z axis color: blue
-	mesh->vColors.emplace_back(0.0, 0.0, 1.0, 1.0);
-	mesh->vColors.emplace_back(0.0, 0.0, 1.0, 1.0);
+	glm::vec4 blue = { 0,0,1,1 };
+	mesh->vColors.emplace_back(blue);
+	mesh->vColors.emplace_back(blue);
 
 	return mesh;
 }
@@ -163,7 +166,10 @@ Mesh* Mesh::generateTriangleWithColors(GLdouble r) {
 		GLdouble x = centerX + r * glm::cos(angleCount);
 		GLdouble y = centerY + r * glm::sin(angleCount);
 		mesh->vVertices.emplace_back(x, y, 0.0);
-		mesh->vColors.emplace_back(i % 3 == 0, i % 3 == 1, i % 3 == 2, 1);
+
+		glm::vec4 color = { i % 3 == 0, i % 3 == 1, i % 3 == 2, 1 };
+
+		mesh->vColors.emplace_back(color);
 
 		angleCount += glm::radians(360.0 / mesh->mNumVertices);
 	}
@@ -199,10 +205,14 @@ Mesh* Mesh::generateRGBRectangle(GLdouble w, GLdouble h){
 	mesh->vVertices.emplace_back((w/2),h/2,0);
 	mesh->vVertices.emplace_back(w/2,-h/2,0);
 
-	mesh->vColors.emplace_back(1.0, 0.0, 0.0, 1.0);
-	mesh->vColors.emplace_back(0.0, 1.0, 0.0, 1.0);
-	mesh->vColors.emplace_back(0.0, 1.0, 0.0, 1.0);
-	mesh->vColors.emplace_back(0.0, 0.0, 1.0, 1.0);
+	glm::vec4 red = { 1,0,0,1 };
+	glm::vec4 green = { 0,1,0,1 };
+	glm::vec4 blue = { 0,0,1,1 };
+
+	mesh->vColors.emplace_back(red);
+	mesh->vColors.emplace_back(green);
+	mesh->vColors.emplace_back(green);
+	mesh->vColors.emplace_back(blue);
 	
 	return mesh;
 }
