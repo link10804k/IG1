@@ -65,7 +65,7 @@ protected:
 
 	// CNG: Adiciones para el update continuo
 
-	const int FRAME_DURATION = 1;
+	const double FRAME_DURATION = 0.033;
 	bool mUpdateEnabled = true;
 	double mNextUpdate = FRAME_DURATION;
 };

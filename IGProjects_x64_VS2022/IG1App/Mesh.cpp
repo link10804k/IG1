@@ -1,5 +1,9 @@
 #include "Mesh.h"
 
+#define PUSH_V(x1,y1,z1,x2,y2,z2,x3,y3,z3) mesh->vVertices.emplace_back(x1,y1,z1); \
+mesh->vVertices.emplace_back(x2,y2,z2); \
+mesh->vVertices.emplace_back(x3,y3,z3) \
+
 using namespace std;
 using namespace glm;
 
@@ -198,3 +202,33 @@ Mesh* Mesh::generateRGBRectangle(GLdouble w, GLdouble h){
 	
 	return mesh;
 }
+
+Mesh* Mesh::generateCube(GLdouble length) {
+	Mesh* mesh = new Mesh();
+	GLdouble d = length / 2;
+
+	mesh->mPrimitive = GL_TRIANGLES;
+
+	mesh->mNumVertices = 36;
+	mesh->vVertices.reserve(mesh->mNumVertices);
+	mesh->vColors.reserve(mesh->mNumVertices);
+
+	
+	PUSH_V(-d, -d, d, -d, -d, -d, d, d, -d);
+
+	//vec3 v1[4] = { {-d,d,-d},{d,d,-d},{-d,-d,-d},{d,-d,-d} };
+	//mesh->vVertices.emplace_back(v1[0], v1[1], v1[2], v1[3], v1[1], v1[2]);
+	//
+	//vec3 v2[4] = { {-d,d,-d},{d,d,-d},{-d,-d,-d},{d,-d,-d} };
+	//mesh->vVertices.emplace_back(v2[0], v2[1], v2[2], v2[3], v2[1], v2[2]);
+	//
+	//vec3 v3[4] = { {-d,d,-d},{d,d,-d},{-d,-d,-d},{d,-d,-d} };
+	//mesh->vVertices.emplace_back(v3[0], v3[1], v3[2], v3[3], v3[1], v3[2]);
+	//
+	//vec3 v4[4] = { {-d,d,-d},{d,d,-d},{-d,-d,-d},{d,-d,-d} };
+	//mesh->vVertices.emplace_back(v4[0], v4[1], v4[2], v4[3], v4[1], v4[2]);
+	//
+	//vec3 v5[4] = { {-d,d,-d},{d,d,-d},{-d,-d,-d},{d,-d,-d} };
+	//mesh->vVertices.emplace_back(v5[0], v5[1], v5[2], v5[3], v5[1], v5[2]);
+}
+

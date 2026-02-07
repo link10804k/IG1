@@ -20,3 +20,5 @@ void Scene2::init() {
 	gObjects.push_back(new RGBTriangle(33, r, 0));
 	gObjects.push_back(new RegularPolygon(60, r, { 1,0,1,1 }));
 }
+
+// FIXME: Cambiar colores como structs a punteros a colores porque si no la GPU se queja y lanza warning
