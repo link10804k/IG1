@@ -4,6 +4,7 @@
 
 #include "Scene1.h"
 #include "Scene2.h"
+#include "Scene3.h"
 
 using namespace std;
 
@@ -70,6 +71,7 @@ IG1App::init()
 	mScenes.push_back(new Scene);
 	mScenes.push_back(new Scene1);
 	mScenes.push_back(new Scene2);
+	mScenes.push_back(new Scene3);
 
 	mCamera->set2D();
 

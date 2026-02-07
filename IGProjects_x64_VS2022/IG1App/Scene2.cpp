@@ -13,7 +13,7 @@ void Scene2::init() {
 
 	// Graphics objects (entities) of the scene
 	gObjects.push_back(new RGBAxes(400.0));
-
+	// FIXME: Comprobar si este double da problemas lol
 	GLdouble r = 100;
 
 	gObjects.push_back(new RGBRectangle(100, 100));
