@@ -12,4 +12,5 @@ Ground::Ground(GLdouble w, GLdouble d) {
 void Ground::render(glm::mat4 const& modelViewMat) const {
 	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	EntityWithColors::render(modelViewMat);
+	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 }

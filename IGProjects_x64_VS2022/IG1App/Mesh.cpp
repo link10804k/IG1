@@ -5,10 +5,12 @@
 using namespace std;
 using namespace glm;
 
+// Macro para pushear todos los vértices de un triángulo
 #define PUSH_TRIANGLE(V1,V2,V3) mesh->vVertices.emplace_back(V1.x, V1.y,V1.z); \
 mesh->vVertices.emplace_back(V2.x, V2.y,V2.z); \
 mesh->vVertices.emplace_back(V3.x, V3.y,V3.z) \
 
+// Macro para pushear todos los colores de un cuadrado
 #define PUSH_SQUARE_COLOR(color) for (int i = 0; i < 6; ++i){ mesh->vColors.emplace_back(color); }
 
 // Placeholder for the pending index of a GPU object
@@ -122,6 +124,8 @@ Mesh::createRGBAxes(GLdouble l)
 
 	return mesh;
 }
+
+// Polígono regular
 Mesh* Mesh::generateRegularPolygon(GLuint num, GLdouble r) {
 	// Se construye sobre el plano Z = 0 así que la z de todos los vértices será igual a 0
 
@@ -136,6 +140,7 @@ Mesh* Mesh::generateRegularPolygon(GLuint num, GLdouble r) {
 	mesh->vVertices.reserve(mesh->mNumVertices);
 
 	GLdouble angleCount = glm::radians(90.0);
+	// Se colocan los vértices siguiendo una circunferencia
 	for (GLuint i = 0; i < num; ++i) {
 		GLdouble x = centerX + r * glm::cos(angleCount);
 		GLdouble y = centerY + r * glm::sin(angleCount);
@@ -146,7 +151,7 @@ Mesh* Mesh::generateRegularPolygon(GLuint num, GLdouble r) {
 	return mesh;
 }
 
-// No lo pone en la práctica pero no sabemos cómo hacerlo sin utilizar un método interno de la clase mesh
+// Triángulo RGB
 Mesh* Mesh::generateTriangleWithColors(GLdouble r) {
 	// Se construye sobre el plano Z = 0 así que la z de todos los vértices será igual a 0
 
@@ -162,11 +167,13 @@ Mesh* Mesh::generateTriangleWithColors(GLdouble r) {
 	mesh->vColors.reserve(mesh->mNumVertices);
 
 	GLdouble angleCount = glm::radians(90.0);
+	// Se colocan los vértices siguiendo una circunferencia
 	for (GLuint i = 0; i < mesh->mNumVertices; ++i) {
 		GLdouble x = centerX + r * glm::cos(angleCount);
 		GLdouble y = centerY + r * glm::sin(angleCount);
 		mesh->vVertices.emplace_back(x, y, 0.0);
 
+		// Se elige el color según el vértice que sea
 		glm::vec4 color = { i % 3 == 0, i % 3 == 1, i % 3 == 2, 1 };
 
 		mesh->vColors.emplace_back(color);
@@ -176,6 +183,8 @@ Mesh* Mesh::generateTriangleWithColors(GLdouble r) {
 
 	return mesh;
 }
+
+// Rectángulo
 Mesh* Mesh::generateRectangle(GLdouble w, GLdouble h){
 	Mesh* mesh = new Mesh();
 
@@ -191,6 +200,8 @@ Mesh* Mesh::generateRectangle(GLdouble w, GLdouble h){
 
 	return mesh;
 }
+
+// Rectángulo RGB
 Mesh* Mesh::generateRGBRectangle(GLdouble w, GLdouble h){
 	Mesh* mesh = new Mesh();
 
@@ -217,6 +228,7 @@ Mesh* Mesh::generateRGBRectangle(GLdouble w, GLdouble h){
 	return mesh;
 }
 
+// Cubo
 Mesh* Mesh::generateCube(GLdouble length) {
 	Mesh* mesh = new Mesh();
 	GLdouble d = length / 2;
@@ -252,6 +264,8 @@ Mesh* Mesh::generateCube(GLdouble length) {
 
 	return mesh;
 }
+
+// Cubo RGB
 Mesh* Mesh::generateRGBCubeTriangles(GLdouble length) {
 	Mesh* mesh = new Mesh();
 	GLdouble d = length / 2;

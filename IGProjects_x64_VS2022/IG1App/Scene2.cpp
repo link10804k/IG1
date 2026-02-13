@@ -4,22 +4,26 @@
 #include "RGBTriangle.h"
 #include "RGBRectangle.h"
 
+#include "glm/gtc/matrix_transform.hpp"
+
 void Scene2::init() {
-	setGL(); // OpenGL settings
+	// Para el setGL() y las RGBAxis
+	Scene::init();
 
-	// allocate memory and load resources
-	// Lights
-	// Textures
-
-	// Graphics objects (entities) of the scene
-	gObjects.push_back(new RGBAxes(400.0));
-
+	// Radio de la circunferencia 
 	GLdouble r = 100;
+	// Tamaño del cuadrado
+	GLdouble length = glm::sin(glm::radians(45.0f)) * r * 2;
 
-	gObjects.push_back(new RGBRectangle(100, 100));
-	gObjects.push_back(new RGBTriangle(33, r, 0));
+	// Rectángulo RGB
+	gObjects.push_back(new RGBRectangle(length, length));
+	// Triángulo RGB
+	RGBTriangle* t = new RGBTriangle(33);
+	// Desplazamiento triángulo hacia la circunferencia
+	t->setModelMat(glm::translate(t->modelMat(), glm::vec3(r, 0, 0)));
+	gObjects.push_back(t);
 
 	glm::vec4 magenta = { 1,0,1,1 };
-
+	// Circunferencia magenta
 	gObjects.push_back(new RegularPolygon(60, r, magenta));
 }

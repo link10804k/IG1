@@ -47,7 +47,7 @@ IG1App::run() // enters the main event processing loop
 		if (glfwGetTime() >= mNextUpdate) {
 			mNextUpdate += FRAME_DURATION;
 			if (mUpdateEnabled) {
-				mScenes[mCurrentScene]->update();
+				update();
 				mNeedsRedisplay = true;
 			}
 		}
@@ -183,8 +183,12 @@ IG1App::key(unsigned int key)
 		case 'o':
 			mCamera->set2D();
 			break;
-		// Case nuevo para actualizar la escena
+		// CNG: Case nuevo para actualizar la escena
 		case 'u':
+			update();
+			break;
+		// CNG: Case nuevo para alternar el update
+		case 'U':
 			mUpdateEnabled = !mUpdateEnabled;
 			break;
 		default:
@@ -257,4 +261,8 @@ IG1App::changeScene(size_t sceneNr)
 	}
 
 	return true;
+}
+
+void IG1App::update() {
+	mScenes[mCurrentScene]->update();
 }

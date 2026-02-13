@@ -35,6 +35,8 @@ protected:
 	IG1App() = default;
 	~IG1App() { close(); };
 
+	void update(); // CNG: Update metido
+
 	void init();
 	void iniWinOpenGL();
 	void destroy();

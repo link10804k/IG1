@@ -4,18 +4,14 @@
 #include "RGBTriangle.h"
 
 void Scene1::init() {
-	setGL(); // OpenGL settings
-
-	// allocate memory and load resources
-	// Lights
-	// Textures
-
-	// Graphics objects (entities) of the scene
-	gObjects.push_back(new RGBAxes(400.0));
+	// Para el setGL() y las RGBAxis
+	Scene::init();
 
 	glm::vec4 magenta = { 1,0,1,1 };
 	glm::vec4 amarillo = { 1,1,0,1 };
 
+	// Hexágono magenta
 	gObjects.push_back(new RegularPolygon(6, 100, magenta));
+	// Circunferencia amarilla
 	gObjects.push_back(new RegularPolygon(60, 100, amarillo));
 }

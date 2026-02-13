@@ -2,16 +2,15 @@
 
 #include "RGBCube.h"
 
+#include "glm/gtc/matrix_transform.hpp"
+
 void Scene3::init() {
-	setGL(); // OpenGL settings
+	// Para el setGL() y las RGBAxis
+	Scene::init();
 
-	// allocate memory and load resources
-	// Lights
-	// Textures
-
-	// Graphics objects (entities) of the scene
-	gObjects.push_back(new RGBAxes(400.0));
-	gObjects.push_back(new RGBCube(100));
-	
-
+	// Cubo
+	GLdouble length = 100;
+	RGBCube* c = new RGBCube(length);
+	c->setModelMat(glm::translate(c->modelMat(), glm::vec3(length / 2, length / 2, -length / 2)));
+	gObjects.push_back(c);
 }

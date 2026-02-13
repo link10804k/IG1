@@ -7,7 +7,7 @@ class RGBTriangle : public EntityWithColors {
 private:
 	GLfloat totalAngle = 0;
 public:
-	RGBTriangle(GLuint r, GLdouble x, GLdouble y);
+	RGBTriangle(GLuint r);
 	~RGBTriangle() = default;
 
 	void update() override;

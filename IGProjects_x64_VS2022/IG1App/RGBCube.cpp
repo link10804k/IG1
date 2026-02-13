@@ -4,8 +4,10 @@
 
 RGBCube::RGBCube(GLdouble lenght) {
 	mMesh = Mesh::generateRGBCubeTriangles(lenght);
-	mModelMat = glm::translate(mModelMat,glm::vec3(lenght/2, lenght /2, -lenght /2));
 }
+
+// Rotamos 5º cada frame hasta llegar a 180º, momento en el que cambia su eje de rotación 
+// y vuelve a hacer lo mismo (Esto se da en el eje 'x', el 'y' y el 'z' y al acabar con el último vuelve al primero)
 void RGBCube::update() {
 	std::vector<glm::vec3> states = {
 		{1,0,0},

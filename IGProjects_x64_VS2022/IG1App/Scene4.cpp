@@ -3,14 +3,9 @@
 #include "Ground.h"
 
 void Scene4::init() {
-	setGL(); // OpenGL settings
+	// Para el setGL() y las RGBAxis
+	Scene::init();
 
-	// allocate memory and load resources
-	// Lights
-	// Textures
-
-	// Graphics objects (entities) of the scene
-	gObjects.push_back(new RGBAxes(400.0));
-
+	// Suelo
 	gObjects.push_back(new Ground(100, 100));
 }
