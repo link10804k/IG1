@@ -12,6 +12,8 @@ protected:
 public:
 	EntityWithTexture();
 	~EntityWithTexture();
+
+	void render(const glm::mat4& modelViewMat) const override;
 };
 
 #endif

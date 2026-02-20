@@ -60,6 +60,17 @@ Mesh::load()
 			glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, sizeof(vec4), nullptr);
 			glEnableVertexAttribArray(1);
 		}
+
+		if (vTexCoords.size() > 0) {
+			glGenBuffers(1, &mTCO); // Creamos el buffer de coordenadas de texturas
+
+			glBindBuffer(GL_ARRAY_BUFFER, mTCO); // Bindeamos el buffer reviamente creado de tipo array buffer
+			glBufferData(GL_ARRAY_BUFFER, vTexCoords.size() * sizeof(glm::vec2), vTexCoords.data(), GL_STATIC_DRAW); // Crea e inicializa el almacenamiento 
+																													 // de datos del buffer
+			glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(glm::vec2), nullptr); // Definimos los atributos del buffer 
+																						 // (índice, tamaño, tipo, normalización, stride)
+			glEnableVertexAttribArray(2); // Activamos el buffer
+		}
 	}
 }
 
@@ -75,6 +86,11 @@ Mesh::unload()
 		if (mCBO != NONE) {
 			glDeleteBuffers(1, &mCBO);
 			mCBO = NONE;
+		}
+
+		if (mTCO != NONE) {
+			glDeleteBuffers(1, &mTCO);
+			mTCO = NONE;
 		}
 	}
 }
@@ -311,5 +327,21 @@ Mesh* Mesh::generateRGBCubeTriangles(GLdouble length) {
 	PUSH_SQUARE_COLOR(blue);
 
 	return mesh;
+}
+
+Mesh* Mesh::generateRectangleTexCor(GLdouble w, GLdouble h, GLuint rw, GLuint rh) {
+	Mesh* mesh = generateRectangle(w, h);
+
+	mesh->vTexCoords.reserve(mesh->mNumVertices);
+	mesh->vTexCoords.emplace_back(0.0, rh);
+	mesh->vTexCoords.emplace_back(0.0, 0.0);
+	mesh->vTexCoords.emplace_back(rw, rh);
+	mesh->vTexCoords.emplace_back(rw, 0.0);
+
+	return mesh;
+}
+
+Mesh* Mesh::generateBoxOutline(GLdouble length) {
+	return nullptr;
 }
 

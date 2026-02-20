@@ -1,7 +1,6 @@
 #include "Scene1.h"
 
 #include "RegularPolygon.h"
-#include "RGBTriangle.h"
 
 void Scene1::init() {
 	// Para el setGL() y las RGBAxis

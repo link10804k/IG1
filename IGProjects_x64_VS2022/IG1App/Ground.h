@@ -1,14 +1,14 @@
 #ifndef GROUND_H
 #define GROUND_H
 
-#include "Entity.h"
+#include "EntityWithTexture.h"
 
-class Ground : public EntityWithColors {
+class Ground : public EntityWithTexture {
 public:
-	Ground(GLdouble w, GLdouble d);
-	~Ground() = default;
+	Ground(GLdouble w, GLdouble d, GLuint rw, GLuint rh);
+	~Ground();
 
-	void render(glm::mat4 const& modelViewMat) const override;
+	void setTexture(Texture* texture);
 };
 
 #endif
