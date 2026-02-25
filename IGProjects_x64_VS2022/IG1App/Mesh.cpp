@@ -1,7 +1,5 @@
 #include "Mesh.h"
 
-
-
 using namespace std;
 using namespace glm;
 
@@ -342,6 +340,26 @@ Mesh* Mesh::generateRectangleTexCor(GLdouble w, GLdouble h, GLuint rw, GLuint rh
 }
 
 Mesh* Mesh::generateBoxOutline(GLdouble length) {
-	return nullptr;
+	Mesh* mesh = new Mesh();
+
+	GLdouble l = length / 2;
+
+	mesh->mPrimitive = GL_TRIANGLE_STRIP;
+
+	mesh->mNumVertices = 10;
+	mesh->vVertices.reserve(mesh->mNumVertices);
+
+	mesh->vVertices.emplace_back(-l, l, l); // 1
+	mesh->vVertices.emplace_back(-l, -l, l); // 2
+	mesh->vVertices.emplace_back(l, l, l); // 3
+	mesh->vVertices.emplace_back(l, -l, l); // 4
+	mesh->vVertices.emplace_back(l, l, -l); // 5
+	mesh->vVertices.emplace_back(l, -l, -l); // 6
+	mesh->vVertices.emplace_back(-l, l, -l); // 7
+	mesh->vVertices.emplace_back(-l, -l, -l); // 8
+	mesh->vVertices.emplace_back(-l, l, l); // 9
+	mesh->vVertices.emplace_back(-l, -l, l); // 10
+
+	return mesh;
 }
 

@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\Texture.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Texture.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\TextureManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\TextureManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\EntityWithTexture.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\EntityWithTexture.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\TextureManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\TextureManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\SingleColorEntity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\SingleColorEntity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\Mesh.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Mesh.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\Mesh.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Mesh.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\RGBTriangle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\RGBTriangle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\RGBTriangle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\RGBTriangle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\Ground.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -27,16 +35,24 @@
       "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Scene4.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\Scene4.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Scene4.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\BoxOutline.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\BoxOutline.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\Ground.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Ground.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\RGBCube.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\RGBCube.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\Texture.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\Texture.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\RGBRectangle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\RGBRectangle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\BoxOutline.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\BoxOutline.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\EntityWithTexture.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C72F3A79-DA8E-4EC6-A14F-6C59650E8A7E}|IG1App\\IG1App.vcxproj|solutionrelative:IG1App\\EntityWithTexture.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,116 +62,176 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "EntityWithTexture.cpp",
-              "DocumentMoniker": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\EntityWithTexture.cpp",
-              "RelativeDocumentMoniker": "IG1App\\EntityWithTexture.cpp",
-              "ToolTip": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\EntityWithTexture.cpp",
-              "RelativeToolTip": "IG1App\\EntityWithTexture.cpp",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-02-20T15:30:13.823Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Mesh.h",
-              "DocumentMoniker": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\Mesh.h",
-              "RelativeDocumentMoniker": "IG1App\\Mesh.h",
-              "ToolTip": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\Mesh.h",
-              "RelativeToolTip": "IG1App\\Mesh.h",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAADMAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-20T15:20:42.906Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Mesh.cpp",
-              "DocumentMoniker": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\Mesh.cpp",
-              "RelativeDocumentMoniker": "IG1App\\Mesh.cpp",
-              "ToolTip": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\Mesh.cpp",
-              "RelativeToolTip": "IG1App\\Mesh.cpp",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAAAF4AAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-02-20T15:16:23.766Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Scene4.h",
-              "DocumentMoniker": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\Scene4.h",
-              "RelativeDocumentMoniker": "IG1App\\Scene4.h",
-              "ToolTip": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\Scene4.h",
-              "RelativeToolTip": "IG1App\\Scene4.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-20T15:14:32.131Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Scene4.cpp",
               "DocumentMoniker": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\Scene4.cpp",
               "RelativeDocumentMoniker": "IG1App\\Scene4.cpp",
               "ToolTip": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\Scene4.cpp",
               "RelativeToolTip": "IG1App\\Scene4.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-02-20T15:04:11.909Z"
+              "WhenOpened": "2026-02-20T15:04:11.909Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Ground.h",
-              "DocumentMoniker": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\Ground.h",
-              "RelativeDocumentMoniker": "IG1App\\Ground.h",
-              "ToolTip": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\Ground.h",
-              "RelativeToolTip": "IG1App\\Ground.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "RGBTriangle.h",
+              "DocumentMoniker": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\RGBTriangle.h",
+              "RelativeDocumentMoniker": "IG1App\\RGBTriangle.h",
+              "ToolTip": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\RGBTriangle.h",
+              "RelativeToolTip": "IG1App\\RGBTriangle.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-20T14:56:11.53Z"
+              "WhenOpened": "2026-02-25T14:50:19.939Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "TextureManager.h",
+              "DocumentMoniker": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\TextureManager.h",
+              "RelativeDocumentMoniker": "IG1App\\TextureManager.h",
+              "ToolTip": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\TextureManager.h",
+              "RelativeToolTip": "IG1App\\TextureManager.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-25T14:46:15.117Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TextureManager.cpp",
+              "DocumentMoniker": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\TextureManager.cpp",
+              "RelativeDocumentMoniker": "IG1App\\TextureManager.cpp",
+              "ToolTip": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\TextureManager.cpp",
+              "RelativeToolTip": "IG1App\\TextureManager.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-02-25T14:46:13.234Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Mesh.cpp",
+              "DocumentMoniker": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\Mesh.cpp",
+              "RelativeDocumentMoniker": "IG1App\\Mesh.cpp",
+              "ToolTip": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\Mesh.cpp",
+              "RelativeToolTip": "IG1App\\Mesh.cpp",
+              "ViewState": "AgIAANcAAAAAAAAAAAAewOQAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-02-25T14:45:12.397Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SingleColorEntity.cpp",
+              "DocumentMoniker": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\SingleColorEntity.cpp",
+              "RelativeDocumentMoniker": "IG1App\\SingleColorEntity.cpp",
+              "ToolTip": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\SingleColorEntity.cpp",
+              "RelativeToolTip": "IG1App\\SingleColorEntity.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-02-25T14:43:51.505Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Ground.cpp",
               "DocumentMoniker": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\Ground.cpp",
               "RelativeDocumentMoniker": "IG1App\\Ground.cpp",
               "ToolTip": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\Ground.cpp",
               "RelativeToolTip": "IG1App\\Ground.cpp",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-02-20T14:55:01.776Z"
+              "WhenOpened": "2026-02-25T14:43:24.669Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Texture.cpp",
-              "DocumentMoniker": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\Texture.cpp",
-              "RelativeDocumentMoniker": "IG1App\\Texture.cpp",
-              "ToolTip": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\Texture.cpp",
-              "RelativeToolTip": "IG1App\\Texture.cpp",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAADIAAAAWAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "RGBCube.cpp",
+              "DocumentMoniker": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\RGBCube.cpp",
+              "RelativeDocumentMoniker": "IG1App\\RGBCube.cpp",
+              "ToolTip": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\RGBCube.cpp",
+              "RelativeToolTip": "IG1App\\RGBCube.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-02-20T14:53:52.863Z",
+              "WhenOpened": "2026-02-25T14:43:01.352Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "RGBRectangle.cpp",
+              "DocumentMoniker": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\RGBRectangle.cpp",
+              "RelativeDocumentMoniker": "IG1App\\RGBRectangle.cpp",
+              "ToolTip": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\RGBRectangle.cpp",
+              "RelativeToolTip": "IG1App\\RGBRectangle.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-02-25T14:40:52.959Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RGBTriangle.cpp",
+              "DocumentMoniker": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\RGBTriangle.cpp",
+              "RelativeDocumentMoniker": "IG1App\\RGBTriangle.cpp",
+              "ToolTip": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\RGBTriangle.cpp",
+              "RelativeToolTip": "IG1App\\RGBTriangle.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-02-25T14:40:50.47Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "EntityWithTexture.cpp",
+              "DocumentMoniker": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\EntityWithTexture.cpp",
+              "RelativeDocumentMoniker": "IG1App\\EntityWithTexture.cpp",
+              "ToolTip": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\EntityWithTexture.cpp",
+              "RelativeToolTip": "IG1App\\EntityWithTexture.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-02-25T14:39:20.062Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "Texture.h",
-              "DocumentMoniker": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\Texture.h",
-              "RelativeDocumentMoniker": "IG1App\\Texture.h",
-              "ToolTip": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\Texture.h",
-              "RelativeToolTip": "IG1App\\Texture.h",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Title": "BoxOutline.cpp",
+              "DocumentMoniker": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\BoxOutline.cpp",
+              "RelativeDocumentMoniker": "IG1App\\BoxOutline.cpp",
+              "ToolTip": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\BoxOutline.cpp",
+              "RelativeToolTip": "IG1App\\BoxOutline.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-02-25T14:34:55.479Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "BoxOutline.h",
+              "DocumentMoniker": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\BoxOutline.h",
+              "RelativeDocumentMoniker": "IG1App\\BoxOutline.h",
+              "ToolTip": "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\IG1App\\BoxOutline.h",
+              "RelativeToolTip": "IG1App\\BoxOutline.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-02-20T15:01:52.929Z"
+              "WhenOpened": "2026-02-25T14:33:43.747Z",
+              "EditorCaption": ""
             }
           ]
         }
