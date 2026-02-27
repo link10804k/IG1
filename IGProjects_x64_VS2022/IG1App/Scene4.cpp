@@ -3,6 +3,7 @@
 #include "Ground.h"
 #include "Texture.h"
 #include "BoxOutline.h"
+#include "Star3D.h"
 
 #include "TextureManager.h"
 
@@ -21,7 +22,11 @@ void Scene4::init() {
 	//gObjects.push_back(g); 
 
 	// Cubo
-	BoxOutline* box = new BoxOutline(100);
-	box->setTexture(TEXTURE_MANAGER->getTexture("papelE.png"), TEXTURE_MANAGER->getTexture("container.jpg"));
-	gObjects.push_back(box);
+	//BoxOutline* box = new BoxOutline(100);
+	//box->setTexture(TEXTURE_MANAGER->getTexture("papelE.png"), TEXTURE_MANAGER->getTexture("container.jpg"));
+	//gObjects.push_back(box);
+
+	// Estrella
+	Star3D* star = new Star3D(100, 10, 100);
+	gObjects.push_back(star);
 }

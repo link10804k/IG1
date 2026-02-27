@@ -8,7 +8,7 @@ protected:
 	glm::vec4 mColor;
 public:
 	SingleColorEntity(glm::vec4 mColor = {1, 1, 1, 1});
-	void render(const glm::mat4& modelViewMat) const override;
+	virtual void render(const glm::mat4& modelViewMat) const override;
 
 	glm::vec4 getColor();
 	void setColor(glm::vec4 mColor);

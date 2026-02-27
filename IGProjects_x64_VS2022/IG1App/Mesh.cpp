@@ -382,3 +382,34 @@ Mesh* Mesh::generateBoxOutlineTexCor(GLdouble length) {
 	return mesh;
 }
 
+Mesh* Mesh::generateStar3D(GLdouble re, GLuint np, GLdouble h) { // Radio exterior, número de puntas, z del radio exterior
+	Mesh* mesh = new Mesh();
+
+	GLdouble ri = re / 2;
+
+	mesh->mPrimitive = GL_TRIANGLE_FAN;
+
+	mesh->mNumVertices = np*2 + 1;
+	mesh->vVertices.reserve(mesh->mNumVertices);
+	// Vértice central
+	mesh->vVertices.emplace_back(0, 0, 0);
+
+	GLdouble angleCount = glm::radians(90.0);
+	// Se colocan los vértices siguiendo una circunferencia
+	for (GLuint i = 0; i < np; ++i) {
+		GLdouble x = 0 + re * glm::cos(angleCount);
+		GLdouble y = 0 + re * glm::sin(angleCount);
+		mesh->vVertices.emplace_back(x, y, h);
+
+		angleCount += glm::radians(360.0 / np * 2);
+
+		x = 0 + ri * glm::cos(angleCount);
+		y = 0 + ri * glm::sin(angleCount);
+		mesh->vVertices.emplace_back(x, y, h);
+
+		angleCount += glm::radians(360.0 / np * 2);
+	}
+
+	return mesh;
+}
+
