@@ -12,12 +12,10 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-# Genera el ejecutable en el subdirectorio bin
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_SOURCE_DIR}/bin)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_SOURCE_DIR}/bin)
 
-# Compila con las bibliotecas GLEW, GLFW y GLM
+set(GLFW_BUILD_X11 ON)
+set(GLFW_BUILD_WAYLAND OFF)
+
 if (CMAKE_HOST_WIN32)
 	# Utiliza las bibliotecas compiladas que van incluidas
 	# en el paquete con el proyecto de Visual Studio
@@ -56,16 +54,6 @@ endif()
 # Compila con stb_image
 include_directories(libs/stb_image/include)
 
-add_executable(IG1App
-	# Archivo de código
-	IG1App/Camera.cpp
-	IG1App/Entity.cpp
-	IG1App/IG1App.cpp
-	IG1App/Image.cpp
-	IG1App/main.cpp
-	IG1App/Mesh.cpp
-	IG1App/Scene.cpp
-	IG1App/Shader.cpp
-	IG1App/Texture.cpp
-	IG1App/Viewport.cpp
-)
+file(GLOB_RECURSE PROJECT_SOURCES CONFIGURE_DEPENDS "${CMAKE_CURRENT_LIST_DIR}/IG1App/*/*.cpp"
+    "${CMAKE_CURRENT_LIST_DIR}/IG1App/*.cpp")
+add_executable(ProyectoIG ${PROJECT_SOURCES})

@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022
+CMAKE_SOURCE_DIR = /home/frampth/Documents/Clase/IG1/IGProjects_x64_VS2022
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/build
+CMAKE_BINARY_DIR = /home/frampth/Documents/Clase/IG1/IGProjects_x64_VS2022/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/build/CMakeFiles /home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/frampth/Documents/Clase/IG1/IGProjects_x64_VS2022/build/CMakeFiles /home/frampth/Documents/Clase/IG1/IGProjects_x64_VS2022/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/frampth/Documents/Clase/Curso2/Cuatri2/IG/IG1/IGProjects_x64_VS2022/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/frampth/Documents/Clase/IG1/IGProjects_x64_VS2022/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -113,28 +113,53 @@ preinstall/fast:
 
 # clear depends
 depend:
+	$(CMAKE_COMMAND) -P /home/frampth/Documents/Clase/IG1/IGProjects_x64_VS2022/build/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named IG1App
+# Target rules for targets named ProyectoIG
 
 # Build rule for target.
-IG1App: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 IG1App
-.PHONY : IG1App
+ProyectoIG: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ProyectoIG
+.PHONY : ProyectoIG
 
 # fast build rule for target.
-IG1App/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IG1App.dir/build.make CMakeFiles/IG1App.dir/build
-.PHONY : IG1App/fast
+ProyectoIG/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/build
+.PHONY : ProyectoIG/fast
+
+IG1App/BoxOutline.o: IG1App/BoxOutline.cpp.o
+.PHONY : IG1App/BoxOutline.o
+
+# target to build an object file
+IG1App/BoxOutline.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/BoxOutline.cpp.o
+.PHONY : IG1App/BoxOutline.cpp.o
+
+IG1App/BoxOutline.i: IG1App/BoxOutline.cpp.i
+.PHONY : IG1App/BoxOutline.i
+
+# target to preprocess a source file
+IG1App/BoxOutline.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/BoxOutline.cpp.i
+.PHONY : IG1App/BoxOutline.cpp.i
+
+IG1App/BoxOutline.s: IG1App/BoxOutline.cpp.s
+.PHONY : IG1App/BoxOutline.s
+
+# target to generate assembly for a file
+IG1App/BoxOutline.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/BoxOutline.cpp.s
+.PHONY : IG1App/BoxOutline.cpp.s
 
 IG1App/Camera.o: IG1App/Camera.cpp.o
 .PHONY : IG1App/Camera.o
 
 # target to build an object file
 IG1App/Camera.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IG1App.dir/build.make CMakeFiles/IG1App.dir/IG1App/Camera.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Camera.cpp.o
 .PHONY : IG1App/Camera.cpp.o
 
 IG1App/Camera.i: IG1App/Camera.cpp.i
@@ -142,7 +167,7 @@ IG1App/Camera.i: IG1App/Camera.cpp.i
 
 # target to preprocess a source file
 IG1App/Camera.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IG1App.dir/build.make CMakeFiles/IG1App.dir/IG1App/Camera.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Camera.cpp.i
 .PHONY : IG1App/Camera.cpp.i
 
 IG1App/Camera.s: IG1App/Camera.cpp.s
@@ -150,15 +175,39 @@ IG1App/Camera.s: IG1App/Camera.cpp.s
 
 # target to generate assembly for a file
 IG1App/Camera.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IG1App.dir/build.make CMakeFiles/IG1App.dir/IG1App/Camera.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Camera.cpp.s
 .PHONY : IG1App/Camera.cpp.s
+
+IG1App/Cube.o: IG1App/Cube.cpp.o
+.PHONY : IG1App/Cube.o
+
+# target to build an object file
+IG1App/Cube.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Cube.cpp.o
+.PHONY : IG1App/Cube.cpp.o
+
+IG1App/Cube.i: IG1App/Cube.cpp.i
+.PHONY : IG1App/Cube.i
+
+# target to preprocess a source file
+IG1App/Cube.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Cube.cpp.i
+.PHONY : IG1App/Cube.cpp.i
+
+IG1App/Cube.s: IG1App/Cube.cpp.s
+.PHONY : IG1App/Cube.s
+
+# target to generate assembly for a file
+IG1App/Cube.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Cube.cpp.s
+.PHONY : IG1App/Cube.cpp.s
 
 IG1App/Entity.o: IG1App/Entity.cpp.o
 .PHONY : IG1App/Entity.o
 
 # target to build an object file
 IG1App/Entity.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IG1App.dir/build.make CMakeFiles/IG1App.dir/IG1App/Entity.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Entity.cpp.o
 .PHONY : IG1App/Entity.cpp.o
 
 IG1App/Entity.i: IG1App/Entity.cpp.i
@@ -166,7 +215,7 @@ IG1App/Entity.i: IG1App/Entity.cpp.i
 
 # target to preprocess a source file
 IG1App/Entity.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IG1App.dir/build.make CMakeFiles/IG1App.dir/IG1App/Entity.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Entity.cpp.i
 .PHONY : IG1App/Entity.cpp.i
 
 IG1App/Entity.s: IG1App/Entity.cpp.s
@@ -174,15 +223,63 @@ IG1App/Entity.s: IG1App/Entity.cpp.s
 
 # target to generate assembly for a file
 IG1App/Entity.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IG1App.dir/build.make CMakeFiles/IG1App.dir/IG1App/Entity.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Entity.cpp.s
 .PHONY : IG1App/Entity.cpp.s
+
+IG1App/EntityWithTexture.o: IG1App/EntityWithTexture.cpp.o
+.PHONY : IG1App/EntityWithTexture.o
+
+# target to build an object file
+IG1App/EntityWithTexture.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/EntityWithTexture.cpp.o
+.PHONY : IG1App/EntityWithTexture.cpp.o
+
+IG1App/EntityWithTexture.i: IG1App/EntityWithTexture.cpp.i
+.PHONY : IG1App/EntityWithTexture.i
+
+# target to preprocess a source file
+IG1App/EntityWithTexture.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/EntityWithTexture.cpp.i
+.PHONY : IG1App/EntityWithTexture.cpp.i
+
+IG1App/EntityWithTexture.s: IG1App/EntityWithTexture.cpp.s
+.PHONY : IG1App/EntityWithTexture.s
+
+# target to generate assembly for a file
+IG1App/EntityWithTexture.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/EntityWithTexture.cpp.s
+.PHONY : IG1App/EntityWithTexture.cpp.s
+
+IG1App/Ground.o: IG1App/Ground.cpp.o
+.PHONY : IG1App/Ground.o
+
+# target to build an object file
+IG1App/Ground.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Ground.cpp.o
+.PHONY : IG1App/Ground.cpp.o
+
+IG1App/Ground.i: IG1App/Ground.cpp.i
+.PHONY : IG1App/Ground.i
+
+# target to preprocess a source file
+IG1App/Ground.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Ground.cpp.i
+.PHONY : IG1App/Ground.cpp.i
+
+IG1App/Ground.s: IG1App/Ground.cpp.s
+.PHONY : IG1App/Ground.s
+
+# target to generate assembly for a file
+IG1App/Ground.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Ground.cpp.s
+.PHONY : IG1App/Ground.cpp.s
 
 IG1App/IG1App.o: IG1App/IG1App.cpp.o
 .PHONY : IG1App/IG1App.o
 
 # target to build an object file
 IG1App/IG1App.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IG1App.dir/build.make CMakeFiles/IG1App.dir/IG1App/IG1App.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/IG1App.cpp.o
 .PHONY : IG1App/IG1App.cpp.o
 
 IG1App/IG1App.i: IG1App/IG1App.cpp.i
@@ -190,7 +287,7 @@ IG1App/IG1App.i: IG1App/IG1App.cpp.i
 
 # target to preprocess a source file
 IG1App/IG1App.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IG1App.dir/build.make CMakeFiles/IG1App.dir/IG1App/IG1App.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/IG1App.cpp.i
 .PHONY : IG1App/IG1App.cpp.i
 
 IG1App/IG1App.s: IG1App/IG1App.cpp.s
@@ -198,7 +295,7 @@ IG1App/IG1App.s: IG1App/IG1App.cpp.s
 
 # target to generate assembly for a file
 IG1App/IG1App.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IG1App.dir/build.make CMakeFiles/IG1App.dir/IG1App/IG1App.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/IG1App.cpp.s
 .PHONY : IG1App/IG1App.cpp.s
 
 IG1App/Image.o: IG1App/Image.cpp.o
@@ -206,7 +303,7 @@ IG1App/Image.o: IG1App/Image.cpp.o
 
 # target to build an object file
 IG1App/Image.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IG1App.dir/build.make CMakeFiles/IG1App.dir/IG1App/Image.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Image.cpp.o
 .PHONY : IG1App/Image.cpp.o
 
 IG1App/Image.i: IG1App/Image.cpp.i
@@ -214,7 +311,7 @@ IG1App/Image.i: IG1App/Image.cpp.i
 
 # target to preprocess a source file
 IG1App/Image.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IG1App.dir/build.make CMakeFiles/IG1App.dir/IG1App/Image.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Image.cpp.i
 .PHONY : IG1App/Image.cpp.i
 
 IG1App/Image.s: IG1App/Image.cpp.s
@@ -222,15 +319,63 @@ IG1App/Image.s: IG1App/Image.cpp.s
 
 # target to generate assembly for a file
 IG1App/Image.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IG1App.dir/build.make CMakeFiles/IG1App.dir/IG1App/Image.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Image.cpp.s
 .PHONY : IG1App/Image.cpp.s
+
+IG1App/Light.o: IG1App/Light.cpp.o
+.PHONY : IG1App/Light.o
+
+# target to build an object file
+IG1App/Light.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Light.cpp.o
+.PHONY : IG1App/Light.cpp.o
+
+IG1App/Light.i: IG1App/Light.cpp.i
+.PHONY : IG1App/Light.i
+
+# target to preprocess a source file
+IG1App/Light.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Light.cpp.i
+.PHONY : IG1App/Light.cpp.i
+
+IG1App/Light.s: IG1App/Light.cpp.s
+.PHONY : IG1App/Light.s
+
+# target to generate assembly for a file
+IG1App/Light.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Light.cpp.s
+.PHONY : IG1App/Light.cpp.s
+
+IG1App/Material.o: IG1App/Material.cpp.o
+.PHONY : IG1App/Material.o
+
+# target to build an object file
+IG1App/Material.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Material.cpp.o
+.PHONY : IG1App/Material.cpp.o
+
+IG1App/Material.i: IG1App/Material.cpp.i
+.PHONY : IG1App/Material.i
+
+# target to preprocess a source file
+IG1App/Material.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Material.cpp.i
+.PHONY : IG1App/Material.cpp.i
+
+IG1App/Material.s: IG1App/Material.cpp.s
+.PHONY : IG1App/Material.s
+
+# target to generate assembly for a file
+IG1App/Material.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Material.cpp.s
+.PHONY : IG1App/Material.cpp.s
 
 IG1App/Mesh.o: IG1App/Mesh.cpp.o
 .PHONY : IG1App/Mesh.o
 
 # target to build an object file
 IG1App/Mesh.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IG1App.dir/build.make CMakeFiles/IG1App.dir/IG1App/Mesh.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Mesh.cpp.o
 .PHONY : IG1App/Mesh.cpp.o
 
 IG1App/Mesh.i: IG1App/Mesh.cpp.i
@@ -238,7 +383,7 @@ IG1App/Mesh.i: IG1App/Mesh.cpp.i
 
 # target to preprocess a source file
 IG1App/Mesh.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IG1App.dir/build.make CMakeFiles/IG1App.dir/IG1App/Mesh.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Mesh.cpp.i
 .PHONY : IG1App/Mesh.cpp.i
 
 IG1App/Mesh.s: IG1App/Mesh.cpp.s
@@ -246,15 +391,111 @@ IG1App/Mesh.s: IG1App/Mesh.cpp.s
 
 # target to generate assembly for a file
 IG1App/Mesh.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IG1App.dir/build.make CMakeFiles/IG1App.dir/IG1App/Mesh.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Mesh.cpp.s
 .PHONY : IG1App/Mesh.cpp.s
+
+IG1App/RGBCube.o: IG1App/RGBCube.cpp.o
+.PHONY : IG1App/RGBCube.o
+
+# target to build an object file
+IG1App/RGBCube.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/RGBCube.cpp.o
+.PHONY : IG1App/RGBCube.cpp.o
+
+IG1App/RGBCube.i: IG1App/RGBCube.cpp.i
+.PHONY : IG1App/RGBCube.i
+
+# target to preprocess a source file
+IG1App/RGBCube.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/RGBCube.cpp.i
+.PHONY : IG1App/RGBCube.cpp.i
+
+IG1App/RGBCube.s: IG1App/RGBCube.cpp.s
+.PHONY : IG1App/RGBCube.s
+
+# target to generate assembly for a file
+IG1App/RGBCube.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/RGBCube.cpp.s
+.PHONY : IG1App/RGBCube.cpp.s
+
+IG1App/RGBRectangle.o: IG1App/RGBRectangle.cpp.o
+.PHONY : IG1App/RGBRectangle.o
+
+# target to build an object file
+IG1App/RGBRectangle.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/RGBRectangle.cpp.o
+.PHONY : IG1App/RGBRectangle.cpp.o
+
+IG1App/RGBRectangle.i: IG1App/RGBRectangle.cpp.i
+.PHONY : IG1App/RGBRectangle.i
+
+# target to preprocess a source file
+IG1App/RGBRectangle.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/RGBRectangle.cpp.i
+.PHONY : IG1App/RGBRectangle.cpp.i
+
+IG1App/RGBRectangle.s: IG1App/RGBRectangle.cpp.s
+.PHONY : IG1App/RGBRectangle.s
+
+# target to generate assembly for a file
+IG1App/RGBRectangle.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/RGBRectangle.cpp.s
+.PHONY : IG1App/RGBRectangle.cpp.s
+
+IG1App/RGBTriangle.o: IG1App/RGBTriangle.cpp.o
+.PHONY : IG1App/RGBTriangle.o
+
+# target to build an object file
+IG1App/RGBTriangle.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/RGBTriangle.cpp.o
+.PHONY : IG1App/RGBTriangle.cpp.o
+
+IG1App/RGBTriangle.i: IG1App/RGBTriangle.cpp.i
+.PHONY : IG1App/RGBTriangle.i
+
+# target to preprocess a source file
+IG1App/RGBTriangle.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/RGBTriangle.cpp.i
+.PHONY : IG1App/RGBTriangle.cpp.i
+
+IG1App/RGBTriangle.s: IG1App/RGBTriangle.cpp.s
+.PHONY : IG1App/RGBTriangle.s
+
+# target to generate assembly for a file
+IG1App/RGBTriangle.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/RGBTriangle.cpp.s
+.PHONY : IG1App/RGBTriangle.cpp.s
+
+IG1App/RegularPolygon.o: IG1App/RegularPolygon.cpp.o
+.PHONY : IG1App/RegularPolygon.o
+
+# target to build an object file
+IG1App/RegularPolygon.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/RegularPolygon.cpp.o
+.PHONY : IG1App/RegularPolygon.cpp.o
+
+IG1App/RegularPolygon.i: IG1App/RegularPolygon.cpp.i
+.PHONY : IG1App/RegularPolygon.i
+
+# target to preprocess a source file
+IG1App/RegularPolygon.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/RegularPolygon.cpp.i
+.PHONY : IG1App/RegularPolygon.cpp.i
+
+IG1App/RegularPolygon.s: IG1App/RegularPolygon.cpp.s
+.PHONY : IG1App/RegularPolygon.s
+
+# target to generate assembly for a file
+IG1App/RegularPolygon.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/RegularPolygon.cpp.s
+.PHONY : IG1App/RegularPolygon.cpp.s
 
 IG1App/Scene.o: IG1App/Scene.cpp.o
 .PHONY : IG1App/Scene.o
 
 # target to build an object file
 IG1App/Scene.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IG1App.dir/build.make CMakeFiles/IG1App.dir/IG1App/Scene.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Scene.cpp.o
 .PHONY : IG1App/Scene.cpp.o
 
 IG1App/Scene.i: IG1App/Scene.cpp.i
@@ -262,7 +503,7 @@ IG1App/Scene.i: IG1App/Scene.cpp.i
 
 # target to preprocess a source file
 IG1App/Scene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IG1App.dir/build.make CMakeFiles/IG1App.dir/IG1App/Scene.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Scene.cpp.i
 .PHONY : IG1App/Scene.cpp.i
 
 IG1App/Scene.s: IG1App/Scene.cpp.s
@@ -270,15 +511,111 @@ IG1App/Scene.s: IG1App/Scene.cpp.s
 
 # target to generate assembly for a file
 IG1App/Scene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IG1App.dir/build.make CMakeFiles/IG1App.dir/IG1App/Scene.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Scene.cpp.s
 .PHONY : IG1App/Scene.cpp.s
+
+IG1App/Scene1.o: IG1App/Scene1.cpp.o
+.PHONY : IG1App/Scene1.o
+
+# target to build an object file
+IG1App/Scene1.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Scene1.cpp.o
+.PHONY : IG1App/Scene1.cpp.o
+
+IG1App/Scene1.i: IG1App/Scene1.cpp.i
+.PHONY : IG1App/Scene1.i
+
+# target to preprocess a source file
+IG1App/Scene1.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Scene1.cpp.i
+.PHONY : IG1App/Scene1.cpp.i
+
+IG1App/Scene1.s: IG1App/Scene1.cpp.s
+.PHONY : IG1App/Scene1.s
+
+# target to generate assembly for a file
+IG1App/Scene1.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Scene1.cpp.s
+.PHONY : IG1App/Scene1.cpp.s
+
+IG1App/Scene2.o: IG1App/Scene2.cpp.o
+.PHONY : IG1App/Scene2.o
+
+# target to build an object file
+IG1App/Scene2.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Scene2.cpp.o
+.PHONY : IG1App/Scene2.cpp.o
+
+IG1App/Scene2.i: IG1App/Scene2.cpp.i
+.PHONY : IG1App/Scene2.i
+
+# target to preprocess a source file
+IG1App/Scene2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Scene2.cpp.i
+.PHONY : IG1App/Scene2.cpp.i
+
+IG1App/Scene2.s: IG1App/Scene2.cpp.s
+.PHONY : IG1App/Scene2.s
+
+# target to generate assembly for a file
+IG1App/Scene2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Scene2.cpp.s
+.PHONY : IG1App/Scene2.cpp.s
+
+IG1App/Scene3.o: IG1App/Scene3.cpp.o
+.PHONY : IG1App/Scene3.o
+
+# target to build an object file
+IG1App/Scene3.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Scene3.cpp.o
+.PHONY : IG1App/Scene3.cpp.o
+
+IG1App/Scene3.i: IG1App/Scene3.cpp.i
+.PHONY : IG1App/Scene3.i
+
+# target to preprocess a source file
+IG1App/Scene3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Scene3.cpp.i
+.PHONY : IG1App/Scene3.cpp.i
+
+IG1App/Scene3.s: IG1App/Scene3.cpp.s
+.PHONY : IG1App/Scene3.s
+
+# target to generate assembly for a file
+IG1App/Scene3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Scene3.cpp.s
+.PHONY : IG1App/Scene3.cpp.s
+
+IG1App/Scene4.o: IG1App/Scene4.cpp.o
+.PHONY : IG1App/Scene4.o
+
+# target to build an object file
+IG1App/Scene4.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Scene4.cpp.o
+.PHONY : IG1App/Scene4.cpp.o
+
+IG1App/Scene4.i: IG1App/Scene4.cpp.i
+.PHONY : IG1App/Scene4.i
+
+# target to preprocess a source file
+IG1App/Scene4.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Scene4.cpp.i
+.PHONY : IG1App/Scene4.cpp.i
+
+IG1App/Scene4.s: IG1App/Scene4.cpp.s
+.PHONY : IG1App/Scene4.s
+
+# target to generate assembly for a file
+IG1App/Scene4.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Scene4.cpp.s
+.PHONY : IG1App/Scene4.cpp.s
 
 IG1App/Shader.o: IG1App/Shader.cpp.o
 .PHONY : IG1App/Shader.o
 
 # target to build an object file
 IG1App/Shader.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IG1App.dir/build.make CMakeFiles/IG1App.dir/IG1App/Shader.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Shader.cpp.o
 .PHONY : IG1App/Shader.cpp.o
 
 IG1App/Shader.i: IG1App/Shader.cpp.i
@@ -286,7 +623,7 @@ IG1App/Shader.i: IG1App/Shader.cpp.i
 
 # target to preprocess a source file
 IG1App/Shader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IG1App.dir/build.make CMakeFiles/IG1App.dir/IG1App/Shader.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Shader.cpp.i
 .PHONY : IG1App/Shader.cpp.i
 
 IG1App/Shader.s: IG1App/Shader.cpp.s
@@ -294,15 +631,39 @@ IG1App/Shader.s: IG1App/Shader.cpp.s
 
 # target to generate assembly for a file
 IG1App/Shader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IG1App.dir/build.make CMakeFiles/IG1App.dir/IG1App/Shader.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Shader.cpp.s
 .PHONY : IG1App/Shader.cpp.s
+
+IG1App/SingleColorEntity.o: IG1App/SingleColorEntity.cpp.o
+.PHONY : IG1App/SingleColorEntity.o
+
+# target to build an object file
+IG1App/SingleColorEntity.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/SingleColorEntity.cpp.o
+.PHONY : IG1App/SingleColorEntity.cpp.o
+
+IG1App/SingleColorEntity.i: IG1App/SingleColorEntity.cpp.i
+.PHONY : IG1App/SingleColorEntity.i
+
+# target to preprocess a source file
+IG1App/SingleColorEntity.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/SingleColorEntity.cpp.i
+.PHONY : IG1App/SingleColorEntity.cpp.i
+
+IG1App/SingleColorEntity.s: IG1App/SingleColorEntity.cpp.s
+.PHONY : IG1App/SingleColorEntity.s
+
+# target to generate assembly for a file
+IG1App/SingleColorEntity.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/SingleColorEntity.cpp.s
+.PHONY : IG1App/SingleColorEntity.cpp.s
 
 IG1App/Texture.o: IG1App/Texture.cpp.o
 .PHONY : IG1App/Texture.o
 
 # target to build an object file
 IG1App/Texture.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IG1App.dir/build.make CMakeFiles/IG1App.dir/IG1App/Texture.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Texture.cpp.o
 .PHONY : IG1App/Texture.cpp.o
 
 IG1App/Texture.i: IG1App/Texture.cpp.i
@@ -310,7 +671,7 @@ IG1App/Texture.i: IG1App/Texture.cpp.i
 
 # target to preprocess a source file
 IG1App/Texture.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IG1App.dir/build.make CMakeFiles/IG1App.dir/IG1App/Texture.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Texture.cpp.i
 .PHONY : IG1App/Texture.cpp.i
 
 IG1App/Texture.s: IG1App/Texture.cpp.s
@@ -318,15 +679,39 @@ IG1App/Texture.s: IG1App/Texture.cpp.s
 
 # target to generate assembly for a file
 IG1App/Texture.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IG1App.dir/build.make CMakeFiles/IG1App.dir/IG1App/Texture.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Texture.cpp.s
 .PHONY : IG1App/Texture.cpp.s
+
+IG1App/TextureManager.o: IG1App/TextureManager.cpp.o
+.PHONY : IG1App/TextureManager.o
+
+# target to build an object file
+IG1App/TextureManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/TextureManager.cpp.o
+.PHONY : IG1App/TextureManager.cpp.o
+
+IG1App/TextureManager.i: IG1App/TextureManager.cpp.i
+.PHONY : IG1App/TextureManager.i
+
+# target to preprocess a source file
+IG1App/TextureManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/TextureManager.cpp.i
+.PHONY : IG1App/TextureManager.cpp.i
+
+IG1App/TextureManager.s: IG1App/TextureManager.cpp.s
+.PHONY : IG1App/TextureManager.s
+
+# target to generate assembly for a file
+IG1App/TextureManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/TextureManager.cpp.s
+.PHONY : IG1App/TextureManager.cpp.s
 
 IG1App/Viewport.o: IG1App/Viewport.cpp.o
 .PHONY : IG1App/Viewport.o
 
 # target to build an object file
 IG1App/Viewport.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IG1App.dir/build.make CMakeFiles/IG1App.dir/IG1App/Viewport.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Viewport.cpp.o
 .PHONY : IG1App/Viewport.cpp.o
 
 IG1App/Viewport.i: IG1App/Viewport.cpp.i
@@ -334,7 +719,7 @@ IG1App/Viewport.i: IG1App/Viewport.cpp.i
 
 # target to preprocess a source file
 IG1App/Viewport.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IG1App.dir/build.make CMakeFiles/IG1App.dir/IG1App/Viewport.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Viewport.cpp.i
 .PHONY : IG1App/Viewport.cpp.i
 
 IG1App/Viewport.s: IG1App/Viewport.cpp.s
@@ -342,7 +727,7 @@ IG1App/Viewport.s: IG1App/Viewport.cpp.s
 
 # target to generate assembly for a file
 IG1App/Viewport.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IG1App.dir/build.make CMakeFiles/IG1App.dir/IG1App/Viewport.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/Viewport.cpp.s
 .PHONY : IG1App/Viewport.cpp.s
 
 IG1App/main.o: IG1App/main.cpp.o
@@ -350,7 +735,7 @@ IG1App/main.o: IG1App/main.cpp.o
 
 # target to build an object file
 IG1App/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IG1App.dir/build.make CMakeFiles/IG1App.dir/IG1App/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/main.cpp.o
 .PHONY : IG1App/main.cpp.o
 
 IG1App/main.i: IG1App/main.cpp.i
@@ -358,7 +743,7 @@ IG1App/main.i: IG1App/main.cpp.i
 
 # target to preprocess a source file
 IG1App/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IG1App.dir/build.make CMakeFiles/IG1App.dir/IG1App/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/main.cpp.i
 .PHONY : IG1App/main.cpp.i
 
 IG1App/main.s: IG1App/main.cpp.s
@@ -366,7 +751,7 @@ IG1App/main.s: IG1App/main.cpp.s
 
 # target to generate assembly for a file
 IG1App/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/IG1App.dir/build.make CMakeFiles/IG1App.dir/IG1App/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ProyectoIG.dir/build.make CMakeFiles/ProyectoIG.dir/IG1App/main.cpp.s
 .PHONY : IG1App/main.cpp.s
 
 # Help Target
@@ -377,31 +762,79 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... IG1App"
+	@echo "... ProyectoIG"
+	@echo "... IG1App/BoxOutline.o"
+	@echo "... IG1App/BoxOutline.i"
+	@echo "... IG1App/BoxOutline.s"
 	@echo "... IG1App/Camera.o"
 	@echo "... IG1App/Camera.i"
 	@echo "... IG1App/Camera.s"
+	@echo "... IG1App/Cube.o"
+	@echo "... IG1App/Cube.i"
+	@echo "... IG1App/Cube.s"
 	@echo "... IG1App/Entity.o"
 	@echo "... IG1App/Entity.i"
 	@echo "... IG1App/Entity.s"
+	@echo "... IG1App/EntityWithTexture.o"
+	@echo "... IG1App/EntityWithTexture.i"
+	@echo "... IG1App/EntityWithTexture.s"
+	@echo "... IG1App/Ground.o"
+	@echo "... IG1App/Ground.i"
+	@echo "... IG1App/Ground.s"
 	@echo "... IG1App/IG1App.o"
 	@echo "... IG1App/IG1App.i"
 	@echo "... IG1App/IG1App.s"
 	@echo "... IG1App/Image.o"
 	@echo "... IG1App/Image.i"
 	@echo "... IG1App/Image.s"
+	@echo "... IG1App/Light.o"
+	@echo "... IG1App/Light.i"
+	@echo "... IG1App/Light.s"
+	@echo "... IG1App/Material.o"
+	@echo "... IG1App/Material.i"
+	@echo "... IG1App/Material.s"
 	@echo "... IG1App/Mesh.o"
 	@echo "... IG1App/Mesh.i"
 	@echo "... IG1App/Mesh.s"
+	@echo "... IG1App/RGBCube.o"
+	@echo "... IG1App/RGBCube.i"
+	@echo "... IG1App/RGBCube.s"
+	@echo "... IG1App/RGBRectangle.o"
+	@echo "... IG1App/RGBRectangle.i"
+	@echo "... IG1App/RGBRectangle.s"
+	@echo "... IG1App/RGBTriangle.o"
+	@echo "... IG1App/RGBTriangle.i"
+	@echo "... IG1App/RGBTriangle.s"
+	@echo "... IG1App/RegularPolygon.o"
+	@echo "... IG1App/RegularPolygon.i"
+	@echo "... IG1App/RegularPolygon.s"
 	@echo "... IG1App/Scene.o"
 	@echo "... IG1App/Scene.i"
 	@echo "... IG1App/Scene.s"
+	@echo "... IG1App/Scene1.o"
+	@echo "... IG1App/Scene1.i"
+	@echo "... IG1App/Scene1.s"
+	@echo "... IG1App/Scene2.o"
+	@echo "... IG1App/Scene2.i"
+	@echo "... IG1App/Scene2.s"
+	@echo "... IG1App/Scene3.o"
+	@echo "... IG1App/Scene3.i"
+	@echo "... IG1App/Scene3.s"
+	@echo "... IG1App/Scene4.o"
+	@echo "... IG1App/Scene4.i"
+	@echo "... IG1App/Scene4.s"
 	@echo "... IG1App/Shader.o"
 	@echo "... IG1App/Shader.i"
 	@echo "... IG1App/Shader.s"
+	@echo "... IG1App/SingleColorEntity.o"
+	@echo "... IG1App/SingleColorEntity.i"
+	@echo "... IG1App/SingleColorEntity.s"
 	@echo "... IG1App/Texture.o"
 	@echo "... IG1App/Texture.i"
 	@echo "... IG1App/Texture.s"
+	@echo "... IG1App/TextureManager.o"
+	@echo "... IG1App/TextureManager.i"
+	@echo "... IG1App/TextureManager.s"
 	@echo "... IG1App/Viewport.o"
 	@echo "... IG1App/Viewport.i"
 	@echo "... IG1App/Viewport.s"
@@ -419,6 +852,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
+	$(CMAKE_COMMAND) -P /home/frampth/Documents/Clase/IG1/IGProjects_x64_VS2022/build/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
