@@ -13,7 +13,7 @@ public:
 	EntityWithTexture();
 	~EntityWithTexture();
 
-	void render(const glm::mat4& modelViewMat) const override;
+	virtual void render(const glm::mat4& modelViewMat) const override;
 };
 
 #endif

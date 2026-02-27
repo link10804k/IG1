@@ -4,6 +4,8 @@
 #include "Texture.h"
 #include "BoxOutline.h"
 
+#include "TextureManager.h"
+
 void Scene4::init() {
 	// Para el setGL() y las RGBAxis
 	Scene::init();
@@ -19,5 +21,7 @@ void Scene4::init() {
 	//gObjects.push_back(g); 
 
 	// Cubo
-	gObjects.push_back(new BoxOutline(100));
+	BoxOutline* box = new BoxOutline(100);
+	box->setTexture(TEXTURE_MANAGER->getTexture("papelE.png"), TEXTURE_MANAGER->getTexture("container.jpg"));
+	gObjects.push_back(box);
 }

@@ -1,5 +1,7 @@
 #include "TextureManager.h"
 
+TextureManager* TextureManager::_instance = nullptr;
+
 TextureManager::TextureManager(std::string root)
  : textureRoot(std::move(root))
 {
@@ -20,3 +22,13 @@ TextureManager::getTexture(const std::string& name, GLubyte alpha)
 
 	return it->second.get();
 }
+
+TextureManager* TextureManager::Instance() {
+	if (_instance == nullptr) _instance = new TextureManager();
+	return _instance;
+}
+
+void TextureManager::Release() {
+	if (_instance != nullptr) delete _instance;
+}
+

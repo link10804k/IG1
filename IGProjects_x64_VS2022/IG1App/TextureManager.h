@@ -7,13 +7,20 @@
 
 #include "Texture.h"
 
+#define TEXTURE_MANAGER TextureManager::Instance()  
+
 class TextureManager
 {
-public:
 	TextureManager(std::string root = "../assets/images/");
+	~TextureManager() = default;
 
 	TextureManager(const Texture& tex) = delete;            // no copy constructor
 	TextureManager& operator=(const Texture& tex) = delete; // no copy assignment
+
+	static TextureManager* _instance;
+public:
+	static TextureManager* Instance();
+	static void Release();
 
 	Texture* getTexture(const std::string& name, GLubyte alpha = 255);
 
