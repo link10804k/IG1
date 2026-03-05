@@ -4,6 +4,7 @@
 #include "Texture.h"
 #include "BoxOutline.h"
 #include "Star3D.h"
+#include "GlassParapet.h"
 
 #include "TextureManager.h"
 
@@ -27,6 +28,22 @@ void Scene4::init() {
 	//gObjects.push_back(box);
 
 	// Estrella
-	Star3D* star = new Star3D(100, 10, 100);
-	gObjects.push_back(star);
+	//Star3D* star = new Star3D(100, 8, 100);
+	//
+	//Texture* starText = new Texture();
+	//starText->load("../assets/images/rueda.png", 255); // ASK: Método para asignarle la textura?
+	//
+	//star->setTexture(starText);
+	//
+	//gObjects.push_back(star);
+
+	// Ventana
+	GlassParapet* window = new GlassParapet();
+
+	Texture* windowText = new Texture();
+	windowText->load("../assets/images/windowC.png", 155); // ASK: Método para asignarle la textura?
+	
+	window->setTexture(windowText);
+	
+	gObjects.push_back(window);
 }

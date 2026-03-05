@@ -1,12 +1,21 @@
 #include "Star3D.h"
 
-Star3D::Star3D(GLdouble re, GLuint np, GLdouble h) {
-	mMesh = Mesh::generateStar3D(re, np, h);
+#include "glm/gtc/matrix_transform.hpp"
 
-	mColor = glm::vec4(0, 0, 0, 1);
+Star3D::Star3D(GLdouble re, GLuint np, GLdouble h) {
+	mMesh = Mesh::generateStar3DTexCor(re, np, h);
 }
 
 void Star3D::render(const glm::mat4& modelViewMat) const {
-	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-	SingleColorEntity::render(modelViewMat);
+	EntityWithTexture::render(modelViewMat);
+
+	// Rotamos la matriz de vista en el eje y para que se vea el modelo rotado en el eje y
+	EntityWithTexture::render(glm::rotate(modelViewMat, glm::radians(180.0f), glm::vec3(0, 1, 0)));
+}
+
+void Star3D::update() {
+	float ang = glm::radians(5.0f);
+	mModelMat = glm::rotate(glm::mat4(1), ang, glm::vec3(0, 1, 0)) * mModelMat;
+	mModelMat = glm::rotate(mModelMat, ang, glm::vec3(0, 0, 1));
+	// ASK: ¿Tienen que girar en el mismo sentido las dos estrellas?
 }

@@ -389,8 +389,10 @@ Mesh* Mesh::generateStar3D(GLdouble re, GLuint np, GLdouble h) { // Radio exteri
 
 	mesh->mPrimitive = GL_TRIANGLE_FAN;
 
-	mesh->mNumVertices = np*2 + 1;
+	// +1 por el vértice central y +1 por el vértice final
+	mesh->mNumVertices = np*2 + 2;
 	mesh->vVertices.reserve(mesh->mNumVertices);
+
 	// Vértice central
 	mesh->vVertices.emplace_back(0, 0, 0);
 
@@ -401,14 +403,51 @@ Mesh* Mesh::generateStar3D(GLdouble re, GLuint np, GLdouble h) { // Radio exteri
 		GLdouble y = 0 + re * glm::sin(angleCount);
 		mesh->vVertices.emplace_back(x, y, h);
 
-		angleCount += glm::radians(360.0 / np * 2);
+		angleCount += glm::radians(360.0 / (np * 2));
 
 		x = 0 + ri * glm::cos(angleCount);
 		y = 0 + ri * glm::sin(angleCount);
 		mesh->vVertices.emplace_back(x, y, h);
 
-		angleCount += glm::radians(360.0 / np * 2);
+		angleCount += glm::radians(360.0 / (np * 2));
 	}
+
+	// Vértice final igual al de la primera punta
+	GLdouble x = 0 + re * glm::cos(angleCount);
+	GLdouble y = 0 + re * glm::sin(angleCount);
+	mesh->vVertices.emplace_back(x, y, h);
+
+	return mesh;
+}
+
+Mesh* Mesh::generateStar3DTexCor(GLdouble re, GLuint np, GLdouble h) {
+	// ASK: Ya que la textura está hecha para estrellas de 8 puntas, 
+	Mesh* mesh = generateStar3D(re, np, h);
+
+	mesh->vTexCoords.reserve(mesh->mNumVertices);
+
+	mesh->vTexCoords.emplace_back(0.5f, 0.5f);
+
+	float u = 0;
+	float v = 0;
+	for (int i = 0; i < 4; ++i) {
+		mesh->vTexCoords.emplace_back(u, v);
+		u += 0.25f;
+	}
+	for (int i = 0; i < 4; ++i) {
+		mesh->vTexCoords.emplace_back(u, v);
+		v += 0.25f;
+	}
+	for (int i = 0; i < 4; ++i) {
+		mesh->vTexCoords.emplace_back(u, v);
+		u -= 0.25f;
+	}
+	for (int i = 0; i < 4; ++i) {
+		mesh->vTexCoords.emplace_back(u, v);
+		v -= 0.25f;
+	}
+
+	mesh->vTexCoords.emplace_back(u, v);
 
 	return mesh;
 }

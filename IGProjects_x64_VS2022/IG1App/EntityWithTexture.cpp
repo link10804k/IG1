@@ -7,6 +7,10 @@ EntityWithTexture::~EntityWithTexture() {
 
 }
 
+void EntityWithTexture::setTexture(Texture* texture) {
+	mTexture = texture;
+}
+
 void EntityWithTexture::render(const glm::mat4& modelViewMat) const {
 	if (mMesh != nullptr) {
 		glm::mat4 aMat = modelViewMat * mModelMat; // glm matrix multiplication
