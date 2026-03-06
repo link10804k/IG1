@@ -355,16 +355,27 @@ Mesh* Mesh::generateBoxOutline(GLdouble length) {
 	mesh->mNumVertices = 10;
 	mesh->vVertices.reserve(mesh->mNumVertices);
 
-	mesh->vVertices.emplace_back(-l, l, l); // 1
-	mesh->vVertices.emplace_back(-l, -l, l); // 2
-	mesh->vVertices.emplace_back(l, l, l); // 3
-	mesh->vVertices.emplace_back(l, -l, l); // 4
-	mesh->vVertices.emplace_back(l, l, -l); // 5
-	mesh->vVertices.emplace_back(l, -l, -l); // 6
-	mesh->vVertices.emplace_back(-l, l, -l); // 7
-	mesh->vVertices.emplace_back(-l, -l, -l); // 8
-	mesh->vVertices.emplace_back(-l, l, l); // 9
-	mesh->vVertices.emplace_back(-l, -l, l); // 10
+	//mesh->vVertices.emplace_back(-l, l, l); // 1
+	//mesh->vVertices.emplace_back(-l, -l, l); // 2
+	//mesh->vVertices.emplace_back(l, l, l); // 3
+	//mesh->vVertices.emplace_back(l, -l, l); // 4
+	//mesh->vVertices.emplace_back(l, l, -l); // 5
+	//mesh->vVertices.emplace_back(l, -l, -l); // 6
+	//mesh->vVertices.emplace_back(-l, l, -l); // 7
+	//mesh->vVertices.emplace_back(-l, -l, -l); // 8
+	//mesh->vVertices.emplace_back(-l, l, l); // 9
+	//mesh->vVertices.emplace_back(-l, -l, l); // 10
+
+	mesh->vVertices.emplace_back(l, l, l); // 1
+	mesh->vVertices.emplace_back(l, -l, l); // 2
+	mesh->vVertices.emplace_back(l, l, -l); // 3
+	mesh->vVertices.emplace_back(l, -l, -l); // 4
+	mesh->vVertices.emplace_back(-l, l, -l); // 5
+	mesh->vVertices.emplace_back(-l, -l, -l); // 6
+	mesh->vVertices.emplace_back(-l, l, l); // 7
+	mesh->vVertices.emplace_back(-l, -l, l); // 8
+	mesh->vVertices.emplace_back(l, l, l); // 9
+	mesh->vVertices.emplace_back(l, -l, l); // 10
 
 	return mesh;
 }
