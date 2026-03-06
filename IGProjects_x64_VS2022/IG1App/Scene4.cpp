@@ -8,6 +8,8 @@
 
 #include "TextureManager.h"
 
+#include "glm/gtc/matrix_transform.hpp"
+
 void Scene4::init() {
 	// Para el setGL() y las RGBAxis
 	Scene::init();
@@ -31,7 +33,7 @@ void Scene4::init() {
 	//Star3D* star = new Star3D(100, 8, 100);
 	//
 	//Texture* starText = new Texture();
-	//starText->load("../assets/images/rueda.png", 255); // ASK: Método para asignarle la textura?
+	//starText->load("../assets/images/rueda.png", 255);
 	//
 	//star->setTexture(starText);
 	//
@@ -39,11 +41,13 @@ void Scene4::init() {
 
 	// Ventana
 	GlassParapet* window = new GlassParapet();
-
+	
 	Texture* windowText = new Texture();
-	windowText->load("../assets/images/windowC.png", 155); // ASK: Método para asignarle la textura?
+	windowText->load("../assets/images/windowC.png", 155); 
 	
 	window->setTexture(windowText);
+
+	//window->setModelMat(glm::translate(window->modelMat(), glm::vec3(100, 100, 100)));
 	
-	gObjects.push_back(window);
+	gTranslucidObjects.push_back(window);
 }

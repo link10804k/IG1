@@ -27,6 +27,7 @@ set(OLD_GLOB
   "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Scene4.cpp"
   "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Shader.cpp"
   "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/SingleColorEntity.cpp"
+  "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Star3D.cpp"
   "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Texture.cpp"
   "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/TextureManager.cpp"
   "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Viewport.cpp"

@@ -7,6 +7,8 @@
 #include "Scene3.h"
 #include "Scene4.h"
 
+#include "TextureManager.h"
+
 using namespace std;
 
 // static single instance (singleton pattern)
@@ -64,15 +66,18 @@ IG1App::init()
 	// create an OpenGL Context
 	iniWinOpenGL();
 
+	// CNG: Inicializar TextureManager
+	TextureManager::Instance();
+
 	// create the scene after creating the context
 	// allocate memory and resources
 	mViewPort = new Viewport(mWinW, mWinH);
 	mCamera = new Camera(mViewPort);
 
-	mScenes.push_back(new Scene);
-	mScenes.push_back(new Scene1);
-	mScenes.push_back(new Scene2);
-	mScenes.push_back(new Scene3);
+	//mScenes.push_back(new Scene);
+	//mScenes.push_back(new Scene1);
+	//mScenes.push_back(new Scene2);
+	//mScenes.push_back(new Scene3);
 	mScenes.push_back(new Scene4);
 
 	mCamera->set2D();
@@ -137,6 +142,9 @@ IG1App::destroy()
 	mCamera = nullptr;
 	delete mViewPort;
 	mViewPort = nullptr;
+
+	// CNG: Liberar TextureManager
+	TextureManager::Release();
 
 	glfwTerminate();
 }

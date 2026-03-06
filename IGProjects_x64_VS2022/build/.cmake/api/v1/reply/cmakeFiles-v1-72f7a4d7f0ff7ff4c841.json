@@ -1,0 +1,173 @@
+{
+	"globsDependent" : 
+	[
+		{
+			"expression" : "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/*.cpp",
+			"paths" : 
+			[
+				"C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/BoxOutline.cpp",
+				"C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Camera.cpp",
+				"C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Cube.cpp",
+				"C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Entity.cpp",
+				"C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/EntityWithTexture.cpp",
+				"C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Ground.cpp",
+				"C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/IG1App.cpp",
+				"C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Image.cpp",
+				"C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Light.cpp",
+				"C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Material.cpp",
+				"C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Mesh.cpp",
+				"C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/RGBCube.cpp",
+				"C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/RGBRectangle.cpp",
+				"C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/RGBTriangle.cpp",
+				"C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/RegularPolygon.cpp",
+				"C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Scene.cpp",
+				"C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Scene1.cpp",
+				"C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Scene2.cpp",
+				"C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Scene3.cpp",
+				"C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Scene4.cpp",
+				"C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Shader.cpp",
+				"C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/SingleColorEntity.cpp",
+				"C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Star3D.cpp",
+				"C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Texture.cpp",
+				"C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/TextureManager.cpp",
+				"C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Viewport.cpp",
+				"C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/main.cpp"
+			],
+			"recurse" : true
+		},
+		{
+			"expression" : "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/*/*.cpp",
+			"paths" : [],
+			"recurse" : true
+		}
+	],
+	"inputs" : 
+	[
+		{
+			"path" : "CMakeLists.txt"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/CMakeFiles/3.31.6-msvc6/CMakeSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeSystemSpecificInitialize.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/Platform/Windows-Initialize.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/CMakeFiles/3.31.6-msvc6/CMakeCXXCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeSystemSpecificInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeGenericSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeInitializeConfigs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/Platform/Windows.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/Platform/WindowsPaths.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeCXXInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/Compiler/MSVC-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/Compiler/MSVC.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/Platform/Windows-MSVC-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/Platform/Windows-MSVC.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/CMakeFiles/3.31.6-msvc6/CMakeRCCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeRCInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/Internal/CMakeCXXLinkerInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/Internal/CMakeCommonLinkerInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/Platform/Linker/Windows-MSVC-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/Platform/Linker/Windows-MSVC.cmake"
+		}
+	],
+	"kind" : "cmakeFiles",
+	"paths" : 
+	{
+		"build" : "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/build",
+		"source" : "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022"
+	},
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 1
+	}
+}

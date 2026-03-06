@@ -17,38 +17,38 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 #set(GLFW_BUILD_WAYLAND OFF)
 
 if (CMAKE_HOST_WIN32)
-	# Utiliza las bibliotecas compiladas que van incluidas
-	# en el paquete con el proyecto de Visual Studio
+    # Utiliza las bibliotecas compiladas que van incluidas
+    # en el paquete con el proyecto de Visual Studio
 
-	include_directories(
-		libs/glew/include
-		libs/glfw/include
-		libs/glm/include
-	)
+    include_directories(
+        libs/glew/include
+        libs/glfw/include
+        libs/glm/include
+    )
 
-	link_directories(
-		libs/glew/lib
-		libs/glfw/lib
-	)
+    link_directories(
+        libs/glew/lib
+        libs/glfw/lib
+    )
 
-	link_libraries(
-		glew32.lib
-		glfw3dll.lib
-		Opengl32.lib
-	)
+    link_libraries(
+        glew32.lib
+        glfw3dll.lib
+        Opengl32.lib
+    )
 
-	# Añade checkML.h automáticamente a todas las unidades de compilación
-	add_compile_options(/FI ${CMAKE_SOURCE_DIR}/libs/misc/include/CheckML.h)
+    # Añade checkML.h automáticamente a todas las unidades de compilación
+    add_compile_options(/FI ${CMAKE_SOURCE_DIR}/libs/misc/include/CheckML.h)
 else()
-	# En otros sistemas operativos utiliza find_package
-	# para encontrar las bibliotecas instaladas aparte
+    # En otros sistemas operativos utiliza find_package
+    # para encontrar las bibliotecas instaladas aparte
 
-	find_package(glfw3 REQUIRED)
-	find_package(glm REQUIRED)
-	find_package(GLEW REQUIRED)
-	find_package(OpenGL REQUIRED)
+    find_package(glfw3 REQUIRED)
+    find_package(glm REQUIRED)
+    find_package(GLEW REQUIRED)
+    find_package(OpenGL REQUIRED)
 
-	link_libraries(glfw GLEW::GLEW OpenGL::GL)
+    link_libraries(glfw GLEW::GLEW OpenGL::GL)
 endif()
 
 # Compila con stb_image

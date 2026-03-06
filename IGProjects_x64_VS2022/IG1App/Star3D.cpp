@@ -17,5 +17,5 @@ void Star3D::update() {
 	float ang = glm::radians(5.0f);
 	mModelMat = glm::rotate(glm::mat4(1), ang, glm::vec3(0, 1, 0)) * mModelMat;
 	mModelMat = glm::rotate(mModelMat, ang, glm::vec3(0, 0, 1));
-	// ASK: ¿Tienen que girar en el mismo sentido las dos estrellas?
+
 }

@@ -7,7 +7,7 @@
 
 class EntityWithTexture : public Abs_Entity {
 protected:
-	Texture* mTexture = nullptr; // TODO: Liberar memoria depende de como se cree la textura
+	Texture* mTexture = nullptr;
 	bool mModulate = false;
 public:
 	EntityWithTexture();

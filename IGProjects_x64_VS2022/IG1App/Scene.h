@@ -33,6 +33,8 @@ protected:
 	void resetGL();
 
 	std::vector<Abs_Entity*> gObjects; // Entities (graphic objects) of the scene
+	std::vector<Abs_Entity*> gTranslucidObjects; // CNG: Entidades translúcidas de la escena
+	// TODO: Vector de objetos transl�cidos
 };
 
 #endif //_H_Scene_H_

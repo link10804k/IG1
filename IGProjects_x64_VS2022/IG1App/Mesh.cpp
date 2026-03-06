@@ -421,12 +421,13 @@ Mesh* Mesh::generateStar3D(GLdouble re, GLuint np, GLdouble h) { // Radio exteri
 }
 
 Mesh* Mesh::generateStar3DTexCor(GLdouble re, GLuint np, GLdouble h) {
-	// ASK: Ya que la textura está hecha para estrellas de 8 puntas, 
 	Mesh* mesh = generateStar3D(re, np, h);
 
 	mesh->vTexCoords.reserve(mesh->mNumVertices);
 
 	mesh->vTexCoords.emplace_back(0.5f, 0.5f);
+
+	// TODO: Parametrizar para un número de puntas diferente de 8
 
 	float u = 0;
 	float v = 0;

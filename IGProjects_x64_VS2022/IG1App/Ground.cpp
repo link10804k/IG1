@@ -3,7 +3,7 @@
 #include "glm/gtc/matrix_transform.hpp"
 #include "Texture.h"
 
-Ground::Ground(GLdouble w, GLdouble d, GLuint rw, GLuint rh) { // ASK: Textura en el constructor?
+Ground::Ground(GLdouble w, GLdouble d, GLuint rw, GLuint rh) {
 	mMesh = Mesh::generateRectangleTexCor(w, d, rw, rh);
 	float ang = glm::radians(90.0f);
 	

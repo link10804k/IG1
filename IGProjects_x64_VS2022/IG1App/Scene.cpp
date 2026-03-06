@@ -32,8 +32,11 @@ Scene::destroy()
 
 	for (Abs_Entity* el : gObjects)
 		delete el;
+	for (Abs_Entity* obj : gTranslucidObjects)
+		delete obj;
 
 	gObjects.clear();
+	gTranslucidObjects.clear();
 }
 
 void
@@ -41,12 +44,16 @@ Scene::load()
 {
 	for (Abs_Entity* obj : gObjects)
 		obj->load();
+	for (Abs_Entity* obj : gTranslucidObjects)
+		obj->load();
 }
 
 void
 Scene::unload()
 {
 	for (Abs_Entity* obj : gObjects)
+		obj->unload();
+	for (Abs_Entity* obj : gTranslucidObjects)
 		obj->unload();
 }
 
@@ -71,10 +78,25 @@ Scene::render(Camera const& cam) const
 
 	for (Abs_Entity* el : gObjects)
 		el->render(cam.viewMat());
+	
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glDepthMask(GL_FALSE);
+
+	for (Abs_Entity* el : gTranslucidObjects)
+		el->render(cam.viewMat());
+
+	glDepthMask(GL_TRUE);
+	glDisable(GL_BLEND);
+	
+
 }
 
 void Scene::update() {
 	for (Abs_Entity* el : gObjects) {
+		el->update();
+	}
+	for (Abs_Entity* el : gTranslucidObjects) {
 		el->update();
 	}
 }
