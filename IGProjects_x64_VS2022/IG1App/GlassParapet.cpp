@@ -1,6 +1,6 @@
 #include "GlassParapet.h"
 
-GlassParapet::GlassParapet() {
-	mMesh = Mesh::generateBoxOutlineTexCor(100);
+GlassParapet::GlassParapet(GLdouble length) {
+	mMesh = Mesh::generateBoxOutlineTexCor(length);
 }
 

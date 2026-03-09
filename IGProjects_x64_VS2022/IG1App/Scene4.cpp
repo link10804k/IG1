@@ -42,19 +42,22 @@ void Scene4::init() {
 	gObjects.push_back(star);
 
 	// Ventana
-	//GlassParapet* window = new GlassParapet();
-	//
-	//Texture* windowText = new Texture();
-	//windowText->load("../assets/images/windowC.png", 155); 
-	//
-	//window->setTexture(windowText);
-	//
-	//gTranslucidObjects.push_back(window);
+	GlassParapet* window = new GlassParapet(100);
+	
+	Texture* windowText = new Texture();
+	windowText->load("../assets/images/windowC.png", 155); 
+	
+	window->setTexture(windowText);
+
+	window->setModelMat(glm::scale(window->modelMat(), glm::vec3(4, 1, 4)));
+	
+	gTranslucidObjects.push_back(window);
 
 	// Foto
 	Photo* ph = new Photo(100, 100);
 
-	ph->setModelMat(glm::translate(ph->modelMat(), glm::vec3(0, 0, -5)));
+	// La movemos un poco hacia arriba para que no haya overlap con el suelo
+	ph->setModelMat(glm::translate(ph->modelMat(), glm::vec3(0, 0, -1)));
 
 	gObjects.push_back(ph);
 }

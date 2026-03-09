@@ -4,9 +4,8 @@
 #include "EntityWithTexture.h"
 class GlassParapet : public EntityWithTexture {
 public:
-	GlassParapet();
-	virtual ~GlassParapet() = default;
-
+	GlassParapet(GLdouble length);
+	~GlassParapet() = default;
 };
 
 #endif
