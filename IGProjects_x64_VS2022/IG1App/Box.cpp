@@ -15,18 +15,18 @@ Box::Box(GLdouble length) : BoxOutline(length) {
 void Box::render(const glm::mat4& modelViewMat) const {
 	BoxOutline::render(modelViewMat);
 
-	glEnable(GL_CULL_FACE);
-	// Dibujamos la cara frontal con la textura frontal
-	glCullFace(GL_BACK);
-	renderFace(mMeshTop, mModelMatTop, modelViewMat, mTexture);
-	renderFace(mMeshBot, mModelMatBot, modelViewMat, mTexture);
-
-	// Dibujamos la cara trasera con la textura trasera
-	glCullFace(GL_FRONT);
-	renderFace(mMeshTop, mModelMatTop, modelViewMat, _innerTexture);
-	renderFace(mMeshBot, mModelMatBot, modelViewMat, _innerTexture);
-
-	glDisable(GL_CULL_FACE);
+	//glEnable(GL_CULL_FACE);
+	//// Dibujamos la cara frontal con la textura frontal
+	//glCullFace(GL_BACK);
+	//renderFace(mMeshTop, mModelMatTop, modelViewMat, mTexture);
+	//renderFace(mMeshBot, mModelMatBot, modelViewMat, mTexture);
+	//
+	//// Dibujamos la cara trasera con la textura trasera
+	//glCullFace(GL_FRONT);
+	//renderFace(mMeshTop, mModelMatTop, modelViewMat, _innerTexture);
+	//renderFace(mMeshBot, mModelMatBot, modelViewMat, _innerTexture);
+	//
+	//glDisable(GL_CULL_FACE);
 }
 
 void Box::renderFace(const Mesh* mesh, const glm::mat4& modelMat, const glm::mat4& modelViewMat, Texture* texture) const {
@@ -43,20 +43,4 @@ void Box::renderFace(const Mesh* mesh, const glm::mat4& modelMat, const glm::mat
 
 		if (texture != nullptr) texture->unbind(); // Le decimos a la GPU que ya no la tiene que utilizar
 	}
-}
-
-void
-Box::load()
-{
-	mMesh->load();
-	mMeshTop->load();
-	mMeshBot->load();
-}
-
-void
-Box::unload()
-{
-	mMesh->unload();
-	mMeshTop->unload();
-	mMeshBot->unload();
 }

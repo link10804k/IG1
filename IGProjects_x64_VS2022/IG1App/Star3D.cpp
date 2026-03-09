@@ -9,8 +9,20 @@ Star3D::Star3D(GLdouble re, GLuint np, GLdouble h) {
 void Star3D::render(const glm::mat4& modelViewMat) const {
 	EntityWithTexture::render(modelViewMat);
 
-	// Rotamos la matriz de vista en el eje y para que se vea el modelo rotado en el eje y
-	EntityWithTexture::render(glm::rotate(modelViewMat, glm::radians(180.0f), glm::vec3(0, 1, 0)));
+	if (mMesh != nullptr) {
+		glm::mat4 aMat = modelViewMat * mModelMat; // glm matrix multiplication
+
+		mShader->use();
+		mShader->setUniform("modulate", mModulate); // Fijamos el uniform modulate con mModulate
+
+		if (mTexture != nullptr) mTexture->bind(); // Le decimos a la GPU que utilice esta textura
+
+		// Rotamos la aMat para renderizar la estrella rotada 180º en el eje y
+		upload(glm::rotate(aMat, glm::radians(180.0f), glm::vec3(0, 1, 0)));
+		mMesh->render();
+
+		if (mTexture != nullptr) mTexture->unbind(); // Le decimos a la GPU que ya no la tiene que utilizar
+	}
 }
 
 void Star3D::update() {
