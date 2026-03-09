@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\Users\jzazo\Documents\GitHub\IG1\IGProjects_x64_VS2022\build\CMakeFiles\e22960fdbffb82787efd6fea7bb9e1a7\generate.stamp.rule">
+    <CustomBuild Include="C:\Users\jzazo\OneDrive\Documents\GitHub\2º\IG1\IGProjects_x64_VS2022\build\CMakeFiles\0f4367c89834686eec64b51056f29957\generate.stamp.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{F17FFA63-354C-3A94-AA5B-455AFF11487E}</UniqueIdentifier>
+      <UniqueIdentifier>{CB796141-B0DF-3215-BE8B-2A7901FFEC75}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

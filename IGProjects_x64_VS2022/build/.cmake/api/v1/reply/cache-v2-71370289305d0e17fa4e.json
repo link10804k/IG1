@@ -27,7 +27,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/build"
+			"value" : "c:/Users/jzazo/OneDrive/Documents/GitHub/2\u00ba/IG1/IGProjects_x64_VS2022/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -335,7 +335,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/build/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/jzazo/OneDrive/Documents/GitHub/2\u00ba/IG1/IGProjects_x64_VS2022/build/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -395,7 +395,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022"
+			"value" : "C:/Users/jzazo/OneDrive/Documents/GitHub/2\u00ba/IG1/IGProjects_x64_VS2022"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -991,7 +991,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/build"
+			"value" : "C:/Users/jzazo/OneDrive/Documents/GitHub/2\u00ba/IG1/IGProjects_x64_VS2022/build"
 		},
 		{
 			"name" : "ProyectoIG_IS_TOP_LEVEL",
@@ -1015,7 +1015,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022"
+			"value" : "C:/Users/jzazo/OneDrive/Documents/GitHub/2\u00ba/IG1/IGProjects_x64_VS2022"
 		}
 	],
 	"kind" : "cache",

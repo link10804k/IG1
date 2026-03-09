@@ -11,7 +11,7 @@ protected:
 	bool mModulate = false;
 public:
 	EntityWithTexture();
-	virtual ~EntityWithTexture();
+	virtual ~EntityWithTexture() = default;
 
 	void setTexture(Texture* texture);
 	virtual void render(const glm::mat4& modelViewMat) const override;

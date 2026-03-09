@@ -5,7 +5,7 @@
         {
             "primary-output": "ProyectoIG.dir\\Debug\\RGBCube.obj",
             "outputs": [
-                "C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\build\\ProyectoIG.dir\\Debug\\vc143.pdb",
+                "C:\\Users\\jzazo\\OneDrive\\Documents\\GitHub\\2º\\IG1\\IGProjects_x64_VS2022\\build\\ProyectoIG.dir\\Debug\\vc143.pdb",
                 "ProyectoIG.dir\\Debug\\"
             ],
             "requires": []

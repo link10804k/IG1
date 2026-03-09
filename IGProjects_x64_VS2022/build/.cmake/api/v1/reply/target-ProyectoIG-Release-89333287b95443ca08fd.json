@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "MinSizeRel/ProyectoIG.exe"
+			"path" : "Release/ProyectoIG.exe"
 		},
 		{
-			"path" : "MinSizeRel/ProyectoIG.pdb"
+			"path" : "Release/ProyectoIG.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -65,7 +65,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /EHsc /O1 /Ob1 /DNDEBUG -std:c++20 -MD"
+					"fragment" : "/DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++20 -MD"
 				},
 				{
 					"backtrace" : 3,
@@ -73,26 +73,26 @@
 				},
 				{
 					"backtrace" : 3,
-					"fragment" : "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/libs/misc/include/CheckML.h"
+					"fragment" : "C:/Users/jzazo/OneDrive/Documents/GitHub/2\u00ba/IG1/IGProjects_x64_VS2022/libs/misc/include/CheckML.h"
 				}
 			],
 			"includes" : 
 			[
 				{
 					"backtrace" : 4,
-					"path" : "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/libs/glew/include"
+					"path" : "C:/Users/jzazo/OneDrive/Documents/GitHub/2\u00ba/IG1/IGProjects_x64_VS2022/libs/glew/include"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/libs/glfw/include"
+					"path" : "C:/Users/jzazo/OneDrive/Documents/GitHub/2\u00ba/IG1/IGProjects_x64_VS2022/libs/glfw/include"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/libs/glm/include"
+					"path" : "C:/Users/jzazo/OneDrive/Documents/GitHub/2\u00ba/IG1/IGProjects_x64_VS2022/libs/glm/include"
 				},
 				{
 					"backtrace" : 5,
-					"path" : "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/libs/stb_image/include"
+					"path" : "C:/Users/jzazo/OneDrive/Documents/GitHub/2\u00ba/IG1/IGProjects_x64_VS2022/libs/stb_image/include"
 				}
 			],
 			"language" : "CXX",
@@ -132,7 +132,8 @@
 				23,
 				24,
 				25,
-				26
+				26,
+				27
 			]
 		}
 	],
@@ -148,7 +149,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "/DWIN32 /D_WINDOWS /EHsc /O1 /Ob1 /DNDEBUG -MD",
+				"fragment" : "/DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -MD",
 				"role" : "flags"
 			},
 			{
@@ -157,12 +158,12 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "-LIBPATH:C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\libs\\glew\\lib",
+				"fragment" : "-LIBPATH:C:\\Users\\jzazo\\OneDrive\\Documents\\GitHub\\2\u00ba\\IG1\\IGProjects_x64_VS2022\\libs\\glew\\lib",
 				"role" : "libraryPath"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "-LIBPATH:C:\\Users\\jzazo\\Documents\\GitHub\\IG1\\IGProjects_x64_VS2022\\libs\\glfw\\lib",
+				"fragment" : "-LIBPATH:C:\\Users\\jzazo\\OneDrive\\Documents\\GitHub\\2\u00ba\\IG1\\IGProjects_x64_VS2022\\libs\\glfw\\lib",
 				"role" : "libraryPath"
 			},
 			{
@@ -226,7 +227,8 @@
 				23,
 				24,
 				25,
-				26
+				26,
+				27
 			]
 		}
 	],
@@ -260,6 +262,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "IG1App/EntityWithTexture.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "IG1App/GlassParapet.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{

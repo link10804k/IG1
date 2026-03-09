@@ -3,46 +3,47 @@
 cmake_policy(SET CMP0009 NEW)
 
 # PROJECT_SOURCES at CMakeLists.txt:57 (file)
-file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/*.cpp")
+file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/*.cpp")
 set(OLD_GLOB
-  "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/BoxOutline.cpp"
-  "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Camera.cpp"
-  "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Cube.cpp"
-  "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Entity.cpp"
-  "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/EntityWithTexture.cpp"
-  "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Ground.cpp"
-  "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/IG1App.cpp"
-  "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Image.cpp"
-  "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Light.cpp"
-  "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Material.cpp"
-  "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Mesh.cpp"
-  "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/RGBCube.cpp"
-  "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/RGBRectangle.cpp"
-  "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/RGBTriangle.cpp"
-  "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/RegularPolygon.cpp"
-  "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Scene.cpp"
-  "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Scene1.cpp"
-  "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Scene2.cpp"
-  "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Scene3.cpp"
-  "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Scene4.cpp"
-  "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Shader.cpp"
-  "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/SingleColorEntity.cpp"
-  "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Star3D.cpp"
-  "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Texture.cpp"
-  "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/TextureManager.cpp"
-  "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/Viewport.cpp"
-  "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/main.cpp"
+  "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/BoxOutline.cpp"
+  "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/Camera.cpp"
+  "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/Cube.cpp"
+  "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/Entity.cpp"
+  "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/EntityWithTexture.cpp"
+  "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/GlassParapet.cpp"
+  "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/Ground.cpp"
+  "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/IG1App.cpp"
+  "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/Image.cpp"
+  "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/Light.cpp"
+  "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/Material.cpp"
+  "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/Mesh.cpp"
+  "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/RGBCube.cpp"
+  "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/RGBRectangle.cpp"
+  "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/RGBTriangle.cpp"
+  "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/RegularPolygon.cpp"
+  "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/Scene.cpp"
+  "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/Scene1.cpp"
+  "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/Scene2.cpp"
+  "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/Scene3.cpp"
+  "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/Scene4.cpp"
+  "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/Shader.cpp"
+  "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/SingleColorEntity.cpp"
+  "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/Star3D.cpp"
+  "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/Texture.cpp"
+  "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/TextureManager.cpp"
+  "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/Viewport.cpp"
+  "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/main.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/build/CMakeFiles/cmake.verify_globs")
 endif()
 
 # PROJECT_SOURCES at CMakeLists.txt:57 (file)
-file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/IG1App/*/*.cpp")
+file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/*/*.cpp")
 set(OLD_GLOB
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "C:/Users/jzazo/Documents/GitHub/IG1/IGProjects_x64_VS2022/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/build/CMakeFiles/cmake.verify_globs")
 endif()

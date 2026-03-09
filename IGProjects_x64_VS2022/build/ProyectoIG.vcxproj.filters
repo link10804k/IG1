@@ -1,94 +1,97 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\jzazo\Documents\GitHub\IG1\IGProjects_x64_VS2022\IG1App\BoxOutline.cpp">
+    <ClCompile Include="C:\Users\jzazo\OneDrive\Documents\GitHub\2º\IG1\IGProjects_x64_VS2022\IG1App\BoxOutline.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\jzazo\Documents\GitHub\IG1\IGProjects_x64_VS2022\IG1App\Camera.cpp">
+    <ClCompile Include="C:\Users\jzazo\OneDrive\Documents\GitHub\2º\IG1\IGProjects_x64_VS2022\IG1App\Camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\jzazo\Documents\GitHub\IG1\IGProjects_x64_VS2022\IG1App\Cube.cpp">
+    <ClCompile Include="C:\Users\jzazo\OneDrive\Documents\GitHub\2º\IG1\IGProjects_x64_VS2022\IG1App\Cube.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\jzazo\Documents\GitHub\IG1\IGProjects_x64_VS2022\IG1App\Entity.cpp">
+    <ClCompile Include="C:\Users\jzazo\OneDrive\Documents\GitHub\2º\IG1\IGProjects_x64_VS2022\IG1App\Entity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\jzazo\Documents\GitHub\IG1\IGProjects_x64_VS2022\IG1App\EntityWithTexture.cpp">
+    <ClCompile Include="C:\Users\jzazo\OneDrive\Documents\GitHub\2º\IG1\IGProjects_x64_VS2022\IG1App\EntityWithTexture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\jzazo\Documents\GitHub\IG1\IGProjects_x64_VS2022\IG1App\Ground.cpp">
+    <ClCompile Include="C:\Users\jzazo\OneDrive\Documents\GitHub\2º\IG1\IGProjects_x64_VS2022\IG1App\GlassParapet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\jzazo\Documents\GitHub\IG1\IGProjects_x64_VS2022\IG1App\IG1App.cpp">
+    <ClCompile Include="C:\Users\jzazo\OneDrive\Documents\GitHub\2º\IG1\IGProjects_x64_VS2022\IG1App\Ground.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\jzazo\Documents\GitHub\IG1\IGProjects_x64_VS2022\IG1App\Image.cpp">
+    <ClCompile Include="C:\Users\jzazo\OneDrive\Documents\GitHub\2º\IG1\IGProjects_x64_VS2022\IG1App\IG1App.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\jzazo\Documents\GitHub\IG1\IGProjects_x64_VS2022\IG1App\Light.cpp">
+    <ClCompile Include="C:\Users\jzazo\OneDrive\Documents\GitHub\2º\IG1\IGProjects_x64_VS2022\IG1App\Image.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\jzazo\Documents\GitHub\IG1\IGProjects_x64_VS2022\IG1App\Material.cpp">
+    <ClCompile Include="C:\Users\jzazo\OneDrive\Documents\GitHub\2º\IG1\IGProjects_x64_VS2022\IG1App\Light.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\jzazo\Documents\GitHub\IG1\IGProjects_x64_VS2022\IG1App\Mesh.cpp">
+    <ClCompile Include="C:\Users\jzazo\OneDrive\Documents\GitHub\2º\IG1\IGProjects_x64_VS2022\IG1App\Material.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\jzazo\Documents\GitHub\IG1\IGProjects_x64_VS2022\IG1App\RGBCube.cpp">
+    <ClCompile Include="C:\Users\jzazo\OneDrive\Documents\GitHub\2º\IG1\IGProjects_x64_VS2022\IG1App\Mesh.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\jzazo\Documents\GitHub\IG1\IGProjects_x64_VS2022\IG1App\RGBRectangle.cpp">
+    <ClCompile Include="C:\Users\jzazo\OneDrive\Documents\GitHub\2º\IG1\IGProjects_x64_VS2022\IG1App\RGBCube.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\jzazo\Documents\GitHub\IG1\IGProjects_x64_VS2022\IG1App\RGBTriangle.cpp">
+    <ClCompile Include="C:\Users\jzazo\OneDrive\Documents\GitHub\2º\IG1\IGProjects_x64_VS2022\IG1App\RGBRectangle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\jzazo\Documents\GitHub\IG1\IGProjects_x64_VS2022\IG1App\RegularPolygon.cpp">
+    <ClCompile Include="C:\Users\jzazo\OneDrive\Documents\GitHub\2º\IG1\IGProjects_x64_VS2022\IG1App\RGBTriangle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\jzazo\Documents\GitHub\IG1\IGProjects_x64_VS2022\IG1App\Scene.cpp">
+    <ClCompile Include="C:\Users\jzazo\OneDrive\Documents\GitHub\2º\IG1\IGProjects_x64_VS2022\IG1App\RegularPolygon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\jzazo\Documents\GitHub\IG1\IGProjects_x64_VS2022\IG1App\Scene1.cpp">
+    <ClCompile Include="C:\Users\jzazo\OneDrive\Documents\GitHub\2º\IG1\IGProjects_x64_VS2022\IG1App\Scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\jzazo\Documents\GitHub\IG1\IGProjects_x64_VS2022\IG1App\Scene2.cpp">
+    <ClCompile Include="C:\Users\jzazo\OneDrive\Documents\GitHub\2º\IG1\IGProjects_x64_VS2022\IG1App\Scene1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\jzazo\Documents\GitHub\IG1\IGProjects_x64_VS2022\IG1App\Scene3.cpp">
+    <ClCompile Include="C:\Users\jzazo\OneDrive\Documents\GitHub\2º\IG1\IGProjects_x64_VS2022\IG1App\Scene2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\jzazo\Documents\GitHub\IG1\IGProjects_x64_VS2022\IG1App\Scene4.cpp">
+    <ClCompile Include="C:\Users\jzazo\OneDrive\Documents\GitHub\2º\IG1\IGProjects_x64_VS2022\IG1App\Scene3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\jzazo\Documents\GitHub\IG1\IGProjects_x64_VS2022\IG1App\Shader.cpp">
+    <ClCompile Include="C:\Users\jzazo\OneDrive\Documents\GitHub\2º\IG1\IGProjects_x64_VS2022\IG1App\Scene4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\jzazo\Documents\GitHub\IG1\IGProjects_x64_VS2022\IG1App\SingleColorEntity.cpp">
+    <ClCompile Include="C:\Users\jzazo\OneDrive\Documents\GitHub\2º\IG1\IGProjects_x64_VS2022\IG1App\Shader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\jzazo\Documents\GitHub\IG1\IGProjects_x64_VS2022\IG1App\Star3D.cpp">
+    <ClCompile Include="C:\Users\jzazo\OneDrive\Documents\GitHub\2º\IG1\IGProjects_x64_VS2022\IG1App\SingleColorEntity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\jzazo\Documents\GitHub\IG1\IGProjects_x64_VS2022\IG1App\Texture.cpp">
+    <ClCompile Include="C:\Users\jzazo\OneDrive\Documents\GitHub\2º\IG1\IGProjects_x64_VS2022\IG1App\Star3D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\jzazo\Documents\GitHub\IG1\IGProjects_x64_VS2022\IG1App\TextureManager.cpp">
+    <ClCompile Include="C:\Users\jzazo\OneDrive\Documents\GitHub\2º\IG1\IGProjects_x64_VS2022\IG1App\Texture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\jzazo\Documents\GitHub\IG1\IGProjects_x64_VS2022\IG1App\Viewport.cpp">
+    <ClCompile Include="C:\Users\jzazo\OneDrive\Documents\GitHub\2º\IG1\IGProjects_x64_VS2022\IG1App\TextureManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\jzazo\Documents\GitHub\IG1\IGProjects_x64_VS2022\IG1App\main.cpp">
+    <ClCompile Include="C:\Users\jzazo\OneDrive\Documents\GitHub\2º\IG1\IGProjects_x64_VS2022\IG1App\Viewport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\jzazo\OneDrive\Documents\GitHub\2º\IG1\IGProjects_x64_VS2022\IG1App\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\jzazo\Documents\GitHub\IG1\IGProjects_x64_VS2022\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\jzazo\OneDrive\Documents\GitHub\2º\IG1\IGProjects_x64_VS2022\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{8BFD878B-5CBD-3998-BD04-675AB7813FFA}</UniqueIdentifier>
+      <UniqueIdentifier>{4BB92EF6-4845-3FDA-9488-44B62B1EA418}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

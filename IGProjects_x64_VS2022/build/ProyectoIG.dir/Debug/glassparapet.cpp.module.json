@@ -3,7 +3,7 @@
     "revision": 0,
     "rules": [
         {
-            "primary-output": "ProyectoIG.dir\\Debug\\Shader.obj",
+            "primary-output": "ProyectoIG.dir\\Debug\\GlassParapet.obj",
             "outputs": [
                 "C:\\Users\\jzazo\\OneDrive\\Documents\\GitHub\\2º\\IG1\\IGProjects_x64_VS2022\\build\\ProyectoIG.dir\\Debug\\vc143.pdb",
                 "ProyectoIG.dir\\Debug\\"

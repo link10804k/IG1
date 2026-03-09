@@ -3,9 +3,6 @@
 EntityWithTexture::EntityWithTexture() {
 	mShader = Shader::get("texture");
 }
-EntityWithTexture::~EntityWithTexture() {
-
-}
 
 void EntityWithTexture::setTexture(Texture* texture) {
 	mTexture = texture;
