@@ -5,6 +5,7 @@
 #include "Star3D.h"
 #include "Box.h"
 #include "GlassParapet.h"
+#include "Grass.h"
 #include "Photo.h"
 
 #include "TextureManager.h"
@@ -44,19 +45,25 @@ void Scene4::init() {
 	// Ventana
 	GlassParapet* window = new GlassParapet(100);
 	
-	Texture* windowText = new Texture();
-	windowText->load("../assets/images/windowC.png", 155); 
-	
-	window->setTexture(windowText);
+	window->setTexture(TEXTURE_MANAGER->getTexture("windowC.png", 155));
 
 	window->setModelMat(glm::scale(window->modelMat(), glm::vec3(4, 1, 4)));
 	
 	gTranslucidObjects.push_back(window);
 
+	// Grass
+	Grass* grass = new Grass(50, 50);
+
+	grass->setTexture(TEXTURE_MANAGER->getTexture("grass.png"));
+
+	grass->setModelMat(glm::translate(grass->modelMat(), glm::vec3(50, 25, 125)));
+
+	gObjects.push_back(grass);
+
 	// Foto
 	Photo* ph = new Photo(100, 100);
 
-	// La movemos un poco hacia arriba para que no haya overlap con el suelo
+	// La movemos un poco hacia arriba para que no haya overlap con el suelo (aquí el eje z es el vertical porque es un rectángulo rotado)
 	ph->setModelMat(glm::translate(ph->modelMat(), glm::vec3(0, 0, -1)));
 
 	gObjects.push_back(ph);
