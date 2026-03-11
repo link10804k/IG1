@@ -11,17 +11,6 @@ mesh->vVertices.emplace_back(V3.x, V3.y,V3.z)
 // Macro para pushear todos los colores de un cuadrado
 #define PUSH_SQUARE_COLOR(color) for (int i = 0; i < 6; ++i){ mesh->vColors.emplace_back(color); }
 
-// Macro para pushear una textura típica de 4 vértices
-#define PUSH_SQUARE_TEXTURE mesh->vTexCoords.emplace_back(0, 1); \
-mesh->vTexCoords.emplace_back(0, 0); \
-mesh->vTexCoords.emplace_back(1, 1); \
-mesh->vTexCoords.emplace_back(1, 0)
-
-//#define PUSH_SQUARE_TEXTURE mesh->vTexCoords.emplace_back(0, 0); \
-//mesh->vTexCoords.emplace_back(0, 1); \
-//mesh->vTexCoords.emplace_back(1, 0); \
-//mesh->vTexCoords.emplace_back(1, 1)
-
 // Placeholder for the pending index of a GPU object
 constexpr GLuint NONE = numeric_limits<GLuint>::max();
 
@@ -391,10 +380,16 @@ Mesh* Mesh::generateBoxOutlineTexCor(GLdouble length) {
 
 	mesh->vTexCoords.reserve(mesh->mNumVertices);
 	
-	PUSH_SQUARE_TEXTURE;
-	PUSH_SQUARE_TEXTURE;
-	PUSH_SQUARE_TEXTURE;
-	PUSH_SQUARE_TEXTURE;
+	mesh->vTexCoords.emplace_back(0, 1);
+	mesh->vTexCoords.emplace_back(0, 0);
+	mesh->vTexCoords.emplace_back(1, 1);
+	mesh->vTexCoords.emplace_back(1, 0);
+	mesh->vTexCoords.emplace_back(0, 1);
+	mesh->vTexCoords.emplace_back(0, 0);
+	mesh->vTexCoords.emplace_back(1, 1);
+	mesh->vTexCoords.emplace_back(1, 0);
+	mesh->vTexCoords.emplace_back(0, 1);
+	mesh->vTexCoords.emplace_back(0, 0);
 
 	return mesh;
 }
