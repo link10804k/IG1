@@ -13,8 +13,6 @@ Box::~Box() {
 }
 
 void Box::render(const glm::mat4& modelViewMat) const {
-	BoxOutline::render(modelViewMat);
-
 	glEnable(GL_CULL_FACE);
 	// Dibujamos la cara frontal con la textura frontal
 	glCullFace(GL_BACK);
