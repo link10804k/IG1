@@ -13,6 +13,10 @@ Photo::Photo(GLdouble w, GLdouble d) {
 	mTexture = new Texture();
 }
 
+Photo::~Photo() {
+	delete mTexture;
+}
+
 void Photo::update() {
 	mTexture->loadColorBuffer(IG1App::s_ig1app.viewPort().width(), IG1App::s_ig1app.viewPort().height());
 }

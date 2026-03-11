@@ -4,12 +4,12 @@
 #include "EntityWithTexture.h"
 
 class BoxOutline : public EntityWithTexture {
-private:
+protected:
 	Texture* _innerTexture = nullptr;
 	void renderFace(const glm::mat4& modelViewMat, Texture* texture) const;
 public:
 	BoxOutline(GLdouble length);
-	~BoxOutline() = default;
+	virtual ~BoxOutline() = default;
 
 	void setTexture(Texture* externTexture, Texture* innerTexture);
 	void render(const glm::mat4& modelViewMat) const override;

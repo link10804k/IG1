@@ -19,10 +19,7 @@ void Scene4::init() {
 	// Suelo
 	Ground* g = new Ground(400, 400, 4, 4);
 	
-	Texture* groundText = new Texture();
-	groundText->load("../assets/images/baldosaC.png", 255); // ASK: Método para asignarle la textura?
-	
-	g->setTexture(groundText);
+	g->setTexture(TEXTURE_MANAGER->getTexture("baldosaC.png"));
 	
 	gObjects.push_back(g); 
 
@@ -30,7 +27,7 @@ void Scene4::init() {
 	Box* box = new Box(75);
 	box->setTexture(TEXTURE_MANAGER->getTexture("papelE.png"), TEXTURE_MANAGER->getTexture("container.jpg"));
 
-	box->setModelMat(glm::translate(box->modelMat(), glm::vec3(100, 37.5, -100)));
+	box->setModelMat(glm::translate(box->modelMat(), glm::vec3(100, 38.5, -100)));
 
 	gObjects.push_back(box);
 

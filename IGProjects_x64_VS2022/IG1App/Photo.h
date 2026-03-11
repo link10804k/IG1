@@ -6,7 +6,7 @@
 class Photo : public EntityWithTexture {
 public:
 	Photo(GLdouble w, GLdouble d);
-	~Photo() = default;
+	~Photo();
 
 	void update() override;
 };

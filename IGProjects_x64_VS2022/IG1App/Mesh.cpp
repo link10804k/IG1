@@ -17,6 +17,11 @@ mesh->vTexCoords.emplace_back(0, 0); \
 mesh->vTexCoords.emplace_back(1, 1); \
 mesh->vTexCoords.emplace_back(1, 0)
 
+//#define PUSH_SQUARE_TEXTURE mesh->vTexCoords.emplace_back(0, 0); \
+//mesh->vTexCoords.emplace_back(0, 1); \
+//mesh->vTexCoords.emplace_back(1, 0); \
+//mesh->vTexCoords.emplace_back(1, 1)
+
 // Placeholder for the pending index of a GPU object
 constexpr GLuint NONE = numeric_limits<GLuint>::max();
 
@@ -24,6 +29,7 @@ Mesh::Mesh()
  : mVAO(NONE)
  , mVBO(NONE)
  , mCBO(NONE)
+ , mTCO(NONE)
 {
 }
 
@@ -374,8 +380,8 @@ Mesh* Mesh::generateBoxOutline(GLdouble length) {
 	mesh->vVertices.emplace_back(-l, -l, -l); // 6
 	mesh->vVertices.emplace_back(-l, l, l); // 7
 	mesh->vVertices.emplace_back(-l, -l, l); // 8
-	mesh->vVertices.emplace_back(l, l, l); // 9
-	mesh->vVertices.emplace_back(l, -l, l); // 10
+	mesh->vVertices.emplace_back(mesh->vVertices[0]); // 9
+	mesh->vVertices.emplace_back(mesh->vVertices[1]); // 10
 
 	return mesh;
 }

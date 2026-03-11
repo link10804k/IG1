@@ -32,6 +32,10 @@ setup_windows_console()
 int
 main(int argc, char* argv[])
 {
+	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+	_CrtSetReportMode(_CRT_WARN, _CRTDBG_MODE_FILE | _CRTDBG_MODE_DEBUG);
+	_CrtSetReportFile(_CRT_WARN, _CRTDBG_FILE_STDERR);
+
 #ifdef WIN32
 	setup_windows_console();
 #endif
