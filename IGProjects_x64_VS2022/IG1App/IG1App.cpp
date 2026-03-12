@@ -8,6 +8,8 @@
 #include "Scene4.h"
 
 #include "TextureManager.h"
+#include "Texture.h"
+#include "stb_image_write.h"
 
 using namespace std;
 
@@ -199,6 +201,9 @@ IG1App::key(unsigned int key)
 		case 'U':
 			mUpdateEnabled = !mUpdateEnabled;
 			break;
+		case 'F':
+			takePhoto();
+			break;
 		default:
 			if (key >= '0' && key <= '9') {
 				if (changeScene(key - '0')) break;
@@ -273,4 +278,30 @@ IG1App::changeScene(size_t sceneNr)
 
 void IG1App::update() {
 	mScenes[mCurrentScene]->update();
+}
+
+void IG1App::takePhoto() {
+	// Cargamos la captura de pantalla como textura
+	Texture tx;
+	tx.loadColorBuffer(IG1App::s_ig1app.viewPort().width(), IG1App::s_ig1app.viewPort().height());
+
+	// (Buffer) Array de unsigned chars donde se almacenan los datos de la imagen
+	std::unique_ptr<unsigned char[]> data = std::make_unique<unsigned char[]>(IG1App::s_ig1app.viewPort().width() * IG1App::s_ig1app.viewPort().height() * 3 * sizeof(unsigned int));
+
+	// Bindeamos la textura
+	tx.bind();
+
+	//Activamos la alineación de la memoria para que al dibujar en la imagen no se corte verticalmente
+	glPixelStorei(GL_PACK_ALIGNMENT, 1);
+	//Dibujamos la imagen en el buffer data
+	glGetTexImage(GL_TEXTURE_2D,0,GL_RGB,GL_UNSIGNED_BYTE,data.get());
+
+	// Invertimos la imagen verticalmente para que salga como se ve en ejecución
+	stbi_flip_vertically_on_write(true);
+
+	// Guardamos la imagen como photo.bmp con los datos obtenidos anteriormente
+	stbi_write_bmp("photo.bmp", tx.width(), tx.height(), 3, data.get());
+	
+	// Unbindeamos la textura
+	tx.unbind();
 }

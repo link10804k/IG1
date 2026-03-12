@@ -12,6 +12,21 @@ Box::~Box() {
 	delete mMeshLid;
 }
 
+void Box::update() {
+	if (rotationDirection) {
+		lidRotation += 5.0f;
+
+		// Cuando llega a 180º, se invierte la rotación
+		if (lidRotation >= 180.0f) rotationDirection = false;
+	}
+	else {
+		lidRotation -= 5.0f;
+
+		// Cuando llega a 0º, se invierte la rotación
+		if (lidRotation <= 0.0f) rotationDirection = true;
+	}
+}
+
 void Box::render(const glm::mat4& modelViewMat) const {
 	glEnable(GL_CULL_FACE);
 	// Dibujamos la cara frontal con la textura frontal
@@ -37,7 +52,16 @@ void Box::renderFace(const glm::mat4& modelViewMat, Texture* texture) const {
 		upload(aMat);
 		mMesh->render();
 
-		glm::mat4 topModelMat = glm::rotate(glm::translate(mModelMat, glm::vec3(0, length / 2, 0)), glm::radians(-90.0f), glm::vec3(1, 0, 0));
+		// Rotamos -90 grados para dejar el rectángulo como una tapa
+		glm::mat4 topModelMat = glm::rotate(glm::mat4(1), glm::radians(-90.0f), glm::vec3(1, 0, 0));
+		// Trasladamos la mitad de su longitud para dejar el rectángulo pegado al (0,0,0)
+		topModelMat = glm::translate(topModelMat, glm::vec3(length / 2, 0, 0));
+		// Rotamos el rectángulo en el eje z con el (0,0,0) como orígen
+		topModelMat = glm::rotate(glm::mat4(1), glm::radians(lidRotation), glm::vec3(0, 0, 1)) * topModelMat;
+		
+		// Trasladamos el rectángulo a la posición de la caja
+		topModelMat = glm::translate(mModelMat, glm::vec3(-length / 2, length / 2, 0)) * topModelMat;
+
 		glm::mat4 botModelMat = glm::rotate(glm::translate(mModelMat, glm::vec3(0, -length / 2, 0)), glm::radians(90.0f), glm::vec3(1, 0, 0));
 
 		aMat = modelViewMat * topModelMat;

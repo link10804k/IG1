@@ -9,6 +9,7 @@
 #include "Scene.h"
 #include "Viewport.h"
 
+
 class IG1App
 {
 public:
@@ -51,6 +52,9 @@ protected:
 	static void s_resize(GLFWwindow*, int newWidth, int newHeight) { s_ig1app.resize(newWidth, newHeight); };
 	static void s_key(GLFWwindow* win, unsigned int codepoint) { s_ig1app.key(codepoint); };
 	static void s_specialkey(GLFWwindow* win, int key, int scancode, int action, int mods) { s_ig1app.specialkey(key, scancode, action, mods); };
+
+	// CNG: Método para tomar una captura de pantalla
+	void takePhoto();
 
 	// Viewport position and size
 	Viewport* mViewPort = nullptr;
