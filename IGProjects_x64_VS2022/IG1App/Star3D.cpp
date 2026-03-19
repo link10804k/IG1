@@ -36,5 +36,4 @@ void Star3D::update() {
 	mModelMat[3][2] = pos.z;
 
 	mModelMat = glm::rotate(mModelMat, ang, glm::vec3(0, 0, 1));
-
 }

@@ -5,18 +5,21 @@ cmake_policy(SET CMP0009 NEW)
 # PROJECT_SOURCES at CMakeLists.txt:57 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/*.cpp")
 set(OLD_GLOB
+  "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/Box.cpp"
   "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/BoxOutline.cpp"
   "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/Camera.cpp"
   "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/Cube.cpp"
   "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/Entity.cpp"
   "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/EntityWithTexture.cpp"
   "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/GlassParapet.cpp"
+  "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/Grass.cpp"
   "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/Ground.cpp"
   "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/IG1App.cpp"
   "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/Image.cpp"
   "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/Light.cpp"
   "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/Material.cpp"
   "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/Mesh.cpp"
+  "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/Photo.cpp"
   "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/RGBCube.cpp"
   "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/RGBRectangle.cpp"
   "C:/Users/jzazo/OneDrive/Documents/GitHub/2º/IG1/IGProjects_x64_VS2022/IG1App/RGBTriangle.cpp"

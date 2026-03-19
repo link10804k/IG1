@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "RelWithDebInfo/ProyectoIG.exe"
+			"path" : "Debug/ProyectoIG.exe"
 		},
 		{
-			"path" : "RelWithDebInfo/ProyectoIG.pdb"
+			"path" : "Debug/ProyectoIG.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -65,7 +65,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /EHsc /O2 /Ob1 /DNDEBUG -std:c++20 -MD -Zi"
+					"fragment" : "/DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++20 -MDd -Zi"
 				},
 				{
 					"backtrace" : 3,
@@ -133,7 +133,10 @@
 				24,
 				25,
 				26,
-				27
+				27,
+				28,
+				29,
+				30
 			]
 		}
 	],
@@ -149,7 +152,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "/DWIN32 /D_WINDOWS /EHsc /O2 /Ob1 /DNDEBUG -MD -Zi",
+				"fragment" : "/DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -MDd -Zi",
 				"role" : "flags"
 			},
 			{
@@ -228,12 +231,21 @@
 				24,
 				25,
 				26,
-				27
+				27,
+				28,
+				29,
+				30
 			]
 		}
 	],
 	"sources" : 
 	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "IG1App/Box.cpp",
+			"sourceGroupIndex" : 0
+		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
@@ -273,6 +285,12 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
+			"path" : "IG1App/Grass.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
 			"path" : "IG1App/Ground.cpp",
 			"sourceGroupIndex" : 0
 		},
@@ -304,6 +322,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "IG1App/Mesh.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "IG1App/Photo.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{

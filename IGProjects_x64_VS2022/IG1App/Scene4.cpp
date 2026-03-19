@@ -60,6 +60,11 @@ void Scene4::init() {
 	// Foto
 	Photo* ph = new Photo(100, 100);
 
+	float ang = glm::radians(90.0f);
+
+	// Rotamos la foto para que esté perpendicular al eje vertical
+	ph->setModelMat(glm::rotate(glm::mat4(1), ang, glm::vec3(1, 0, 0)) * ph->modelMat());
+
 	// La movemos un poco hacia arriba para que no haya overlap con el suelo (aquí el eje z es el vertical porque es un rectángulo rotado)
 	ph->setModelMat(glm::translate(ph->modelMat(), glm::vec3(0, 0, -1)));
 

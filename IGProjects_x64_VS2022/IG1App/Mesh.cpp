@@ -350,17 +350,6 @@ Mesh* Mesh::generateBoxOutline(GLdouble length) {
 	mesh->mNumVertices = 10;
 	mesh->vVertices.reserve(mesh->mNumVertices);
 
-	//mesh->vVertices.emplace_back(-l, l, l); // 1
-	//mesh->vVertices.emplace_back(-l, -l, l); // 2
-	//mesh->vVertices.emplace_back(l, l, l); // 3
-	//mesh->vVertices.emplace_back(l, -l, l); // 4
-	//mesh->vVertices.emplace_back(l, l, -l); // 5
-	//mesh->vVertices.emplace_back(l, -l, -l); // 6
-	//mesh->vVertices.emplace_back(-l, l, -l); // 7
-	//mesh->vVertices.emplace_back(-l, -l, -l); // 8
-	//mesh->vVertices.emplace_back(-l, l, l); // 9
-	//mesh->vVertices.emplace_back(-l, -l, l); // 10
-
 	mesh->vVertices.emplace_back(l, l, l); // 1
 	mesh->vVertices.emplace_back(l, -l, l); // 2
 	mesh->vVertices.emplace_back(l, l, -l); // 3
@@ -437,27 +426,33 @@ Mesh* Mesh::generateStar3DTexCor(GLdouble re, GLuint np, GLdouble h) {
 
 	mesh->vTexCoords.reserve(mesh->mNumVertices);
 
+	// El primer vértice es el centro de la textura
 	mesh->vTexCoords.emplace_back(0.5f, 0.5f);
-
-	// TODO: Parametrizar para un número de puntas diferente de 8
 
 	float u = 0;
 	float v = 0;
-	for (int i = 0; i < 4; ++i) {
-		mesh->vTexCoords.emplace_back(u, v);
-		u += 0.25f;
-	}
-	for (int i = 0; i < 4; ++i) {
-		mesh->vTexCoords.emplace_back(u, v);
-		v += 0.25f;
-	}
-	for (int i = 0; i < 4; ++i) {
-		mesh->vTexCoords.emplace_back(u, v);
-		u -= 0.25f;
-	}
-	for (int i = 0; i < 4; ++i) {
-		mesh->vTexCoords.emplace_back(u, v);
-		v -= 0.25f;
+	for (int i = 0; i < np; ++i) {
+		int state = (i % 8) / 2;
+
+		// Un vértice para la punta y otro para el valle
+		for (int j = 0; j < 2; ++j) {
+			mesh->vTexCoords.emplace_back(u, v);
+
+			switch (state) {
+			case 0:
+				u += 0.25f;
+				break;
+			case 1:
+				v += 0.25f;
+				break;
+			case 2:
+				u -= 0.25f;
+				break;
+			case 3:
+				v -= 0.25f;
+				break;
+			}
+		}	
 	}
 
 	mesh->vTexCoords.emplace_back(u, v);

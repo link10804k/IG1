@@ -300,7 +300,7 @@ void IG1App::takePhoto() {
 	stbi_flip_vertically_on_write(true);
 
 	// Guardamos la imagen como photo.bmp con los datos obtenidos anteriormente
-	stbi_write_bmp("photo.bmp", tx.width(), tx.height(), 3, data.get());
+	stbi_write_bmp("../screenshots/photo.bmp", tx.width(), tx.height(), 3, data.get());
 	
 	// Unbindeamos la textura
 	tx.unbind();
