@@ -36,6 +36,10 @@ public:
 	// transfers its viewport, the view matrix and projection matrix to the GPU
 	void upload() const;
 
+	// CNG: Nuevos atributos práctica 3
+	void moveLR(GLfloat cs);
+	void moveFB(GLfloat cs);
+	void moveUD(GLfloat cs);
 protected:
 	glm::vec3 mEye = {0.0, 0.0, 500.0}; // camera's position
 	glm::vec3 mLook = {0.0, 0.0, 0.0};  // target's position
@@ -56,6 +60,10 @@ protected:
 
 	void setVM();
 	void setPM();
+
+	// CNG: Nuevos atributos práctica 3
+	glm::vec3 mRight, mUpward, mFront;
+	void setAxes();
 };
 
 #endif //_H_Camera_H_

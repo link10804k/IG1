@@ -28,6 +28,7 @@ void
 Camera::setVM()
 {
 	mViewMat = lookAt(mEye, mLook, mUp); // glm::lookAt defines the view matrix
+	setAxes(); // CNG
 }
 
 void
@@ -53,6 +54,7 @@ Camera::pitch(GLfloat a)
 {
 	mViewMat = rotate(mViewMat, glm::radians(a), glm::vec3(1.0, 0, 0));
 	// glm::rotate returns mViewMat * rotationMatrix
+	setAxes(); // CNG
 }
 
 void
@@ -60,6 +62,7 @@ Camera::yaw(GLfloat a)
 {
 	mViewMat = rotate(mViewMat, glm::radians(a), glm::vec3(0, 1.0, 0));
 	// glm::rotate returns mViewMat * rotationMatrix
+	setAxes(); // CNG
 }
 
 void
@@ -67,6 +70,7 @@ Camera::roll(GLfloat a)
 {
 	mViewMat = rotate(mViewMat, glm::radians(a), glm::vec3(0, 0, 1.0));
 	// glm::rotate returns mViewMat * rotationMatrix
+	setAxes(); // CNG
 }
 
 void
@@ -100,6 +104,8 @@ Camera::setPM()
 		                 mFarVal);
 		// glm::ortho defines the orthogonal projection matrix
 	}
+
+	//setAxes(); // CNG
 }
 
 void
@@ -114,4 +120,33 @@ Camera::upload() const
 	mViewPort->upload();
 	uploadVM();
 	uploadPM();
+}
+
+// ASK: ¿row() debería estar en las librerías?
+glm::vec3 row(glm::mat4 mat, int row) {
+	return { mat[row][0], mat[row][1], mat[row][2] };
+}
+
+void Camera::setAxes() {
+	mRight = row(mViewMat, 0);
+	mUpward = row(mViewMat, 1);
+	mFront = -row(mViewMat, 2);
+}
+
+// ASK: Funcionan raro
+
+void Camera::moveLR(GLfloat cs) {
+	mEye += mRight * cs;
+	mLook += mRight * cs;
+	setVM();
+}
+void Camera::moveFB(GLfloat cs) {
+	mEye += mFront * cs;
+	mLook += mFront * cs;
+	setVM();
+}
+void Camera::moveUD(GLfloat cs) {
+	mEye += mUpward * cs;
+	mLook += mUpward * cs;
+	setVM();
 }

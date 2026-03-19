@@ -204,6 +204,25 @@ IG1App::key(unsigned int key)
 		case 'F':
 			takePhoto();
 			break;
+		// ASK: ¿Parametrizamos la velocidad de la cámara (y dónde)?
+		case 'a':
+			mCamera->moveLR(-5.0f);
+			break;
+		case 'd':
+			mCamera->moveLR(5.0f);
+			break;
+		case 'w':
+			mCamera->moveUD(5.0f);
+			break;
+		case 's':
+			mCamera->moveUD(-5.0f);
+			break;
+		case 'W':
+			mCamera->moveFB(-5.0f);
+			break;
+		case 'S':
+			mCamera->moveFB(5.0f);
+			break;
 		default:
 			if (key >= '0' && key <= '9') {
 				if (changeScene(key - '0')) break;
