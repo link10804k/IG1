@@ -104,6 +104,14 @@ Camera::setPM()
 		                 mFarVal);
 		// glm::ortho defines the orthogonal projection matrix
 	}
+	else {
+		mProjMat = frustum(xLeft * mScaleFact,
+						xRight * mScaleFact,
+						yBot * mScaleFact,
+						yTop * mScaleFact,
+						mNearVal,
+						mFarVal);
+	}
 
 	//setAxes(); // CNG
 }
@@ -151,6 +159,7 @@ void Camera::moveUD(GLfloat cs) {
 	setVM();
 }
 
+// ASK: No veo la diferencia
 void Camera::changePrj() {
 	bOrto = !bOrto;
 }
