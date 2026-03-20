@@ -40,6 +40,8 @@ public:
 	void moveLR(GLfloat cs);
 	void moveFB(GLfloat cs);
 	void moveUD(GLfloat cs);
+
+	void changePrj();
 protected:
 	glm::vec3 mEye = {0.0, 0.0, 500.0}; // camera's position
 	glm::vec3 mLook = {0.0, 0.0, 0.0};  // target's position

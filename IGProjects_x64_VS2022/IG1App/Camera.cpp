@@ -150,3 +150,7 @@ void Camera::moveUD(GLfloat cs) {
 	mLook += mUpward * cs;
 	setVM();
 }
+
+void Camera::changePrj() {
+	bOrto = !bOrto;
+}
