@@ -193,11 +193,10 @@ IG1App::key(unsigned int key)
 		case 'o':
 			mCamera->set2D();
 			break;
-		// CNG: Case nuevo para actualizar la escena
+		// CNG
 		case 'u':
 			update();
 			break;
-		// CNG: Case nuevo para alternar el update
 		case 'U':
 			mUpdateEnabled = !mUpdateEnabled;
 			break;
@@ -225,6 +224,7 @@ IG1App::key(unsigned int key)
 			break;
 		case 'p':
 			mCamera->changePrj();
+		// Fin 
 		default:
 			if (key >= '0' && key <= '9') {
 				if (changeScene(key - '0')) break;

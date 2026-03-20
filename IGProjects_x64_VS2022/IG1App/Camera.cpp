@@ -27,6 +27,7 @@ Camera::uploadVM() const
 void
 Camera::setVM()
 {
+	glm::mat4 aux = mViewMat;
 	mViewMat = lookAt(mEye, mLook, mUp); // glm::lookAt defines the view matrix
 	setAxes(); // CNG
 }
@@ -105,6 +106,7 @@ Camera::setPM()
 		// glm::ortho defines the orthogonal projection matrix
 	}
 	else {
+		// ASK: Está raro el frustum
 		mProjMat = frustum(xLeft * mScaleFact,
 						xRight * mScaleFact,
 						yBot * mScaleFact,
@@ -112,8 +114,6 @@ Camera::setPM()
 						mNearVal,
 						mFarVal);
 	}
-
-	//setAxes(); // CNG
 }
 
 void
@@ -159,7 +159,7 @@ void Camera::moveUD(GLfloat cs) {
 	setVM();
 }
 
-// ASK: No veo la diferencia
 void Camera::changePrj() {
 	bOrto = !bOrto;
+	setPM();
 }
