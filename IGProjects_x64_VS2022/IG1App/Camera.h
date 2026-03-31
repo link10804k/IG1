@@ -42,6 +42,13 @@ public:
 	void moveUD(GLfloat cs);
 
 	void changePrj();
+
+	void pitchReal(GLfloat cs);
+	void yawReal(GLfloat cs);
+	void rollReal(GLfloat cs);
+
+	void orbit(GLfloat incAng, GLfloat incY);
+	void setCenital();
 protected:
 	glm::vec3 mEye = {0.0, 0.0, 500.0}; // camera's position
 	glm::vec3 mLook = {0.0, 0.0, 0.0};  // target's position
@@ -54,7 +61,7 @@ protected:
 	void uploadPM() const; // transfers projMat to the GPU
 
 	GLfloat xRight, xLeft, yTop, yBot;     // size of scene visible area
-	GLfloat mNearVal = 1, mFarVal = 10000; // view volume
+	GLfloat mNearVal = 500, mFarVal = 10000; // view volume
 	GLfloat mScaleFact = 1;                // scale factor
 	bool bOrto = true;                      // orthogonal or perspective projection
 
@@ -66,6 +73,8 @@ protected:
 	// CNG: Nuevos atributos práctica 3
 	glm::vec3 mRight, mUpward, mFront;
 	void setAxes();
+
+	GLfloat mAng, mRadio;
 };
 
 #endif //_H_Camera_H_

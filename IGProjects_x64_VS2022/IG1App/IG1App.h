@@ -74,6 +74,22 @@ protected:
 	const double FRAME_DURATION = 0.033;
 	bool mUpdateEnabled = true;
 	double mNextUpdate = FRAME_DURATION;
+
+	// CNG: Adiciones para varias vistas
+	void display2V() const;
+	bool m2Vistas = false;
+
+	// CNG: Adiciones para controles de ratón
+	glm::dvec2 mMouseCoord;
+	int mMouseButt = GLFW_MOUSE_BUTTON_LAST;
+
+	static void s_mouse(GLFWwindow* win, int button, int state, int mods) { s_ig1app.mouse(button, state, mods); }
+	static void s_motion(GLFWwindow* win, double x, double y) { s_ig1app.motion(x, y); }
+	static void s_mouseWheel(GLFWwindow* win, double dx, double dy) { s_ig1app.mouseWheel(dx, dy); }
+
+	void mouse(int button, int state, int mods);
+	void motion(double x, double y);
+	void mouseWheel(double dx, double dy);
 };
 
 inline Viewport const&

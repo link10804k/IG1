@@ -38,6 +38,8 @@ Camera::set2D()
 	mEye = {0, 0, 500};
 	mLook = {0, 0, 0};
 	mUp = {0, 1, 0};
+	mAng = 270.0f;
+	mRadio = 500.0f;
 	setVM();
 }
 
@@ -47,6 +49,8 @@ Camera::set3D()
 	mEye = {500, 500, 500};
 	mLook = {0, 10, 0};
 	mUp = {0, 1, 0};
+	mAng = -45.0f;
+	mRadio = 500.0f;
 	setVM();
 }
 
@@ -106,7 +110,6 @@ Camera::setPM()
 		// glm::ortho defines the orthogonal projection matrix
 	}
 	else {
-		// ASK: Está raro el frustum
 		mProjMat = frustum(xLeft * mScaleFact,
 						xRight * mScaleFact,
 						yBot * mScaleFact,
@@ -132,7 +135,8 @@ Camera::upload() const
 
 // ASK: ¿row() debería estar en las librerías?
 glm::vec3 row(glm::mat4 mat, int row) {
-	return { mat[row][0], mat[row][1], mat[row][2] };
+	//return { mat[row][0], mat[row][1], mat[row][2] };
+	return { mat[0][row], mat[1][row], mat[2][row] };
 }
 
 void Camera::setAxes() {
@@ -162,4 +166,37 @@ void Camera::moveUD(GLfloat cs) {
 void Camera::changePrj() {
 	bOrto = !bOrto;
 	setPM();
+}
+
+void Camera::pitchReal(GLfloat cs) {
+	printf("pitch");
+	mLook += mUpward * cs;
+	setVM();
+}
+void Camera::yawReal(GLfloat cs) {
+	printf("yaw");
+	mLook += mRight * cs;
+	//mUp += mRight * cs;
+	setVM();
+}
+// TODO: No funciona
+void Camera::rollReal(GLfloat cs) {
+	printf("roll");
+	//mLook += mFront * cs;
+	mUp += mFront * cs;
+	setVM();
+}
+void Camera::orbit(GLfloat incAng, GLfloat incY) {
+	mAng += incAng;
+	mEye.x = mLook.x + cos(radians(mAng)) * mRadio;
+	mEye.z = mLook.z - sin(radians(mAng)) * mRadio;
+	mEye.y += incY;
+	setVM();
+}
+
+void Camera::setCenital() {
+	mEye = { 0.0f, 600.0f, 0.0f };
+	mUp = { -1, 0, 0 };
+	mLook = { 0.0f, 0.0f, 0.0f };
+	setVM();
 }

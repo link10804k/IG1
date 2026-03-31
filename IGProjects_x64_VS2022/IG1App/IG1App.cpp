@@ -20,10 +20,12 @@ IG1App IG1App::s_ig1app; // default constructor (constructor with no parameters)
 void GLAPIENTRY debugCallback(GLenum source, GLenum type, GLuint id, GLenum severity,
                    GLsizei length, const GLchar* message, const void* userParam)
 {
-	const char* prefix = (type == GL_DEBUG_TYPE_ERROR)
-		? "\x1b[31m[ERROR]\x1b[0m "
-		: "\x1b[33m[WARNING]\x1b[0m ";
-	cout << prefix << message << endl;
+	if (severity != GL_DEBUG_SEVERITY_NOTIFICATION && severity != GL_DEBUG_SEVERITY_LOW) {
+		const char* prefix = (type == GL_DEBUG_TYPE_ERROR)
+			? "\x1b[31m[ERROR]\x1b[0m "
+			: "\x1b[33m[WARNING]\x1b[0m ";
+		cout << prefix << message << endl;
+	}
 }
 
 void
@@ -124,6 +126,11 @@ IG1App::iniWinOpenGL()
 	glfwSetKeyCallback(mWindow, s_specialkey);
 	glfwSetWindowRefreshCallback(mWindow, s_display);
 
+	// CNG: Callbacks eventos de ratón
+	glfwSetMouseButtonCallback(mWindow, s_mouse);
+	glfwSetCursorPosCallback(mWindow, s_motion);
+	glfwSetScrollCallback(mWindow, s_mouseWheel);
+
 	// Error message callback (all messages)
 	glEnable(GL_DEBUG_OUTPUT);
 	glDebugMessageControl(GL_DONT_CARE, GL_DONT_CARE, GL_DONT_CARE, 0u, 0, GL_TRUE);
@@ -157,7 +164,10 @@ IG1App::display() const
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // clears the back buffer
 
-	mScenes[mCurrentScene]->render(*mCamera); // uploads the viewport and camera to the GPU
+	if (m2Vistas) 
+		display2V();
+	else
+		mScenes[mCurrentScene]->render(*mCamera); // uploads the viewport and camera to the GPU
 
 	glfwSwapBuffers(mWindow); // swaps the front and back buffer
 }
@@ -217,13 +227,16 @@ IG1App::key(unsigned int key)
 			mCamera->moveUD(-5.0f);
 			break;
 		case 'W':
-			mCamera->moveFB(-5.0f);
+			mCamera->moveFB(5.0f);
 			break;
 		case 'S':
-			mCamera->moveFB(5.0f);
+			mCamera->moveFB(-5.0f);
 			break;
 		case 'p':
 			mCamera->changePrj();
+			break;
+		case 'k':
+			m2Vistas = !m2Vistas;
 		// Fin 
 		default:
 			if (key >= '0' && key <= '9') {
@@ -255,21 +268,21 @@ IG1App::specialkey(int key, int scancode, int action, int mods)
 			break;
 		case GLFW_KEY_RIGHT:
 			if (mods == GLFW_MOD_CONTROL)
-				mCamera->pitch(-1); // rotates -1 on the X axis
+				mCamera->rollReal(-5); // rotates -1 on the X axis
 			else
-				mCamera->pitch(1); // rotates 1 on the X axis
+				mCamera->yawReal(5); // rotates 1 on the X axis
 			break;
 		case GLFW_KEY_LEFT:
 			if (mods == GLFW_MOD_CONTROL)
-				mCamera->yaw(1); // rotates 1 on the Y axis
+				mCamera->rollReal(5); // rotates 1 on the Y axis
 			else
-				mCamera->yaw(-1); // rotate -1 on the Y axis
+				mCamera->yawReal(-5); // rotate -1 on the Y axis
 			break;
 		case GLFW_KEY_UP:
-			mCamera->roll(1); // rotates 1 on the Z axis
+			mCamera->pitchReal(5); // rotates 1 on the Z axis
 			break;
 		case GLFW_KEY_DOWN:
-			mCamera->roll(-1); // rotates -1 on the Z axis
+			mCamera->pitchReal(-5); // rotates -1 on the Z axis
 			break;
 		default:
 			need_redisplay = false;
@@ -325,4 +338,67 @@ void IG1App::takePhoto() {
 	
 	// Unbindeamos la textura
 	tx.unbind();
+}
+
+void IG1App::display2V() const {
+	Camera auxCam = *mCamera;
+	Viewport auxVP = *mViewPort;
+	mViewPort->setSize(mWinW / 2, mWinH);
+
+	auxCam.setSize(mViewPort->width(), mViewPort->height());
+
+	// Vista 3D ortogonal:
+	mViewPort->setPos(0, 0);
+	auxCam.set3D();
+
+	mScenes[mCurrentScene]->render(auxCam);
+
+	// Vista cenital proyección:
+	mViewPort->setPos(mWinW / 2, 0);
+	auxCam.setCenital();
+	auxCam.changePrj();
+
+	mScenes[mCurrentScene]->render(auxCam);
+
+	*mViewPort = auxVP;
+}
+
+void IG1App::mouse(int button, int state, int mods) {
+	if (state == GLFW_PRESS)
+		mMouseButt = button;
+	else
+		mMouseButt = GLFW_MOUSE_BUTTON_LAST;
+	
+	glfwGetCursorPos(mWindow, &mMouseCoord.x, &mMouseCoord.y);
+}
+void IG1App::motion(double x, double y) {
+	if (mMouseButt == GLFW_MOUSE_BUTTON_RIGHT) {
+		glm::dvec2 displacement = glm::dvec2(x, y) - mMouseCoord;
+
+		mCamera->moveUD(displacement.y);
+		mCamera->moveLR(-displacement.x);
+
+		mNeedsRedisplay = true;
+		mMouseCoord = glm::dvec2(x, y);
+	}
+	else if (mMouseButt == GLFW_MOUSE_BUTTON_LEFT) {
+		glm::dvec2 displacement = glm::dvec2(x, y) - mMouseCoord;
+
+		mCamera->orbit(-displacement.x * 0.05, displacement.y);
+
+		mNeedsRedisplay = true;
+		mMouseCoord = glm::dvec2(x, y);
+	}
+}
+void IG1App::mouseWheel(double dx, double dy) {
+	if (glfwGetKey(mWindow, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS) {
+		// Escala la escena según el valor de d
+		mCamera->setScale(dy);
+	}
+	else {
+		// Desplaza la cámara en su dirección de vista
+		mCamera->moveFB(dy);
+	}
+
+	mNeedsRedisplay = true;
 }
