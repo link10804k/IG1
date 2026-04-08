@@ -90,6 +90,9 @@ protected:
 	void mouse(int button, int state, int mods);
 	void motion(double x, double y);
 	void mouseWheel(double dx, double dy);
+
+	//CNG: Adiciones para la vista de dos escenas
+	void set2Viewports();
 };
 
 inline Viewport const&
@@ -109,5 +112,6 @@ IG1App::scene()
 {
 	return *mScenes[mCurrentScene];
 }
+
 
 #endif //_H_IG1App_H_

@@ -83,6 +83,7 @@ IG1App::init()
 	//mScenes.push_back(new Scene2);
 	//mScenes.push_back(new Scene3);
 	mScenes.push_back(new Scene4);
+	mScenes.push_back(new Scene2);
 
 	mCamera->set2D();
 
@@ -236,7 +237,7 @@ IG1App::key(unsigned int key)
 			mCamera->changePrj();
 			break;
 		case 'k':
-			m2Vistas = !m2Vistas;
+			set2Viewports();
 		// Fin 
 		default:
 			if (key >= '0' && key <= '9') {
@@ -311,7 +312,12 @@ IG1App::changeScene(size_t sceneNr)
 }
 
 void IG1App::update() {
-	mScenes[mCurrentScene]->update();
+	if (m2Vistas) {
+		mScenes[0]->update();
+		mScenes[1]->update();
+	}
+	else
+		mScenes[mCurrentScene]->update();
 }
 
 void IG1App::takePhoto() {
@@ -351,14 +357,15 @@ void IG1App::display2V() const {
 	mViewPort->setPos(0, 0);
 	auxCam.set3D();
 
-	mScenes[mCurrentScene]->render(auxCam);
+	mScenes[0]->render(auxCam);
 
 	// Vista cenital proyección:
 	mViewPort->setPos(mWinW / 2, 0);
-	auxCam.setCenital();
-	auxCam.changePrj();
+	//auxCam.setCenital();
+	//auxCam.changePrj();
+	auxCam.set2D();
 
-	mScenes[mCurrentScene]->render(auxCam);
+	mScenes[1]->render(auxCam);
 
 	*mViewPort = auxVP;
 }
@@ -401,4 +408,22 @@ void IG1App::mouseWheel(double dx, double dy) {
 	}
 
 	mNeedsRedisplay = true;
+}
+
+void IG1App::set2Viewports() {
+	if (m2Vistas) {
+		// Descargamos la 4 y la 2
+		mScenes[0]->unload();
+		mScenes[1]->unload();
+		// Cargamos la actual
+		mScenes[mCurrentScene]->load();
+	}
+	else {
+		// Descargamos la actual
+		mScenes[mCurrentScene]->unload();
+		// Cargamos la 4 y la 2
+		mScenes[0]->load();
+		mScenes[1]->load();
+	}
+	m2Vistas = !m2Vistas;
 }

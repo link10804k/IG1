@@ -10,6 +10,7 @@ Box::Box(GLdouble length) : BoxOutline(length), length(length) {
 
 Box::~Box() {
 	delete mMeshLid;
+	mMeshLid = nullptr;
 }
 
 void Box::update() {

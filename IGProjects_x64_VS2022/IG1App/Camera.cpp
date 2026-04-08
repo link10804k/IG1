@@ -3,6 +3,7 @@
 
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include <glm/gtc/matrix_access.hpp>
 
 using namespace glm;
 
@@ -133,19 +134,11 @@ Camera::upload() const
 	uploadPM();
 }
 
-// ASK: ¿row() debería estar en las librerías?
-glm::vec3 row(glm::mat4 mat, int row) {
-	//return { mat[row][0], mat[row][1], mat[row][2] };
-	return { mat[0][row], mat[1][row], mat[2][row] };
-}
-
 void Camera::setAxes() {
 	mRight = row(mViewMat, 0);
 	mUpward = row(mViewMat, 1);
 	mFront = -row(mViewMat, 2);
 }
-
-// ASK: Funcionan raro
 
 void Camera::moveLR(GLfloat cs) {
 	mEye += mRight * cs;
@@ -169,22 +162,20 @@ void Camera::changePrj() {
 }
 
 void Camera::pitchReal(GLfloat cs) {
-	printf("pitch");
 	mLook += mUpward * cs;
 	setVM();
+
 }
 void Camera::yawReal(GLfloat cs) {
-	printf("yaw");
 	mLook += mRight * cs;
-	//mUp += mRight * cs;
 	setVM();
+
 }
-// TODO: No funciona
 void Camera::rollReal(GLfloat cs) {
-	printf("roll");
-	//mLook += mFront * cs;
-	mUp += mFront * cs;
+	// Rotamos el vector Front y lo multiplicamos por el up
+	mUp = glm::rotate(glm::mat4(1.0f), glm::radians(cs), mFront) * glm::vec4(mUp, 0.0f);
 	setVM();
+
 }
 void Camera::orbit(GLfloat incAng, GLfloat incY) {
 	mAng += incAng;
