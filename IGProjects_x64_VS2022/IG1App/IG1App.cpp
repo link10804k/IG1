@@ -6,6 +6,7 @@
 #include "Scene2.h"
 #include "Scene3.h"
 #include "Scene4.h"
+#include "Scene5.h"
 
 #include "TextureManager.h"
 #include "Texture.h"
@@ -78,12 +79,12 @@ IG1App::init()
 	mViewPort = new Viewport(mWinW, mWinH);
 	mCamera = new Camera(mViewPort);
 
-	//mScenes.push_back(new Scene);
-	//mScenes.push_back(new Scene1);
-	//mScenes.push_back(new Scene2);
-	//mScenes.push_back(new Scene3);
-	mScenes.push_back(new Scene4);
+	mScenes.push_back(new Scene);
+	mScenes.push_back(new Scene1);
 	mScenes.push_back(new Scene2);
+	mScenes.push_back(new Scene3);
+	mScenes.push_back(new Scene4);
+	mScenes.push_back(new Scene5);
 
 	mCamera->set2D();
 
@@ -214,7 +215,6 @@ IG1App::key(unsigned int key)
 		case 'F':
 			takePhoto();
 			break;
-		// ASK: ¿Parametrizamos la velocidad de la cámara (y dónde)?
 		case 'a':
 			mCamera->moveLR(-5.0f);
 			break;
@@ -238,6 +238,7 @@ IG1App::key(unsigned int key)
 			break;
 		case 'k':
 			set2Viewports();
+			break;
 		// Fin 
 		default:
 			if (key >= '0' && key <= '9') {
@@ -271,13 +272,13 @@ IG1App::specialkey(int key, int scancode, int action, int mods)
 			if (mods == GLFW_MOD_CONTROL)
 				mCamera->rollReal(-5); // rotates -1 on the X axis
 			else
-				mCamera->yawReal(5); // rotates 1 on the X axis
+				mCamera->yawReal(-5); // rotates 1 on the X axis
 			break;
 		case GLFW_KEY_LEFT:
 			if (mods == GLFW_MOD_CONTROL)
 				mCamera->rollReal(5); // rotates 1 on the Y axis
 			else
-				mCamera->yawReal(-5); // rotate -1 on the Y axis
+				mCamera->yawReal(5); // rotate -1 on the Y axis
 			break;
 		case GLFW_KEY_UP:
 			mCamera->pitchReal(5); // rotates 1 on the Z axis

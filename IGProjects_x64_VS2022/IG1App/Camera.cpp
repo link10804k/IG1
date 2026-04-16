@@ -1,9 +1,11 @@
 #include "Shader.h"
 #include "Camera.h"
 
+#define GLM_ENABLE_EXPERIMENTAL
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/gtc/matrix_access.hpp>
+#include <glm/gtx/rotate_vector.hpp>
 
 using namespace glm;
 
@@ -111,10 +113,11 @@ Camera::setPM()
 		// glm::ortho defines the orthogonal projection matrix
 	}
 	else {
-		mProjMat = frustum(xLeft * mScaleFact,
-						xRight * mScaleFact,
-						yBot * mScaleFact,
-						yTop * mScaleFact,
+		GLfloat aspectRatio = mNearVal / glm::distance(mEye, mLook);
+		mProjMat = frustum(xLeft * mScaleFact * aspectRatio,
+						xRight * mScaleFact * aspectRatio,
+						yBot * mScaleFact * aspectRatio,
+						yTop * mScaleFact * aspectRatio,
 						mNearVal,
 						mFarVal);
 	}
@@ -162,18 +165,20 @@ void Camera::changePrj() {
 }
 
 void Camera::pitchReal(GLfloat cs) {
-	mLook += mUpward * cs;
+	mLook = mEye + glm::rotate(mLook - mEye, glm::radians(cs), mRight);
+	mUp = glm::rotate(mUp, glm::radians(cs), mRight);
 	setVM();
 
 }
 void Camera::yawReal(GLfloat cs) {
-	mLook += mRight * cs;
+	mLook = mEye + glm::rotate(mLook - mEye, glm::radians(cs), mUpward);
+	mUp = glm::rotate(mUp, glm::radians(cs), mUpward);
 	setVM();
 
 }
 void Camera::rollReal(GLfloat cs) {
 	// Rotamos el vector Front y lo multiplicamos por el up
-	mUp = glm::rotate(glm::mat4(1.0f), glm::radians(cs), mFront) * glm::vec4(mUp, 0.0f);
+	mUp = glm::rotate(mUp, glm::radians(cs), mFront);
 	setVM();
 
 }
