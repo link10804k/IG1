@@ -19,5 +19,7 @@ public:
 	// nSamples: número de muestras que conforman la figura
 	// angleMax: ángulo de rotación de la figura completa
 	static IndexMesh* generateByRevolution(const std::vector<glm::vec2>& profile, GLuint nSamples, GLfloat angleMax = 2 * std::numbers::pi);
+
+	void buildNormalVectors();
 };
 

@@ -411,6 +411,7 @@ void IG1App::mouseWheel(double dx, double dy) {
 	mNeedsRedisplay = true;
 }
 
+// TODO: "Carga excesiva de escenas en set2Viewports()."
 void IG1App::set2Viewports() {
 	if (m2Vistas) {
 		// Descargamos la 4 y la 2

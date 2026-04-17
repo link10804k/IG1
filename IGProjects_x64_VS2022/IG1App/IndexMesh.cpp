@@ -1,11 +1,11 @@
-#include "IndexMesh.h"
+ï»¿#include "IndexMesh.h"
 
 void IndexMesh::draw() const {
 	glDrawElements(
 		mPrimitive, // primitiva ( GL_TRIANGLES , etc.)
-		vIndexes.size(), // número de índices
-		GL_UNSIGNED_INT, // tipo de los índices
-		nullptr // offset en el VBO de índices
+		vIndexes.size(), // nÃºmero de Ã­ndices
+		GL_UNSIGNED_INT, // tipo de los Ã­ndices
+		nullptr // offset en el VBO de Ã­ndices
 	);
 }
 
@@ -35,28 +35,50 @@ void IndexMesh::unload() {
 }
 
 IndexMesh* IndexMesh::generateByRevolution(const std::vector<glm::vec2>& profile, GLuint nSamples, GLfloat angleMax) {
-	IndexMesh* mesh = new IndexMesh;
-	mesh->mPrimitive = GL_TRIANGLES;
-	int tamPerfil = profile.size();
-	mesh->vVertices.reserve(nSamples * tamPerfil);
-
-	// Genera los vértices de las muestras
-	GLdouble theta1 = 2 * std::numbers::pi / nSamples;
-	for (int i = 0; i <= nSamples; ++i) { // muestra i-ésima
-		GLdouble c = cos(i * theta1), s = sin(i * theta1);
-		for (auto p : profile) // rota el perfil
-			mesh->vVertices.emplace_back(p.x * c, p.y, -p.x * s);
-		for (int i = 0; i < nSamples; ++i) // caras i a i + 1
-			for (int j = 0; j < tamPerfil - 1; ++j) { // una cara
-				if (profile[j].x != 0.0) // triángulo inferior
-					for (auto [s, t] : { std::pair{i, j}, {i, j + 1}, {i + 1, j} })
-						mesh->vIndexes.push_back(s * tamPerfil + t);
-				if (profile[j + 1].x != 0.0) // triángulo superior
-					for (auto [s, t] : { std::pair{i, j + 1}, {i + 1, j + 1}, {i + 1, j} })
-						mesh->vIndexes.push_back(s * tamPerfil + t);
-			}
+		IndexMesh* mesh = new IndexMesh;
+		mesh->mPrimitive = GL_TRIANGLES;
+		int tamPerfil = profile.size();
+		mesh->vVertices.reserve(nSamples * tamPerfil);
+		// Genera los vÃ©rtices de las muestras
+		GLdouble theta1 = 2 * std::numbers::pi / nSamples;
+		for (int i = 0; i <= nSamples; ++i) { // muestra i-Ã©sima
+			GLdouble c = cos(i * theta1), s = sin(i * theta1);
+			for (auto p : profile) // rota el perfil
+				mesh->vVertices.emplace_back(p.x * c, p.y, -p.x * s);
+			for (int i = 0; i < nSamples; ++i) // caras i a i + 1
+				for (int j = 0; j < tamPerfil - 1; ++j) { // una cara
+					if (profile[j].x != 0.0) // triÃ¡ngulo inferior
+						for (auto [s, t] : { std::pair{i, j}, {i + 1, j}, {i, j + 1} })
+							mesh->vIndexes.push_back(s * tamPerfil + t);
+					if (profile[j + 1].x != 0.0) // triÃ¡ngulo superior
+						for (auto [s, t] : { std::pair{i, j + 1}, {i + 1, j}, {i + 1, j + 1} })
+							mesh->vIndexes.push_back(s * tamPerfil + t);
+				}
+		}
 		mesh->mNumVertices = mesh->vVertices.size();
+
+		// Buildeamos sus normales
+		mesh->buildNormalVectors();
+
 		return mesh;
 	}
+
+void IndexMesh::buildNormalVectors() {
+	int n = vVertices.size();
+	int m = vIndexes.size();
+
+	vNormals.clear();
+	vNormals.resize(mNumVertices, {0.0, 0.0, 0.0});
+
+	for (int k = 0; k < m; k += 3) {
+		glm::vec3 normal = normalize(cross(vVertices[vIndexes[k + 1]] - vVertices[vIndexes[k]], vVertices[vIndexes[k + 2]] - vVertices[vIndexes[k]]));
+		vNormals[vIndexes[k]] += normal;
+		vNormals[vIndexes[k+1]] += normal;
+		vNormals[vIndexes[k+2]] += normal;
+	}	
+	for (int j = 0; j < n; ++j) {
+		vNormals[j] = normalize(vNormals[j]);
+	}
 }
+
 	

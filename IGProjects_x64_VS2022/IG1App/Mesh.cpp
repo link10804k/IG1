@@ -59,7 +59,6 @@ Mesh::load()
 			glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, sizeof(vec4), nullptr);
 			glEnableVertexAttribArray(1);
 		}
-
 		if (vTexCoords.size() > 0) {
 			glGenBuffers(1, &mTCO); // Creamos el buffer de coordenadas de texturas
 
@@ -69,6 +68,14 @@ Mesh::load()
 			glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(glm::vec2), nullptr); // Definimos los atributos del buffer 
 																						 // (índice, tamaño, tipo, normalización, stride)
 			glEnableVertexAttribArray(2); // Activamos el buffer
+		}
+		if (vNormals.size() > 0) {
+			glGenBuffers(1, &mNBO);
+
+			glBindBuffer(GL_ARRAY_BUFFER, mNBO);
+			glBufferData(GL_ARRAY_BUFFER, vNormals.size() * sizeof(vec3), vNormals.data(), GL_STATIC_DRAW);
+			glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, sizeof(vec3), nullptr);
+			glEnableVertexAttribArray(3);
 		}
 	}
 }
@@ -86,10 +93,13 @@ Mesh::unload()
 			glDeleteBuffers(1, &mCBO);
 			mCBO = NONE;
 		}
-
 		if (mTCO != NONE) {
 			glDeleteBuffers(1, &mTCO);
 			mTCO = NONE;
+		}
+		if (mNBO != NONE) {
+			glDeleteBuffers(1, &mNBO);
+			mNBO = NONE;
 		}
 	}
 }
