@@ -7,10 +7,13 @@
 #include "Scene3.h"
 #include "Scene4.h"
 #include "Scene5.h"
+#include "Scene6.h"
 
 #include "TextureManager.h"
 #include "Texture.h"
 #include "stb_image_write.h"
+
+#include "ColorMaterialEntity.h"
 
 using namespace std;
 
@@ -85,6 +88,7 @@ IG1App::init()
 	mScenes.push_back(new Scene3);
 	mScenes.push_back(new Scene4);
 	mScenes.push_back(new Scene5);
+	mScenes.push_back(new Scene6);
 
 	mCamera->set2D();
 
@@ -238,6 +242,9 @@ IG1App::key(unsigned int key)
 			break;
 		case 'k':
 			set2Viewports();
+			break;
+		case 'N':
+			ColorMaterialEntity::toggleShowNormals();
 			break;
 		// Fin 
 		default:

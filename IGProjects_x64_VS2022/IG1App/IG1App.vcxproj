@@ -81,6 +81,7 @@
     <ClInclude Include="Grass.h" />
     <ClInclude Include="Ground.h" />
     <ClInclude Include="IG1App.h" />
+    <ClInclude Include="IndexedBox.h" />
     <ClInclude Include="IndexMesh.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="Image.h" />
@@ -95,6 +96,7 @@
     <ClInclude Include="Scene3.h" />
     <ClInclude Include="Scene4.h" />
     <ClInclude Include="Scene5.h" />
+    <ClInclude Include="Scene6.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="SingleColorEntity.h" />
     <ClInclude Include="Star3D.h" />
@@ -115,6 +117,7 @@
     <ClCompile Include="Grass.cpp" />
     <ClCompile Include="Ground.cpp" />
     <ClCompile Include="IG1App.cpp" />
+    <ClCompile Include="IndexedBox.cpp" />
     <ClCompile Include="IndexMesh.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mesh.cpp" />
@@ -130,6 +133,7 @@
     <ClCompile Include="Scene3.cpp" />
     <ClCompile Include="Scene4.cpp" />
     <ClCompile Include="Scene5.cpp" />
+    <ClCompile Include="Scene6.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="SingleColorEntity.cpp" />
     <ClCompile Include="Star3D.cpp" />

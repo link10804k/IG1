@@ -13,12 +13,12 @@ Torus::Torus(GLdouble R, GLdouble r, GLuint nPoints, GLuint nSamples) {
 	
 	GLdouble angleCount = glm::radians(270.0f);
 	// Se colocan los vértices siguiendo una circunferencia
-	for (GLuint i = 0; i < nPoints; ++i) {
+	for (GLuint i = 0; i <= nPoints; ++i) {
 		GLdouble x = centerX + r * glm::cos(angleCount);
 		GLdouble y = centerY + r * glm::sin(angleCount);
 		profile.emplace_back(x, y);
 	
-		angleCount += glm::radians(360.0 / nPoints - 1);
+		angleCount += glm::radians(360.0 / nPoints);
 	}
     mMesh = IndexMesh::generateByRevolution(profile, nSamples);
 }

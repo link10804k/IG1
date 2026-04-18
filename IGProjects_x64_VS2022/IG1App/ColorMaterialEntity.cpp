@@ -4,6 +4,7 @@
 
 ColorMaterialEntity::ColorMaterialEntity() {
 	mShader = Shader::get("simple_light");
+	normalShader = Shader::get("normals");
 }
 
 void ColorMaterialEntity::render(const glm::mat4& modelViewMat) const {
@@ -13,7 +14,12 @@ void ColorMaterialEntity::render(const glm::mat4& modelViewMat) const {
 		mShader->use();
 		glm::mat4 viewMat = IG1App::s_ig1app.camera().viewMat();
 		mShader->setUniform("lightDir", viewMat * glm::vec4(-1, -1.5, -1.25, 0));
+		mShader->setUniform("color", mColor);
+		mMesh->render();
 
-        SingleColorEntity::render(aMat);
+		if (mShowNormals) {
+			normalShader->use();
+			mMesh->render();
+		}
 	}
 }
