@@ -13,6 +13,7 @@ void ColorMaterialEntity::render(const glm::mat4& modelViewMat) const {
 
 		mShader->use();
 		glm::mat4 viewMat = IG1App::s_ig1app.camera().viewMat();
+		// ASK: Se ve mal multiplicando por viewMat
 		mShader->setUniform("lightDir", viewMat * glm::vec4(-1, -1.5, -1.25, 0));
 		mShader->setUniform("color", mColor);
 		mMesh->render();

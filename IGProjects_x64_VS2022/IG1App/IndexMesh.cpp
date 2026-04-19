@@ -105,7 +105,7 @@ IndexMesh* IndexMesh::generateByRevolution(const std::vector<glm::vec2>& profile
 	return mesh;
 }
 
-IndexMesh* IndexMesh::generateIndexBox8(GLdouble l){
+IndexMesh* IndexMesh::generateIndexedBox8(GLdouble l){
 	IndexMesh* mesh = new IndexMesh;
 	mesh->mPrimitive = GL_TRIANGLES;
 
@@ -122,13 +122,70 @@ IndexMesh* IndexMesh::generateIndexBox8(GLdouble l){
 	mesh->vVertices.emplace_back(-l, l, -l);
 	mesh->vVertices.emplace_back(-l, -l, -l);
 
+	// TODO: Están mása o menos las normales
 	mesh->vIndexes = {  0, 1, 2, 2, 1, 3, 
 						2, 3, 4, 4, 3, 5, 
 						4, 5, 6, 6, 5, 7, 
 						6, 7, 0, 0, 7, 1, 
 						4, 6, 2, 2, 6, 0, 
 						1, 7, 3, 3, 7, 5 };
+
+	std::reverse(mesh->vIndexes.begin(), mesh->vIndexes.end());
 	
+	mesh->buildNormalVectors();
+
+	return mesh;
+}
+
+IndexMesh* IndexMesh::generateIndexedBox(GLdouble l) {
+	IndexMesh* mesh = new IndexMesh;
+	mesh->mPrimitive = GL_TRIANGLES;
+
+	mesh->mNumVertices = 24;
+	mesh->vVertices.reserve(mesh->mNumVertices);
+	mesh->vIndexes.reserve(36);
+
+	mesh->vVertices.emplace_back(l, l, -l); // 0
+	mesh->vVertices.emplace_back(l, -l, -l); // 1
+	mesh->vVertices.emplace_back(l, l, l); // 2
+	mesh->vVertices.emplace_back(l, -l, l); // 3
+
+	mesh->vVertices.emplace_back(l, l, l); // 2
+	mesh->vVertices.emplace_back(l, -l, l); // 3
+	mesh->vVertices.emplace_back(-l, l, l); // 4
+	mesh->vVertices.emplace_back(-l, -l, l); // 5
+
+	mesh->vVertices.emplace_back(-l, l, l); // 4
+	mesh->vVertices.emplace_back(-l, -l, l); // 5
+	mesh->vVertices.emplace_back(-l, l, -l); // 6
+	mesh->vVertices.emplace_back(-l, -l, -l); // 7
+
+	mesh->vVertices.emplace_back(-l, l, -l); // 6
+	mesh->vVertices.emplace_back(-l, -l, -l); // 7
+	mesh->vVertices.emplace_back(l, l, -l); // 0
+	mesh->vVertices.emplace_back(l, -l, -l); // 1
+
+	mesh->vVertices.emplace_back(-l, l, l); // 4
+	mesh->vVertices.emplace_back(-l, l, -l); // 6
+	mesh->vVertices.emplace_back(l, l, l); // 2
+	mesh->vVertices.emplace_back(l, l, -l); // 0
+
+	mesh->vVertices.emplace_back(l, -l, -l); // 1
+	mesh->vVertices.emplace_back(-l, -l, -l); // 7
+	mesh->vVertices.emplace_back(l, -l, l); // 3
+	mesh->vVertices.emplace_back(-l, -l, l); // 5
+
+	// TODO: Están mása o menos las normales
+	// 0, 1, 2, 2, 1, 3
+	mesh->vIndexes = { 0, 1, 2, 2, 1, 3,
+						4, 5, 6, 6, 5, 7,
+						8, 9, 10, 10, 9, 11,
+						12, 13, 14, 14, 13, 15,
+						16, 17, 18, 18, 17, 19,
+						20, 21, 22, 22, 21, 23 };
+
+	std::reverse(mesh->vIndexes.begin(), mesh->vIndexes.end());
+
 	mesh->buildNormalVectors();
 
 	return mesh;

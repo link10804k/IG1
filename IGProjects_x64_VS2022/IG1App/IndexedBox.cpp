@@ -3,5 +3,5 @@
 #include "IndexMesh.h"
 
 IndexedBox::IndexedBox(GLdouble l){
-    mMesh = IndexMesh::generateIndexBox8(l);
+    mMesh = IndexMesh::generateIndexedBox(l);
 }

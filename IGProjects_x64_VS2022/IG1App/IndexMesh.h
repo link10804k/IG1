@@ -20,7 +20,8 @@ public:
 	// angleMax: ángulo de rotación de la figura completa
 	static IndexMesh* generateByRevolution(const std::vector<glm::vec2>& profile, GLuint nSamples, GLfloat angleMax = 2 * std::numbers::pi);
 
-	static IndexMesh* generateIndexBox8(GLdouble l);
+	static IndexMesh* generateIndexedBox8(GLdouble l);
+	static IndexMesh* generateIndexedBox(GLdouble l);
 
 	void buildNormalVectors();
 };
