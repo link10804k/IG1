@@ -10,6 +10,7 @@
 #include "Scene6.h"
 #include "Scene7.h"
 #include "Scene8.h"
+#include "Scene9.h"
 
 #include "TextureManager.h"
 #include "Texture.h"
@@ -93,6 +94,7 @@ IG1App::init()
 	mScenes.push_back(new Scene6);
 	mScenes.push_back(new Scene7);
 	mScenes.push_back(new Scene8);
+	mScenes.push_back(new Scene9);
 
 	mCamera->set2D();
 
@@ -250,6 +252,12 @@ IG1App::key(unsigned int key)
 		case 'N':
 			ColorMaterialEntity::toggleShowNormals();
 			break;
+		case 'f':
+			mScenes[mCurrentScene]->rotate();
+			break;
+		case 'g':
+			mScenes[mCurrentScene]->orbit();
+			break;
 		// Fin 
 		default:
 			if (key >= '0' && key <= '9') {
@@ -318,6 +326,9 @@ IG1App::changeScene(size_t sceneNr)
 		mScenes[mCurrentScene]->unload();
 		mCurrentScene = sceneNr;
 		mScenes[mCurrentScene]->load();
+
+		if (mCurrentScene == 8) glClearColor(0, 0, 0, 1);
+		else glClearColor(0.6, 0.7, 0.8, 1.0);
 	}
 
 	return true;

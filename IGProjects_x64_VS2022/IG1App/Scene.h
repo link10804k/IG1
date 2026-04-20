@@ -27,6 +27,11 @@ public:
 	void load();
 	void unload();
 
+	void scene();
+
+	// CNG: Adiciones para rotar el androide
+	virtual void rotate() {}
+	virtual void orbit() {}
 protected:
 	void destroy();
 	void setGL();

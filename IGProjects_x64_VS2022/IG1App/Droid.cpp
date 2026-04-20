@@ -14,6 +14,8 @@ Droid::Droid(GLdouble radius) {
     cuerpoMesh->setTexture(TEXTURE_MANAGER->getTexture("container.jpg"));
     addEntity(cuerpoMesh);
 
+    body = cuerpoMesh;
+
     // Cabeza
     CompoundEntity* cabeza = new CompoundEntity();
     cabeza->setModelMat(glm::translate(cabeza->modelMat(), glm::vec3(0, radius, 0)));
@@ -40,6 +42,11 @@ Droid::Droid(GLdouble radius) {
     ojoDerMesh->setModelMat(glm::rotate(ojoDerMesh->modelMat(), glm::radians(90.0f), glm::vec3(1, 0, 0)));
     ojoDerMesh->setColor({0, 1, 0, 1});
     cabeza->addEntity(ojoDerMesh);
- 
+}
 
+void Droid::walk() {
+    assert(body != nullptr);
+
+    float angle = 5.0f;
+    body->setModelMat(glm::rotate(body->modelMat(), glm::radians(angle), glm::vec3(1, 0, 0)));
 }

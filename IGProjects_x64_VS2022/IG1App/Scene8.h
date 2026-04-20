@@ -3,9 +3,18 @@
 
 #include "Scene.h"
 
+class Droid;
+class CompoundEntity;
+
 class Scene8 : public Scene {
 public:
 	void init() override;
+
+	void rotate() override;
+	void orbit() override;
+private:
+	CompoundEntity* ghost = nullptr;
+	Droid* droid = nullptr;
 };
 
 #endif
