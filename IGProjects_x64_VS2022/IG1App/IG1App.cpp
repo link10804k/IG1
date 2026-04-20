@@ -8,6 +8,8 @@
 #include "Scene4.h"
 #include "Scene5.h"
 #include "Scene6.h"
+#include "Scene7.h"
+#include "Scene8.h"
 
 #include "TextureManager.h"
 #include "Texture.h"
@@ -89,6 +91,8 @@ IG1App::init()
 	mScenes.push_back(new Scene4);
 	mScenes.push_back(new Scene5);
 	mScenes.push_back(new Scene6);
+	mScenes.push_back(new Scene7);
+	mScenes.push_back(new Scene8);
 
 	mCamera->set2D();
 

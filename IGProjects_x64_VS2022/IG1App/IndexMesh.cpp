@@ -1,5 +1,6 @@
 ﻿#include "IndexMesh.h"
 
+
 #include <algorithm>
 
 void IndexMesh::draw() const {
@@ -59,6 +60,7 @@ IndexMesh* IndexMesh::generateByRevolution(const std::vector<glm::vec2>& profile
 	mesh->mPrimitive = GL_TRIANGLES;
 	int tamPerfil = profile.size();
 	mesh->vVertices.reserve(nSamples * tamPerfil);
+	mesh->vTexCoords.reserve(nSamples * tamPerfil);
 
 	// Genera los vértices de las muestras
 	GLdouble theta1 = angleMax / nSamples;
@@ -68,12 +70,16 @@ IndexMesh* IndexMesh::generateByRevolution(const std::vector<glm::vec2>& profile
 
 		for (auto p : profile) // rota el perfil
 			mesh->vVertices.emplace_back(p.x * c, p.y, -p.x * s);
-	}
-	
-	// Si k == 1 significa que el cuerpo de revolución se tiene que cerrar por el final por lo que este for da una vuelta de menos para dejar la vuelta especial para otro bucle for
-	int k = angleMax - 2 * (float)std::numbers::pi <= std::numeric_limits<float>::epsilon();
 
-	for (int i = 0; i < nSamples - k; ++i){ // caras i a i + 1
+		// Coordenadas de textura
+		for (int j = 0; j < profile.size(); ++j) {
+			float u = float(i) / nSamples;
+			float v = 1.0 - j / (profile.size() - 1.0);
+			mesh->vTexCoords.emplace_back(u, v);
+		}
+	}
+
+	for (int i = 0; i < nSamples; ++i){ // caras i a i + 1
 		for (int j = 0; j < tamPerfil - 1; ++j) { // una cara
 			if (profile[j].x != 0.0) // triángulo inferior
 				for (auto [s, t] : { std::pair{i, j}, {i + 1, j}, {i, j + 1} })
@@ -84,22 +90,23 @@ IndexMesh* IndexMesh::generateByRevolution(const std::vector<glm::vec2>& profile
 		}
 	}
 
-	if (k) {
-		for (int j = 0; j < tamPerfil - 1; ++j) { // una cara
-			int i = nSamples - 1;
-			if (profile[j].x != 0.0) // triángulo inferior
-				for (auto [s, t] : { std::pair{i, j}, {(i + 1) % nSamples, j}, {i, j + 1} })
-					mesh->vIndexes.push_back(s * tamPerfil + t);
-			if (profile[j + 1].x != 0.0) // triángulo superior
-				for (auto [s, t] : { std::pair{i, j + 1}, {(i + 1) % nSamples, j}, {(i + 1) % nSamples, j + 1} })
-					mesh->vIndexes.push_back(s * tamPerfil + t);
-		}
-	}
-		
+	// TODO: Se ve una línea entre el último y el primer vértice
+
+	//if (angleMax - 2 * (float)std::numbers::pi <= std::numeric_limits<float>::epsilon()) {
+	//	int i = nSamples;
+	//	for (int j = 0; j < tamPerfil - 1; ++j) { // una cara
+	//		if (profile[j].x != 0.0) // triángulo inferior
+	//			for (auto [s, t] : { std::pair{i, j}, {0, j}, {i, j + 1}})
+	//				mesh->vIndexes.push_back(s * tamPerfil + t);
+	//		if (profile[j + 1].x != 0.0) // triángulo superior
+	//			for (auto [s, t] : { std::pair{i, j + 1}, {0, j}, {0, j + 1} })
+	//				mesh->vIndexes.push_back(s * tamPerfil + t);
+	//	}
+	//}
 		
 	mesh->mNumVertices = mesh->vVertices.size();
 
-	// Buildeamos sus normales
+	// Construimos sus normales
 	mesh->buildNormalVectors();
 
 	return mesh;
@@ -191,3 +198,21 @@ IndexMesh* IndexMesh::generateIndexedBox(GLdouble l) {
 	return mesh;
 }
 
+IndexMesh* IndexMesh::generateSphere(GLdouble radius, GLuint nParallels, GLuint mMeridians){
+	std::vector<glm::vec2> profile;
+	profile.reserve(nParallels);
+
+	GLdouble angleCount = glm::radians(270.0f);
+	// Se colocan los vértices siguiendo una semicircunferencia
+	for (GLuint i = 0; i < nParallels; ++i) {
+		GLdouble x = radius * glm::cos(angleCount);
+		GLdouble y = radius * glm::sin(angleCount);
+		profile.emplace_back(x, y);
+
+		angleCount += glm::radians(180.0 / nParallels);
+	}
+	// Colocamos el último vértice a mano para evitar errores de punto flotante
+	profile.emplace_back(0, radius);
+
+	return IndexMesh::generateByRevolution(profile, mMeridians * 2);
+}
