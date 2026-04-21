@@ -2,6 +2,7 @@
 
 #include "Sphere.h"
 #include "Droid.h"
+#include "CompoundEntity.h"
 
 #include "glm/gtc/matrix_transform.hpp"
 

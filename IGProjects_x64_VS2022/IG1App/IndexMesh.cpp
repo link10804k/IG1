@@ -89,20 +89,6 @@ IndexMesh* IndexMesh::generateByRevolution(const std::vector<glm::vec2>& profile
 					mesh->vIndexes.push_back(s * tamPerfil + t);
 		}
 	}
-
-	// TODO: Se ve una línea entre el último y el primer vértice
-
-	//if (angleMax - 2 * (float)std::numbers::pi <= std::numeric_limits<float>::epsilon()) {
-	//	int i = nSamples;
-	//	for (int j = 0; j < tamPerfil - 1; ++j) { // una cara
-	//		if (profile[j].x != 0.0) // triángulo inferior
-	//			for (auto [s, t] : { std::pair{i, j}, {0, j}, {i, j + 1}})
-	//				mesh->vIndexes.push_back(s * tamPerfil + t);
-	//		if (profile[j + 1].x != 0.0) // triángulo superior
-	//			for (auto [s, t] : { std::pair{i, j + 1}, {0, j}, {0, j + 1} })
-	//				mesh->vIndexes.push_back(s * tamPerfil + t);
-	//	}
-	//}
 		
 	mesh->mNumVertices = mesh->vVertices.size();
 
@@ -182,8 +168,6 @@ IndexMesh* IndexMesh::generateIndexedBox(GLdouble l) {
 	mesh->vVertices.emplace_back(l, -l, l); // 3
 	mesh->vVertices.emplace_back(-l, -l, l); // 5
 
-	// TODO: Están mása o menos las normales
-	// 0, 1, 2, 2, 1, 3
 	mesh->vIndexes = { 0, 1, 2, 2, 1, 3,
 						4, 5, 6, 6, 5, 7,
 						8, 9, 10, 10, 9, 11,
