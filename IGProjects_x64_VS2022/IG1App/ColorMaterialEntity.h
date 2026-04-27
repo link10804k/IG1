@@ -1,9 +1,9 @@
 #ifndef COLOR_MATERIAL_ENTITY_H
 #define COLOR_MATERIAL_ENTITY_H
 
-#include "SingleColorEntity.h"
+#include "EntityWithMaterial.h"
 
-class ColorMaterialEntity : public SingleColorEntity {
+class ColorMaterialEntity : public EntityWithMaterial {
 public:
 	ColorMaterialEntity();
 	virtual ~ColorMaterialEntity() = default;
@@ -12,6 +12,8 @@ public:
 	static inline void toggleShowNormals() {
 		mShowNormals = !mShowNormals;
 	}
+
+	void setColor(glm::vec4 color);
 private:
 	Shader* normalShader;
 	// ASK: ¿inline está bien? Si no se pone inline no deja asignarle falso por no ser constante

@@ -6,8 +6,11 @@
 
 #include "Camera.h"
 #include "Entity.h"
+#include "Light.h"
 
 #include <vector>
+
+class DirLight;
 
 class Scene
 {
@@ -39,6 +42,10 @@ protected:
 
 	std::vector<Abs_Entity*> gObjects; // Entities (graphic objects) of the scene
 	std::vector<Abs_Entity*> gTranslucidObjects; // CNG: Entidades translúcidas de la escena
+	std::vector<Light*> gLights; // CNG: Entidades de luz
+
+	void uploadLights() const;
+	DirLight* dirLight = nullptr;
 };
 
 #endif //_H_Scene_H_

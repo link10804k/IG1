@@ -2,6 +2,7 @@
 
 #include <iostream>
 
+#include "Scene0.h"
 #include "Scene1.h"
 #include "Scene2.h"
 #include "Scene3.h"
@@ -85,7 +86,7 @@ IG1App::init()
 	mViewPort = new Viewport(mWinW, mWinH);
 	mCamera = new Camera(mViewPort);
 
-	mScenes.push_back(new Scene);
+	mScenes.push_back(new Scene0);
 	mScenes.push_back(new Scene1);
 	mScenes.push_back(new Scene2);
 	mScenes.push_back(new Scene3);
