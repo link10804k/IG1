@@ -10,8 +10,6 @@
 
 #include <vector>
 
-class DirLight;
-
 class Scene
 {
 public:
@@ -35,9 +33,13 @@ public:
 	// CNG: Adiciones para rotar el androide
 	virtual void rotate() {}
 	virtual void orbit() {}
+
+	// CNG: Input escena
+	virtual void handleInput(char c) {}
 protected:
 	void destroy();
 	void setGL();
+	virtual void setBackgroundColor();
 	void resetGL();
 
 	std::vector<Abs_Entity*> gObjects; // Entities (graphic objects) of the scene

@@ -12,6 +12,9 @@ private:
 
 	void draw() const override;
 public:
+	IndexMesh();
+	~IndexMesh() = default;
+
 	void load() override;
 	void unload() override;
 

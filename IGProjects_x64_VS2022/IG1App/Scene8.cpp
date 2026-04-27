@@ -42,3 +42,20 @@ void Scene8::orbit(){
 
 	droid->walk();
 }
+
+void Scene8::setBackgroundColor(){
+	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+}
+
+void Scene8::handleInput(char c) {
+	switch (c) {
+	case 'f':
+		rotate();
+		break;
+	case 'g':
+		orbit();
+		break;
+	}
+	
+}
+

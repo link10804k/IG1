@@ -52,6 +52,8 @@ Scene::destroy()
 void
 Scene::load()
 {
+	setBackgroundColor();
+
 	for (Abs_Entity* obj : gObjects)
 		obj->load();
 	for (Abs_Entity* obj : gTranslucidObjects)
@@ -106,8 +108,6 @@ Scene::render(Camera const& cam) const
 
 	glDepthMask(GL_TRUE);
 	glDisable(GL_BLEND);
-	
-
 }
 
 void Scene::update() {
@@ -125,4 +125,8 @@ void Scene::uploadLights() const {
 	for (Light* l : gLights) {
 		l->upload(*s, IG1App::s_ig1app.camera().viewMat());
 	}
+}
+
+void Scene::setBackgroundColor(){
+	glClearColor(0.6f, 0.7f, 0.8f, 1.0f);
 }

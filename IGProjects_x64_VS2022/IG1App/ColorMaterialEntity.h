@@ -16,7 +16,6 @@ public:
 	void setColor(glm::vec4 color);
 private:
 	Shader* normalShader;
-	// ASK: ¿inline está bien? Si no se pone inline no deja asignarle falso por no ser constante
 	inline static bool mShowNormals = false;
 };
 

@@ -3,6 +3,11 @@
 
 #include <algorithm>
 
+// Placeholder for the pending index of a GPU object
+constexpr GLuint NONE = std::numeric_limits<GLuint>::max();
+
+IndexMesh::IndexMesh() : mIBO(NONE) {}
+
 void IndexMesh::draw() const {
 	glDrawElements(
 		mPrimitive, // primitiva ( GL_TRIANGLES , etc.)
@@ -12,19 +17,22 @@ void IndexMesh::draw() const {
 	);
 }
 
-// Placeholder for the pending index of a GPU object
-constexpr GLuint NONE = std::numeric_limits<GLuint>::max();
-
 void IndexMesh::load() {
-	Mesh::load(); 
-	glBindVertexArray(mVAO);
-	glGenBuffers(1, &mIBO);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mIBO);
 
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER,
-		vIndexes.size() * sizeof(GLuint),
-		vIndexes.data(), GL_STATIC_DRAW);
-	glBindVertexArray(0);
+
+	Mesh::load(); 
+
+	// ASK: ¿Así está bien la comprobación de cosas?
+	if (vVertices.size() > 0 && vNormals.size() > 0) {
+		glBindVertexArray(mVAO);
+		glGenBuffers(1, &mIBO);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mIBO);
+
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER,
+			vIndexes.size() * sizeof(GLuint),
+			vIndexes.data(), GL_STATIC_DRAW);
+		glBindVertexArray(0);
+	}
 }
 void IndexMesh::unload() {
 	if (mVAO == NONE) return;
@@ -115,7 +123,6 @@ IndexMesh* IndexMesh::generateIndexedBox8(GLdouble l){
 	mesh->vVertices.emplace_back(-l, l, -l);
 	mesh->vVertices.emplace_back(-l, -l, -l);
 
-	// TODO: Están mása o menos las normales
 	mesh->vIndexes = {  0, 1, 2, 2, 1, 3, 
 						2, 3, 4, 4, 3, 5, 
 						4, 5, 6, 6, 5, 7, 
@@ -198,5 +205,5 @@ IndexMesh* IndexMesh::generateSphere(GLdouble radius, GLuint nParallels, GLuint 
 	// Colocamos el último vértice a mano para evitar errores de punto flotante
 	profile.emplace_back(0, radius);
 
-	return IndexMesh::generateByRevolution(profile, mMeridians * 2);
+	return IndexMesh::generateByRevolution(profile, mMeridians);
 }

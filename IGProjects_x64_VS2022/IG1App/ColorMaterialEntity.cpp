@@ -26,6 +26,7 @@ void ColorMaterialEntity::render(const glm::mat4& modelViewMat) const {
 		EntityWithMaterial::render(modelViewMat);
 		if (mShowNormals) {
 			normalShader->use();
+			normalShader->setUniform("modelView", modelViewMat * mModelMat);
 			mMesh->render();
 		}
 	}

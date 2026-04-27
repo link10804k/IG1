@@ -9,10 +9,13 @@ class CompoundEntity;
 class Scene8 : public Scene {
 public:
 	void init() override;
+	void setBackgroundColor() override;
 
+	void handleInput(char c) override;
+private:
 	void rotate() override;
 	void orbit() override;
-private:
+
 	CompoundEntity* ghost = nullptr;
 	Droid* droid = nullptr;
 };
