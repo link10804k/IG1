@@ -83,7 +83,7 @@ IndexMesh* IndexMesh::generateByRevolution(const std::vector<glm::vec2>& profile
 		for (int j = 0; j < profile.size(); ++j) {
 			float u = float(i) / nSamples;
 			float v = 1.0 - j / (profile.size() - 1.0);
-			mesh->vTexCoords.emplace_back(u, v);
+			mesh->vTexCoords.emplace_back(u, v);	
 		}
 	}
 
@@ -97,6 +97,18 @@ IndexMesh* IndexMesh::generateByRevolution(const std::vector<glm::vec2>& profile
 					mesh->vIndexes.push_back(s * tamPerfil + t);
 		}
 	}
+
+	//if (angleMax >= 2 * std::numbers::pi) {
+	//	int i = nSamples - 1;
+	//	for (int j = 0; j < tamPerfil - 1; ++j) { // una cara
+	//		if (profile[j].x != 0.0) // triángulo inferior
+	//			for (auto [s, t] : { std::pair{i, j}, {0, j}, {i, j + 1} })
+	//				mesh->vIndexes.push_back(s * tamPerfil + t);
+	//		if (profile[j + 1].x != 0.0) // triángulo superior
+	//			for (auto [s, t] : { std::pair{i, j + 1}, {0, j}, {0, j + 1} })
+	//				mesh->vIndexes.push_back(s * tamPerfil + t);
+	//	}
+	//}
 		
 	mesh->mNumVertices = mesh->vVertices.size();
 

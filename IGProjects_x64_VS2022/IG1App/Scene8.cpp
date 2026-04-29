@@ -47,14 +47,16 @@ void Scene8::setBackgroundColor(){
 	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 }
 
-void Scene8::handleInput(char c) {
+bool Scene8::handleInput(char c) {
 	switch (c) {
 	case 'f':
 		rotate();
-		break;
+		return true;
 	case 'g':
 		orbit();
-		break;
+		return true;
+	default:
+		return Scene::handleInput(c);
 	}
 	
 }

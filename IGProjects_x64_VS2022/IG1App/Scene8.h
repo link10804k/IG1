@@ -11,7 +11,7 @@ public:
 	void init() override;
 	void setBackgroundColor() override;
 
-	void handleInput(char c) override;
+	bool handleInput(char c) override;
 private:
 	void rotate() override;
 	void orbit() override;

@@ -33,8 +33,8 @@ void ColorMaterialEntity::render(const glm::mat4& modelViewMat) const {
 }
 
 void ColorMaterialEntity::setColor(glm::vec4 color) {
-	glm::vec3 color3 = color;
 	mMaterial.setAmb(color);
 	mMaterial.setDiff(color);
 	mMaterial.setSpec(color);
+	mMaterial.setExp(1);
 }

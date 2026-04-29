@@ -35,7 +35,7 @@ public:
 	virtual void orbit() {}
 
 	// CNG: Input escena
-	virtual void handleInput(char c) {}
+	virtual bool handleInput(char c);
 protected:
 	void destroy();
 	void setGL();

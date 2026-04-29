@@ -24,6 +24,11 @@ Scene::init()
 	// CNG: Luz direccional global
 	dirLight = new DirLight();
 	dirLight->setEnabled(true);
+
+	dirLight->setAmb({ 0.25, 0.25, 0.25 });
+	dirLight->setDiff({ 0.6, 0.6, 0.6 });
+	dirLight->setSpec({ 0, 0.2, 0 });
+
 	gLights.push_back(dirLight);
 }
 
@@ -129,4 +134,12 @@ void Scene::uploadLights() const {
 
 void Scene::setBackgroundColor(){
 	glClearColor(0.6f, 0.7f, 0.8f, 1.0f);
+}
+
+bool Scene::handleInput(char c) {
+	switch (c) {
+	case 'r':
+		dirLight->setEnabled(!dirLight->enabled());
+		return true;
+	}
 }

@@ -258,11 +258,11 @@ IG1App::key(unsigned int key)
 			if (key >= '0' && key <= '9') {
 				if (changeScene(key - '0')) break;
 				cout << "[NOTE] There is no scene " << char(key) << ".\n";
+				need_redisplay = false;
 			}
 			else {
-				mScenes[mCurrentScene]->handleInput(key);
-			}
-			need_redisplay = false;
+				need_redisplay = mScenes[mCurrentScene]->handleInput(key);
+			}	
 			break;
 	} // switch
 
