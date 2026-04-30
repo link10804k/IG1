@@ -70,6 +70,7 @@ Scene::unload()
 {
 	// FIXME: Código dudoso
 	Shader* s = Shader::get("light");
+	s->use();
 	for (Light* l : gLights) {
 		l->unload(*s);
 	}
@@ -127,6 +128,7 @@ void Scene::update() {
 // FIXME: Código dudoso
 void Scene::uploadLights() const {
 	Shader* s = Shader::get("light");
+	s->use();
 	for (Light* l : gLights) {
 		l->upload(*s, IG1App::s_ig1app.camera().viewMat());
 	}

@@ -18,6 +18,9 @@ private:
 
 	CompoundEntity* ghost = nullptr;
 	Droid* droid = nullptr;
+
+	PosLight* posLight = nullptr;
+	SpotLight* spotLight = nullptr;
 };
 
 #endif

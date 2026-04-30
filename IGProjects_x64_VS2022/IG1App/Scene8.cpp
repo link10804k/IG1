@@ -3,6 +3,7 @@
 #include "Sphere.h"
 #include "Droid.h"
 #include "CompoundEntity.h"
+#include "Light.h"
 
 #include "glm/gtc/matrix_transform.hpp"
 
@@ -11,8 +12,8 @@ void Scene8::init() {
 	Scene::init();
 
 	int planetRadius = 200;
-    // Planeta
-    Sphere* planeta = new Sphere(planetRadius, 50, 50);
+	// Planeta
+	Sphere* planeta = new Sphere(planetRadius, 50, 50);
 	planeta->setColor({ 171 / 255.0, 33 / 255.0, 72 / 255.0, 0 });
 	gObjects.push_back(planeta);
 
@@ -22,13 +23,40 @@ void Scene8::init() {
 
 	this->ghost = ghost;
 
-    // Androide
+	// Androide
 	int droidRadius = 20;
 	Droid* d = new Droid(20);
 	d->setModelMat(glm::translate(d->modelMat(), glm::vec3(0, planetRadius + droidRadius, 0)));
 	ghost->addEntity(d);
 
 	droid = d;
+
+	// Luz posicional
+	posLight = new PosLight();
+	posLight->setEnabled(true);
+
+	posLight->setAmb({ 0.25, 0.25, 0.25 });
+	posLight->setDiff({ 0.6, 0.6, 0.6 });
+	posLight->setSpec({ 0, 0.2, 0 });
+
+	posLight->setPosition(glm::vec3(500, 500, 0));
+
+	gLights.push_back(posLight);
+
+	// Luz foco
+	spotLight = new SpotLight();
+	spotLight->setEnabled(true);
+
+	spotLight->setAmb({ 0.25, 0.25, 0.25 });
+	spotLight->setDiff({ 0.6, 0.6, 0.6 });
+	spotLight->setSpec({ 0, 0.2, 0 });
+
+	glm::vec3 position = { 0, 500, 500 };
+	spotLight->setPosition(glm::vec3(position));
+	spotLight->setDirection(glm::normalize(glm::vec3(0, 0, 0) - position));
+	spotLight->setCutoff(5.0f, 15.0f);
+
+	gLights.push_back(spotLight);
 }
 
 void Scene8::rotate() {
@@ -54,6 +82,14 @@ bool Scene8::handleInput(char c) {
 		return true;
 	case 'g':
 		orbit();
+		return true;
+	case 't':
+		posLight->setEnabled(!posLight->enabled());
+		return true;
+	case 'y':
+		spotLight->setEnabled(!spotLight->enabled());
+		return true;
+	case 'h':
 		return true;
 	default:
 		return Scene::handleInput(c);
