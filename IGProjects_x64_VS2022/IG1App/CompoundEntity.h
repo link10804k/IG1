@@ -8,7 +8,7 @@ protected:
 	std::vector<Abs_Entity*> gObjects;
 public:
 	CompoundEntity() = default;
-	~CompoundEntity();
+	virtual ~CompoundEntity();
 
 	void addEntity(Abs_Entity* entity);
 

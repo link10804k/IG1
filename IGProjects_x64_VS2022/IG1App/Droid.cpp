@@ -7,6 +7,12 @@
 #include "TextureManager.h"
 
 #include "glm/gtc/matrix_transform.hpp"
+#define GLM_ENABLE_EXPERIMENTAL
+#include "glm/gtx/matrix_decompose.hpp"
+
+#include "Light.h"
+
+#include "IG1App.h"
 
 Droid::Droid(GLdouble radius) {
     // Cuerpo
@@ -42,6 +48,30 @@ Droid::Droid(GLdouble radius) {
     ojoDerMesh->setModelMat(glm::rotate(ojoDerMesh->modelMat(), glm::radians(90.0f), glm::vec3(1, 0, 0)));
     ojoDerMesh->setColor({0, 1, 0, 1});
     cabeza->addEntity(ojoDerMesh);
+
+    // Luz
+    droidLight = new SpotLight(glm::vec3(0, 0, 0), 1);
+    droidLight->setEnabled(true);
+
+    droidLight->setAmb({ 0.25, 0.25, 0.25 });
+    droidLight->setDiff({ 0.6, 0.6, 0.6 });
+    droidLight->setSpec({ 0, 0.2, 0 });
+
+    droidLight->setPosition(glm::vec3(0, 0, 0));
+    droidLight->setDirection(glm::vec3(0, -1, 0));
+    droidLight->setCutoff(30.0f, 60.0f);
+}
+void Droid::render(const glm::mat4& modelViewMat) const {
+    // Calculamos la matriz de modelado absoluta del androide (mModelMat es relativa a la de su padre, el nodo fantasma, 
+    // por lo que necesitamos la modelViewMat que nos pasa el render y deshacer la multiplicación de la viewMat)
+    glm::mat4 aMat =  glm::inverse(IG1App::s_ig1app.camera().viewMat()) * modelViewMat * mModelMat;
+
+    // Utilizamos la posición del androide para settear la posición de la luz ({0, 0, 0} es su posición inicial)
+    droidLight->setPosition(aMat * glm::vec4(0, 0, 0, 1));
+    // Utilizamos la orientación del androide para settear la dirección de la luz ({0, -1, 0} es su dirección inicial)
+    droidLight->setDirection(aMat * glm::vec4(0, -1, 0, 0));
+
+    CompoundEntity::render(modelViewMat);
 }
 
 void Droid::walk() {
@@ -49,4 +79,8 @@ void Droid::walk() {
 
     float angle = 5.0f;
     body->setModelMat(glm::rotate(body->modelMat(), glm::radians(angle), glm::vec3(1, 0, 0)));
+}
+
+SpotLight* Droid::getDroidLight() {
+    return droidLight;
 }
