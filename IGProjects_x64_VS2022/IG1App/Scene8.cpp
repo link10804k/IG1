@@ -59,7 +59,8 @@ void Scene8::init() {
 	gLights.push_back(spotLight);
 
 	// Luz androide
-	gLights.push_back(droid->getDroidLight());
+	droidLight = droid->getDroidLight();
+	gLights.push_back(droidLight);
 }
 
 void Scene8::rotate() {
@@ -93,6 +94,7 @@ bool Scene8::handleInput(char c) {
 		spotLight->setEnabled(!spotLight->enabled());
 		return true;
 	case 'h':
+		droidLight->setEnabled(!droidLight->enabled());
 		return true;
 	default:
 		return Scene::handleInput(c);

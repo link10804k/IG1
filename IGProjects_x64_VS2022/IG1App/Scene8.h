@@ -21,6 +21,7 @@ private:
 
 	PosLight* posLight = nullptr;
 	SpotLight* spotLight = nullptr;
+	SpotLight* droidLight = nullptr;
 };
 
 #endif
