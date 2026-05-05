@@ -50,7 +50,7 @@ Droid::Droid(GLdouble radius) {
     cabeza->addEntity(ojoDerMesh);
 
     // Luz
-    droidLight = new SpotLight(glm::vec3(0, 0, 0), 1);
+    droidLight = new SpotLight(glm::vec3(0, 0, 0), 1); // id 1 porque ya se crea otra SpotLight con id 0 en la escena
     droidLight->setEnabled(true);
 
     droidLight->setAmb({ 0.25, 0.25, 0.25 });
@@ -64,7 +64,7 @@ Droid::Droid(GLdouble radius) {
 void Droid::render(const glm::mat4& modelViewMat) const {
     // Calculamos la matriz de modelado absoluta del androide (mModelMat es relativa a la de su padre, el nodo fantasma, 
     // por lo que necesitamos la modelViewMat que nos pasa el render y deshacer la multiplicación de la viewMat)
-    glm::mat4 aMat =  glm::inverse(IG1App::s_ig1app.camera().viewMat()) * modelViewMat * mModelMat;
+    glm::mat4 aMat = glm::inverse(IG1App::s_ig1app.camera().viewMat()) * modelViewMat * mModelMat;
 
     // Utilizamos la posición del androide para settear la posición de la luz ({0, 0, 0} es su posición inicial)
     droidLight->setPosition(aMat * glm::vec4(0, 0, 0, 1));
