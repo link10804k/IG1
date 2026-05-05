@@ -10,4 +10,6 @@ void Scene7::init() {
 	// Androide
 	Droid* d = new Droid(200);
 	gObjects.push_back(d);
+
+	gLights.push_back(d->getDroidLight());
 }

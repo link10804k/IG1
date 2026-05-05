@@ -25,7 +25,7 @@ void Scene8::init() {
 
 	// Androide
 	int droidRadius = 20;
-	Droid* d = new Droid(20);
+	Droid* d = new Droid(droidRadius);
 	d->setModelMat(glm::translate(d->modelMat(), glm::vec3(0, planetRadius + droidRadius, 0)));
 	ghost->addEntity(d);
 

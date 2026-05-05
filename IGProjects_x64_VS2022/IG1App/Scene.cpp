@@ -50,6 +50,7 @@ Scene::destroy()
 	for (Abs_Entity* obj : gTranslucidObjects)
 		delete obj;
 
+	gLights.clear();
 	gObjects.clear();
 	gTranslucidObjects.clear();
 }
