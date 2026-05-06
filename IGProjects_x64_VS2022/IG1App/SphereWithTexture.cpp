@@ -3,5 +3,5 @@
 #include "IndexMesh.h"
 
 SphereWithTexture::SphereWithTexture(GLdouble radius, GLuint nParallels, GLuint nMeridians) {
-	mMesh = IndexMesh::generateSphere(radius, nParallels, nMeridians);
+	mMesh = IndexMesh::generateSphereWithTexture(radius, nParallels, nMeridians);
 }

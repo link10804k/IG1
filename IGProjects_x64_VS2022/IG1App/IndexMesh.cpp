@@ -87,7 +87,7 @@ IndexMesh* IndexMesh::generateByRevolution(const std::vector<glm::vec2>& profile
 		}
 	}
 
-	for (int i = 0; i < nSamples; ++i){ // caras i a i + 1
+	for (int i = 0; i < nSamples -1; ++i){ // caras i a i + 1
 		for (int j = 0; j < tamPerfil - 1; ++j) { // una cara
 			if (profile[j].x != 0.0) // triángulo inferior
 				for (auto [s, t] : { std::pair{i, j}, {i + 1, j}, {i, j + 1} })
@@ -98,17 +98,17 @@ IndexMesh* IndexMesh::generateByRevolution(const std::vector<glm::vec2>& profile
 		}
 	}
 
-	//if (angleMax >= 2 * std::numbers::pi) {
-	//	int i = nSamples - 1;
-	//	for (int j = 0; j < tamPerfil - 1; ++j) { // una cara
-	//		if (profile[j].x != 0.0) // triángulo inferior
-	//			for (auto [s, t] : { std::pair{i, j}, {0, j}, {i, j + 1} })
-	//				mesh->vIndexes.push_back(s * tamPerfil + t);
-	//		if (profile[j + 1].x != 0.0) // triángulo superior
-	//			for (auto [s, t] : { std::pair{i, j + 1}, {0, j}, {0, j + 1} })
-	//				mesh->vIndexes.push_back(s * tamPerfil + t);
-	//	}
-	//}
+	if (angleMax >= 2 * std::numbers::pi) {
+		int i = nSamples - 1;
+		for (int j = 0; j < tamPerfil - 1; ++j) { // una cara
+			if (profile[j].x != 0.0) // triángulo inferior
+				for (auto [s, t] : { std::pair{i, j}, {0, j}, {i, j + 1} })
+					mesh->vIndexes.push_back(s * tamPerfil + t);
+			if (profile[j + 1].x != 0.0) // triángulo superior
+				for (auto [s, t] : { std::pair{i, j + 1}, {0, j}, {0, j + 1} })
+					mesh->vIndexes.push_back(s * tamPerfil + t);
+		}
+	}
 		
 	mesh->mNumVertices = mesh->vVertices.size();
 
@@ -218,4 +218,32 @@ IndexMesh* IndexMesh::generateSphere(GLdouble radius, GLuint nParallels, GLuint 
 	profile.emplace_back(0, radius);
 
 	return IndexMesh::generateByRevolution(profile, mMeridians);
+}
+
+IndexMesh* IndexMesh::generateSphereWithTexture(GLdouble radius, GLuint nParallels, GLuint mMeridians) {
+	std::vector<glm::vec2> profile;
+	profile.reserve(nParallels);
+
+	GLdouble angleCount = glm::radians(270.0f);
+	// Se colocan los vértices siguiendo una semicircunferencia
+	for (GLuint i = 0; i < nParallels; ++i) {
+		GLdouble x = radius * glm::cos(angleCount);
+		GLdouble y = radius * glm::sin(angleCount);
+		profile.emplace_back(x, y);
+
+		angleCount += glm::radians(180.0 / nParallels);
+	}
+	// Colocamos el último vértice a mano para evitar errores de punto flotante
+	profile.emplace_back(0, radius);
+
+	IndexMesh* mesh = IndexMesh::generateSphere(radius, nParallels, mMeridians);
+
+	// Coordenadas de textura
+	for (int i = 0; i < profile.size(); ++i) {
+		float u = 1.0f;
+		float v = 1.0 - i / (profile.size() - 1.0);
+		mesh->vTexCoords[i + (mesh->vTexCoords.size() - profile.size())] = {u, v};
+	}
+
+	return mesh;
 }
