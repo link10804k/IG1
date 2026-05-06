@@ -1,4 +1,4 @@
-#include "Star3D.h"
+﻿#include "Star3D.h"
 
 #include "glm/gtc/matrix_transform.hpp"
 
@@ -17,7 +17,7 @@ void Star3D::render(const glm::mat4& modelViewMat) const {
 
 		upload(aMat);
 		mMesh->render();
-		// Rotamos la aMat para renderizar la estrella rotada 180� en el eje y
+		// Rotamos la aMat para renderizar la estrella rotada 180º en el eje y
 		upload(glm::rotate(aMat, glm::radians(180.0f), glm::vec3(0, 1, 0)));
 		mMesh->render();	
 

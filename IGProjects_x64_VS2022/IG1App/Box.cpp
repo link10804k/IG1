@@ -1,4 +1,4 @@
-#include "Box.h"
+Ôªø#include "Box.h"
 
 #include "glm/gtc/matrix_transform.hpp"
 
@@ -17,13 +17,13 @@ void Box::update() {
 	if (rotationDirection) {
 		lidRotation += 5.0f;
 
-		// Cuando llega a 180∫, se invierte la rotaciÛn
+		// Cuando llega a 180¬∫, se invierte la rotaci√≥n
 		if (lidRotation >= 180.0f) rotationDirection = false;
 	}
 	else {
 		lidRotation -= 5.0f;
 
-		// Cuando llega a 0∫, se invierte la rotaciÛn
+		// Cuando llega a 0¬∫, se invierte la rotaci√≥n
 		if (lidRotation <= 0.0f) rotationDirection = true;
 	}
 }
@@ -53,14 +53,14 @@ void Box::renderFace(const glm::mat4& modelViewMat, Texture* texture) const {
 		upload(aMat);
 		mMesh->render();
 
-		// Rotamos -90 grados para dejar el rect·ngulo como una tapa
+		// Rotamos -90 grados para dejar el rect√°ngulo como una tapa
 		glm::mat4 topModelMat = glm::rotate(glm::mat4(1), glm::radians(-90.0f), glm::vec3(1, 0, 0));
-		// Trasladamos la mitad de su longitud para dejar el rect·ngulo pegado al (0,0,0)
+		// Trasladamos la mitad de su longitud para dejar el rect√°ngulo pegado al (0,0,0)
 		topModelMat = glm::translate(topModelMat, glm::vec3(length / 2, 0, 0));
-		// Rotamos el rect·ngulo en el eje z con el (0,0,0) como orÌgen
+		// Rotamos el rect√°ngulo en el eje z con el (0,0,0) como or√≠gen
 		topModelMat = glm::rotate(glm::mat4(1), glm::radians(lidRotation), glm::vec3(0, 0, 1)) * topModelMat;
 		
-		// Trasladamos el rect·ngulo a la posiciÛn de la caja
+		// Trasladamos el rect√°ngulo a la posici√≥n de la caja
 		topModelMat = glm::translate(mModelMat, glm::vec3(-length / 2, length / 2, 0)) * topModelMat;
 
 		glm::mat4 botModelMat = glm::rotate(glm::translate(mModelMat, glm::vec3(0, -length / 2, 0)), glm::radians(90.0f), glm::vec3(1, 0, 0));
