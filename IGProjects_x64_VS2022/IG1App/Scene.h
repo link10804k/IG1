@@ -26,7 +26,7 @@ public:
 
 	// load or unload scene data into the GPU
 	void load();
-	void unload();
+	virtual void unload();
 
 	void scene();
 

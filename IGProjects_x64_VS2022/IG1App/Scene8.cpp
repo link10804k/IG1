@@ -90,11 +90,17 @@ bool Scene8::handleInput(char c) {
 		spotLight->setEnabled(!spotLight->enabled());
 		return true;
 	case 'h':
-		droidLight->setEnabled(!droidLight->enabled());
+		droid->setEnabledLight(!droid->getEnabledLight());
 		return true;
 	default:
 		return Scene::handleInput(c);
 	}
 	
+}
+
+void Scene8::unload() {
+	droid->unloadLight();
+
+	Scene::unload();
 }
 

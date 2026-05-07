@@ -1,4 +1,4 @@
-#include "Grass.h"
+﻿#include "Grass.h"
 
 #include "glm/gtc/matrix_transform.hpp"
 
@@ -19,7 +19,7 @@ void Grass::render(const glm::mat4& modelViewMat) const {
 
 		upload(aMat);
 		mMesh->render();
-		// Rotamos la aMat para renderizar la hierba rotada 120� en el eje y
+		// Rotamos la aMat para renderizar la hierba rotada 120º en el eje y
 		upload(glm::rotate(aMat, glm::radians(120.0f), glm::vec3(0, 1, 0)));
 		mMesh->render();
 		// Rotamos la aMat para renderizar la hierba rotada 240 en el eje y

@@ -1,4 +1,4 @@
-#ifndef _H_IG1App_H_
+ï»¿#ifndef _H_IG1App_H_
 #define _H_IG1App_H_
 
 #include <GL/glew.h>     // OpenGL Extension Wrangler
@@ -53,7 +53,7 @@ protected:
 	static void s_key(GLFWwindow* win, unsigned int codepoint) { s_ig1app.key(codepoint); };
 	static void s_specialkey(GLFWwindow* win, int key, int scancode, int action, int mods) { s_ig1app.specialkey(key, scancode, action, mods); };
 
-	// CNG: Método para tomar una captura de pantalla
+	// CNG: MÃ©todo para tomar una captura de pantalla
 	void takePhoto();
 
 	// Viewport position and size
@@ -79,7 +79,7 @@ protected:
 	void display2V() const;
 	bool m2Vistas = false;
 
-	// CNG: Adiciones para controles de ratón
+	// CNG: Adiciones para controles de ratÃ³n
 	glm::dvec2 mMouseCoord;
 	int mMouseButt = GLFW_MOUSE_BUTTON_LAST;
 

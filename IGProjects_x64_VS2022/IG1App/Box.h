@@ -1,4 +1,4 @@
-#ifndef BOX_H
+﻿#ifndef BOX_H
 #define BOX_H
 
 #include "BoxOutline.h"
@@ -8,7 +8,7 @@ private:
 	Mesh* mMeshLid;
 	GLdouble length;
 	float lidRotation = 0.0f;
-	bool rotationDirection = true; // Indica si la rotaci�n es positiva o negativa
+	bool rotationDirection = true; // Indica si la rotación es positiva o negativa
 
 	void renderFace(const glm::mat4& modelViewMat, Texture* texture) const;
 public:

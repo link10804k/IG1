@@ -63,7 +63,6 @@ Droid::Droid(GLdouble radius) {
 }
 
 Droid::~Droid() {
-    //droidLight->unload(); ASK: ¿Puede ser?
     delete droidLight;
 }
 
@@ -82,4 +81,16 @@ void Droid::walk() {
 
     float angle = 5.0f;
     body->setModelMat(glm::rotate(body->modelMat(), glm::radians(angle), glm::vec3(1, 0, 0)));
+}
+
+void Droid::unloadLight() {
+    Shader* s = Shader::get("light");
+    s->use();
+    droidLight->unload(*s);
+}
+void Droid::setEnabledLight(bool enabled) {
+    droidLight->setEnabled(enabled);
+}
+bool Droid::getEnabledLight() {
+    return droidLight->enabled();
 }

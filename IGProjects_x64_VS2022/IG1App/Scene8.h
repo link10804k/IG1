@@ -12,6 +12,8 @@ public:
 	void setBackgroundColor() override;
 
 	bool handleInput(char c) override;
+
+	void unload() override;
 private:
 	void rotate() override;
 	void orbit() override;

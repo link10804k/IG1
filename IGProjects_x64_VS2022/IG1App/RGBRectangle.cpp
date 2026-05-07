@@ -1,4 +1,4 @@
-#include "RGBRectangle.h"
+Ôªø#include "RGBRectangle.h"
 
 RGBRectangle::RGBRectangle(GLdouble w, GLdouble h) {
 	mMesh = Mesh::generateRGBRectangle(w, h);
@@ -6,9 +6,9 @@ RGBRectangle::RGBRectangle(GLdouble w, GLdouble h) {
 
 void RGBRectangle::render(glm::mat4 const& modelViewMat) const {
 	
-	// Cambiamos el modo de dibujado para toda la figura porque no est·n disponibles el FRONT ni el BACK para glPolygonMode
+	// Cambiamos el modo de dibujado para toda la figura porque no est√°n disponibles el FRONT ni el BACK para glPolygonMode
 	glEnable(GL_CULL_FACE);
-	// Dibujamos la cara frontal con lÌneas
+	// Dibujamos la cara frontal con l√≠neas
 	glCullFace(GL_BACK);
 	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	EntityWithColors::render(modelViewMat);

@@ -1,4 +1,4 @@
-#ifndef _H_Entities_H_
+ï»¿#ifndef _H_Entities_H_
 #define _H_Entities_H_
 
 #include <GL/glew.h>
@@ -19,7 +19,7 @@ public:
 	Abs_Entity& operator=(const Abs_Entity& e) = delete; // no copy assignment
 
 	virtual void render(const glm::mat4& modelViewMat) const = 0; // abstract method
-	virtual void update(){}; // Método virtual vacío (para no obligar a hacer override si no se necesita un update)
+	virtual void update(){}; // MÃ©todo virtual vacÃ­o (para no obligar a hacer override si no se necesita un update)
 
 	// modeling matrix
 	glm::mat4 const& modelMat() const { return mModelMat; };

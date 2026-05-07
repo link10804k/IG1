@@ -236,13 +236,27 @@ IndexMesh* IndexMesh::generateSphereWithTexture(GLdouble radius, GLuint nParalle
 	// Colocamos el último vértice a mano para evitar errores de punto flotante
 	profile.emplace_back(0, radius);
 
-	IndexMesh* mesh = IndexMesh::generateSphere(radius, nParallels, mMeridians);
+	IndexMesh* mesh = IndexMesh::generateByRevolution(profile, mMeridians);
 
-	// Coordenadas de textura
-	for (int i = 0; i < profile.size(); ++i) {
-		float u = 1.0f;
-		float v = 1.0 - i / (profile.size() - 1.0);
-		mesh->vTexCoords[i + (mesh->vTexCoords.size() - profile.size())] = {u, v};
+	// Popeamos el todos los índices del último sample
+	int i = mMeridians - 1;
+	for (int j = 0; j < profile.size() - 1; ++j) {
+		if (profile[j].x != 0.0) // triángulo inferior
+			for (int k = 0; k < 3; ++k)
+				mesh->vIndexes.pop_back();
+		if (profile[j + 1].x != 0.0) // triángulo superior
+			for (int k = 0; k < 3; ++k)
+				mesh->vIndexes.pop_back();
+	}
+
+	// Pusheamos los índices correctos para una entidad con textura
+	for (int j = 0; j < profile.size() - 1; ++j) { // una cara
+		if (profile[j].x != 0.0) // triángulo inferior
+			for (auto [s, t] : { std::pair{i, j}, {i + 1, j}, {i, j + 1} })
+				mesh->vIndexes.push_back(s * profile.size() + t);
+		if (profile[j + 1].x != 0.0) // triángulo superior
+			for (auto [s, t] : { std::pair{i, j + 1}, {i + 1, j}, {i + 1, j + 1} })
+				mesh->vIndexes.push_back(s * profile.size() + t);
 	}
 
 	return mesh;

@@ -1,4 +1,4 @@
-#include "IG1App.h"
+ï»¿#include "IG1App.h"
 
 #include <iostream>
 
@@ -139,7 +139,7 @@ IG1App::iniWinOpenGL()
 	glfwSetKeyCallback(mWindow, s_specialkey);
 	glfwSetWindowRefreshCallback(mWindow, s_display);
 
-	// CNG: Callbacks eventos de ratón
+	// CNG: Callbacks eventos de ratÃ³n
 	glfwSetMouseButtonCallback(mWindow, s_mouse);
 	glfwSetCursorPosCallback(mWindow, s_motion);
 	glfwSetScrollCallback(mWindow, s_mouseWheel);
@@ -349,12 +349,12 @@ void IG1App::takePhoto() {
 	// Bindeamos la textura
 	tx.bind();
 
-	//Activamos la alineación de la memoria para que al dibujar en la imagen no se corte verticalmente
+	//Activamos la alineaciÃ³n de la memoria para que al dibujar en la imagen no se corte verticalmente
 	glPixelStorei(GL_PACK_ALIGNMENT, 1);
 	//Dibujamos la imagen en el buffer data
 	glGetTexImage(GL_TEXTURE_2D,0,GL_RGB,GL_UNSIGNED_BYTE,data.get());
 
-	// Invertimos la imagen verticalmente para que salga como se ve en ejecución
+	// Invertimos la imagen verticalmente para que salga como se ve en ejecuciÃ³n
 	stbi_flip_vertically_on_write(true);
 
 	// Guardamos la imagen como photo.bmp con los datos obtenidos anteriormente
@@ -377,7 +377,7 @@ void IG1App::display2V() const {
 
 	mScenes[0]->render(auxCam);
 
-	// Vista cenital proyección:
+	// Vista cenital proyecciÃ³n:
 	mViewPort->setPos(mWinW / 2, 0);
 	//auxCam.setCenital();
 	//auxCam.changePrj();
@@ -417,11 +417,11 @@ void IG1App::motion(double x, double y) {
 }
 void IG1App::mouseWheel(double dx, double dy) {
 	if (glfwGetKey(mWindow, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS) {
-		// Escala la escena según el valor de d
+		// Escala la escena segÃºn el valor de d
 		mCamera->setScale(dy);
 	}
 	else {
-		// Desplaza la cámara en su dirección de vista
+		// Desplaza la cÃ¡mara en su direcciÃ³n de vista
 		mCamera->moveFB(dy);
 	}
 

@@ -1,4 +1,4 @@
-#include "Scene2.h"
+ï»¿#include "Scene2.h"
 
 #include "RegularPolygon.h"
 #include "RGBTriangle.h"
@@ -12,14 +12,14 @@ void Scene2::init() {
 
 	// Radio de la circunferencia 
 	GLdouble r = 100;
-	// Tamaño del cuadrado
+	// TamaÃ±o del cuadrado
 	GLdouble length = glm::sin(glm::radians(45.0f)) * r * 2;
 
-	// Rectángulo RGB
+	// RectÃ¡ngulo RGB
 	gObjects.push_back(new RGBRectangle(length, length));
-	// Triángulo RGB
+	// TriÃ¡ngulo RGB
 	RGBTriangle* t = new RGBTriangle(33);
-	// Desplazamiento triángulo hacia la circunferencia
+	// Desplazamiento triÃ¡ngulo hacia la circunferencia
 	t->setModelMat(glm::translate(t->modelMat(), glm::vec3(r, 0, 0)));
 	gObjects.push_back(t);
 

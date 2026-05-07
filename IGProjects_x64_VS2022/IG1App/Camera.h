@@ -1,4 +1,4 @@
-#ifndef _H_Camera_H_
+Ôªø#ifndef _H_Camera_H_
 #define _H_Camera_H_
 
 #include <GL/glew.h>
@@ -36,7 +36,7 @@ public:
 	// transfers its viewport, the view matrix and projection matrix to the GPU
 	void upload() const;
 
-	// CNG: Nuevos atributos pr·ctica 3
+	// CNG: Nuevos atributos pr√°ctica 3
 	void moveLR(GLfloat cs);
 	void moveFB(GLfloat cs);
 	void moveUD(GLfloat cs);
@@ -70,7 +70,7 @@ protected:
 	void setVM();
 	void setPM();
 
-	// CNG: Nuevos atributos pr·ctica 3
+	// CNG: Nuevos atributos pr√°ctica 3
 	glm::vec3 mRight, mUpward, mFront;
 	void setAxes();
 

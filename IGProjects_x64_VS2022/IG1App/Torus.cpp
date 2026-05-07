@@ -1,4 +1,4 @@
-#include "Torus.h"
+﻿#include "Torus.h"
 
 #include "IndexMesh.h"
 
@@ -12,7 +12,7 @@ Torus::Torus(GLdouble R, GLdouble r, GLuint nPoints, GLuint nSamples) {
 	GLdouble centerX = R;
 	
 	GLdouble angleCount = glm::radians(270.0f);
-	// Se colocan los v�rtices siguiendo una circunferencia
+	// Se colocan los vértices siguiendo una circunferencia
 	for (GLuint i = 0; i <= nPoints; ++i) {
 		GLdouble x = centerX + r * glm::cos(angleCount);
 		GLdouble y = centerY + r * glm::sin(angleCount);

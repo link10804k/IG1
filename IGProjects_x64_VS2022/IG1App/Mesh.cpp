@@ -1,9 +1,9 @@
-#include "Mesh.h"
+ï»¿#include "Mesh.h"
 
 using namespace std;
 using namespace glm;
 
-// Macro para pushear todos los vértices de un triángulo
+// Macro para pushear todos los vÃ©rtices de un triÃ¡ngulo
 #define PUSH_TRIANGLE(V1,V2,V3) mesh->vVertices.emplace_back(V1.x, V1.y,V1.z); \
 mesh->vVertices.emplace_back(V2.x, V2.y,V2.z); \
 mesh->vVertices.emplace_back(V3.x, V3.y,V3.z) 
@@ -67,7 +67,7 @@ Mesh::load()
 			glBufferData(GL_ARRAY_BUFFER, vTexCoords.size() * sizeof(glm::vec2), vTexCoords.data(), GL_STATIC_DRAW); // Crea e inicializa el almacenamiento 
 																													 // de datos del buffer
 			glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(glm::vec2), nullptr); // Definimos los atributos del buffer 
-																						 // (índice, tamaño, tipo, normalización, stride)
+																						 // (Ã­ndice, tamaÃ±o, tipo, normalizaciÃ³n, stride)
 			glEnableVertexAttribArray(2); // Activamos el buffer
 		}
 		if (vNormals.size() > 0) {
@@ -151,9 +151,9 @@ Mesh::createRGBAxes(GLdouble l)
 	return mesh;
 }
 
-// Polígono regular
+// PolÃ­gono regular
 Mesh* Mesh::generateRegularPolygon(GLuint num, GLdouble r) {
-	// Se construye sobre el plano Z = 0 así que la z de todos los vértices será igual a 0
+	// Se construye sobre el plano Z = 0 asÃ­ que la z de todos los vÃ©rtices serÃ¡ igual a 0
 
 	const int centerX = 0;
 	const int centerY = 0;
@@ -166,7 +166,7 @@ Mesh* Mesh::generateRegularPolygon(GLuint num, GLdouble r) {
 	mesh->vVertices.reserve(mesh->mNumVertices);
 
 	GLdouble angleCount = glm::radians(90.0);
-	// Se colocan los vértices siguiendo una circunferencia
+	// Se colocan los vÃ©rtices siguiendo una circunferencia
 	for (GLuint i = 0; i < num; ++i) {
 		GLdouble x = centerX + r * glm::cos(angleCount);
 		GLdouble y = centerY + r * glm::sin(angleCount);
@@ -177,9 +177,9 @@ Mesh* Mesh::generateRegularPolygon(GLuint num, GLdouble r) {
 	return mesh;
 }
 
-// Triángulo RGB
+// TriÃ¡ngulo RGB
 Mesh* Mesh::generateTriangleWithColors(GLdouble r) {
-	// Se construye sobre el plano Z = 0 así que la z de todos los vértices será igual a 0
+	// Se construye sobre el plano Z = 0 asÃ­ que la z de todos los vÃ©rtices serÃ¡ igual a 0
 
 	const int centerX = 0;
 	const int centerY = 0;
@@ -193,13 +193,13 @@ Mesh* Mesh::generateTriangleWithColors(GLdouble r) {
 	mesh->vColors.reserve(mesh->mNumVertices);
 
 	GLdouble angleCount = glm::radians(90.0);
-	// Se colocan los vértices siguiendo una circunferencia
+	// Se colocan los vÃ©rtices siguiendo una circunferencia
 	for (GLuint i = 0; i < mesh->mNumVertices; ++i) {
 		GLdouble x = centerX + r * glm::cos(angleCount);
 		GLdouble y = centerY + r * glm::sin(angleCount);
 		mesh->vVertices.emplace_back(x, y, 0.0);
 
-		// Se elige el color según el vértice que sea
+		// Se elige el color segÃºn el vÃ©rtice que sea
 		glm::vec4 color = { i % 3 == 0, i % 3 == 1, i % 3 == 2, 1 };
 
 		mesh->vColors.emplace_back(color);
@@ -210,7 +210,7 @@ Mesh* Mesh::generateTriangleWithColors(GLdouble r) {
 	return mesh;
 }
 
-// Rectángulo
+// RectÃ¡ngulo
 Mesh* Mesh::generateRectangle(GLdouble w, GLdouble h){
 	Mesh* mesh = new Mesh();
 
@@ -227,7 +227,7 @@ Mesh* Mesh::generateRectangle(GLdouble w, GLdouble h){
 	return mesh;
 }
 
-// Rectángulo RGB
+// RectÃ¡ngulo RGB
 Mesh* Mesh::generateRGBRectangle(GLdouble w, GLdouble h){
 	Mesh* mesh = new Mesh();
 
@@ -394,22 +394,22 @@ Mesh* Mesh::generateBoxOutlineTexCor(GLdouble length) {
 	return mesh;
 }
 
-Mesh* Mesh::generateStar3D(GLdouble re, GLuint np, GLdouble h) { // Radio exterior, número de puntas, z del radio exterior
+Mesh* Mesh::generateStar3D(GLdouble re, GLuint np, GLdouble h) { // Radio exterior, nÃºmero de puntas, z del radio exterior
 	Mesh* mesh = new Mesh();
 
 	GLdouble ri = re / 2;
 
 	mesh->mPrimitive = GL_TRIANGLE_FAN;
 
-	// +1 por el vértice central y +1 por el vértice final
+	// +1 por el vÃ©rtice central y +1 por el vÃ©rtice final
 	mesh->mNumVertices = np*2 + 2;
 	mesh->vVertices.reserve(mesh->mNumVertices);
 
-	// Vértice central
+	// VÃ©rtice central
 	mesh->vVertices.emplace_back(0, 0, 0);
 
 	GLdouble angleCount = glm::radians(90.0);
-	// Se colocan los vértices siguiendo una circunferencia
+	// Se colocan los vÃ©rtices siguiendo una circunferencia
 	for (GLuint i = 0; i < np; ++i) {
 		GLdouble x = 0 + re * glm::cos(angleCount);
 		GLdouble y = 0 + re * glm::sin(angleCount);
@@ -424,7 +424,7 @@ Mesh* Mesh::generateStar3D(GLdouble re, GLuint np, GLdouble h) { // Radio exteri
 		angleCount += glm::radians(360.0 / (np * 2));
 	}
 
-	// Vértice final igual al de la primera punta
+	// VÃ©rtice final igual al de la primera punta
 	GLdouble x = 0 + re * glm::cos(angleCount);
 	GLdouble y = 0 + re * glm::sin(angleCount);
 	mesh->vVertices.emplace_back(x, y, h);
@@ -437,7 +437,7 @@ Mesh* Mesh::generateStar3DTexCor(GLdouble re, GLuint np, GLdouble h) {
 
 	mesh->vTexCoords.reserve(mesh->mNumVertices);
 
-	// El primer vértice es el centro de la textura
+	// El primer vÃ©rtice es el centro de la textura
 	mesh->vTexCoords.emplace_back(0.5f, 0.5f);
 
 	float u = 0;
@@ -445,7 +445,7 @@ Mesh* Mesh::generateStar3DTexCor(GLdouble re, GLuint np, GLdouble h) {
 	for (int i = 0; i < np; ++i) {
 		int state = (i % 8) / 2;
 
-		// Un vértice para la punta y otro para el valle
+		// Un vÃ©rtice para la punta y otro para el valle
 		for (int j = 0; j < 2; ++j) {
 			mesh->vTexCoords.emplace_back(u, v);
 

@@ -1,4 +1,4 @@
-#include "Scene4.h"
+ï»¿#include "Scene4.h"
 
 #include "Ground.h"
 #include "Texture.h"
@@ -62,10 +62,10 @@ void Scene4::init() {
 
 	float ang = glm::radians(90.0f);
 
-	// Rotamos la foto para que esté perpendicular al eje vertical
+	// Rotamos la foto para que estÃ© perpendicular al eje vertical
 	ph->setModelMat(glm::rotate(glm::mat4(1), ang, glm::vec3(1, 0, 0)) * ph->modelMat());
 
-	// La movemos un poco hacia arriba para que no haya overlap con el suelo (aquí el eje z es el vertical porque es un rectángulo rotado)
+	// La movemos un poco hacia arriba para que no haya overlap con el suelo (aquÃ­ el eje z es el vertical porque es un rectÃ¡ngulo rotado)
 	ph->setModelMat(glm::translate(ph->modelMat(), glm::vec3(0, 0, -1)));
 
 	gObjects.push_back(ph);
