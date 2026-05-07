@@ -1,4 +1,4 @@
-#include "Scene8.h"
+﻿#include "Scene8.h"
 
 #include "Sphere.h"
 #include "Droid.h"
@@ -57,10 +57,6 @@ void Scene8::init() {
 	spotLight->setCutoff(5.0f, 15.0f);
 
 	gLights.push_back(spotLight);
-
-	// Luz androide
-	droidLight = droid->getDroidLight();
-	gLights.push_back(droidLight);
 }
 
 void Scene8::rotate() {

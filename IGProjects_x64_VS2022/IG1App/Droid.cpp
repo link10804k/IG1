@@ -1,4 +1,4 @@
-#include "Droid.h"
+ï»¿#include "Droid.h"
 
 #include "CompoundEntity.h"
 #include "SphereWithTexture.h"
@@ -61,15 +61,18 @@ Droid::Droid(GLdouble radius) {
     droidLight->setDirection(glm::vec3(0, -1, 0));
     droidLight->setCutoff(30.0f, 60.0f);
 }
-void Droid::render(const glm::mat4& modelViewMat) const {
-    // Calculamos la matriz de modelado absoluta del androide (mModelMat es relativa a la de su padre, el nodo fantasma, 
-    // por lo que necesitamos la modelViewMat que nos pasa el render y deshacer la multiplicación de la viewMat)
-    glm::mat4 aMat = glm::inverse(IG1App::s_ig1app.camera().viewMat()) * modelViewMat * mModelMat;
 
-    // Utilizamos la posición del androide para settear la posición de la luz ({0, 0, 0} es su posición inicial)
-    droidLight->setPosition(aMat * glm::vec4(0, 0, 0, 1));
-    // Utilizamos la orientación del androide para settear la dirección de la luz ({0, -1, 0} es su dirección inicial)
-    droidLight->setDirection(aMat * glm::vec4(0, -1, 0, 0));
+Droid::~Droid() {
+    //droidLight->unload(); ASK: Â¿Puede ser?
+    delete droidLight;
+}
+
+void Droid::render(const glm::mat4& modelViewMat) const {
+    glm::mat4 aMat = modelViewMat * mModelMat;
+
+    Shader* s = Shader::get("light");
+    s->use();
+    droidLight->upload(*s, aMat);
 
     CompoundEntity::render(modelViewMat);
 }
@@ -79,8 +82,4 @@ void Droid::walk() {
 
     float angle = 5.0f;
     body->setModelMat(glm::rotate(body->modelMat(), glm::radians(angle), glm::vec3(1, 0, 0)));
-}
-
-SpotLight* Droid::getDroidLight() {
-    return droidLight;
 }
