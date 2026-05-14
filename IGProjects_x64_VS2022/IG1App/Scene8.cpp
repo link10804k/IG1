@@ -11,26 +11,25 @@ void Scene8::init() {
 	// Para el setGL() y las RGBAxis
 	Scene::init();
 
+	int droidRadius = 20;
 	int planetRadius = 200;
-	// Planeta
-	Sphere* planeta = new Sphere(planetRadius, 50, 50);
-	planeta->setColor({ 171 / 255.0, 33 / 255.0, 72 / 255.0, 0 });
-	gObjects.push_back(planeta);
 
 	// Nodo ficticio 	
 	CompoundEntity* ghost = new CompoundEntity();
 	gObjects.push_back(ghost);
-
 	this->ghost = ghost;
 
 	// Androide
-	int droidRadius = 20;
 	Droid* d = new Droid(droidRadius);
 	d->setModelMat(glm::translate(d->modelMat(), glm::vec3(0, planetRadius + droidRadius, 0)));
 	ghost->addEntity(d);
-
 	droid = d;
-
+	
+	// Planeta
+	Sphere* planeta = new Sphere(planetRadius, 50, 50);
+	planeta->setColor({ 171 / 255.0, 33 / 255.0, 72 / 255.0, 0 });
+	gObjects.push_back(planeta);
+	
 	// Luz posicional
 	posLight = new PosLight();
 	posLight->setEnabled(true);

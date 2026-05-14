@@ -139,8 +139,14 @@ void Scene::setBackgroundColor(){
 
 bool Scene::handleInput(char c) {
 	switch (c) {
-	case 'r':
-		dirLight->setEnabled(!dirLight->enabled());
-		return true;
+		case 'r':
+		{
+			dirLight->setEnabled(!dirLight->enabled());
+			return true;
+		}
+		default:
+		{
+			return false;
+		}
 	}
 }

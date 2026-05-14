@@ -2,6 +2,7 @@
 
 EntityWithMaterial::EntityWithMaterial() {
 	mShader = Shader::get("light");
+	normalShader = Shader::get("normals");
 }
 
 void EntityWithMaterial::render(const glm::mat4& modelViewMat) const
@@ -12,5 +13,13 @@ void EntityWithMaterial::render(const glm::mat4& modelViewMat) const
 		mMaterial.upload(*mShader);
 		upload(modelViewMat * mModelMat);
 		mMesh->render();
+	}
+
+	if (mMesh != nullptr) {
+		if (mShowNormals) {
+			normalShader->use();
+			normalShader->setUniform("modelView", modelViewMat * mModelMat);
+			mMesh->render();
+		}
 	}
 }

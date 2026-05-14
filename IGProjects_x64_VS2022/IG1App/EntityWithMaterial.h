@@ -11,8 +11,14 @@ public:
 	virtual ~EntityWithMaterial() = default;
 	void setMaterial(const Material& m) { mMaterial = m; };
 	void render(const glm::mat4& modelViewMat) const override;
+
+	static inline void toggleShowNormals() {
+		mShowNormals = !mShowNormals;
+	}
 protected:
 	Material mMaterial;
+	Shader* normalShader;
+	inline static bool mShowNormals = false;
 };
 
 #endif

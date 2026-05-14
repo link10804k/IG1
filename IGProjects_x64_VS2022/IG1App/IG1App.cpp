@@ -251,7 +251,7 @@ IG1App::key(unsigned int key)
 			set2Viewports();
 			break;
 		case 'N':
-			ColorMaterialEntity::toggleShowNormals();
+			EntityWithMaterial::toggleShowNormals();
 			break;
 		// Fin 
 		default:
