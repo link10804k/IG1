@@ -38,7 +38,7 @@ void Scene8::init() {
 	posLight->setDiff({ 0.6, 0.6, 0.6 });
 	posLight->setSpec({ 0, 0.2, 0 });
 
-	posLight->setPosition(glm::vec3(500, 500, 0));
+	posLight->setPosition(glm::vec3(planetRadius + 100, planetRadius + 100, 0));
 
 	gLights.push_back(posLight);
 
@@ -50,7 +50,7 @@ void Scene8::init() {
 	spotLight->setDiff({ 0.6, 0.6, 0.6 });
 	spotLight->setSpec({ 0, 0.2, 0 });
 
-	glm::vec3 position = { 0, 500, 500 };
+	glm::vec3 position = { 0, planetRadius + 10, planetRadius + 10 };
 	spotLight->setPosition(glm::vec3(position));
 	spotLight->setDirection(glm::normalize(glm::vec3(0, 0, 0) - position));
 	spotLight->setCutoff(5.0f, 15.0f);
